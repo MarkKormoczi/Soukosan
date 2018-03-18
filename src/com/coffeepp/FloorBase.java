@@ -33,4 +33,8 @@ public abstract class FloorBase {
     {
         entity = null;
     }
+    @Override
+    public String toString() {
+    	return "FloorBase";
+    }
 }

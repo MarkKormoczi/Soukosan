@@ -5,4 +5,8 @@ public class Obstruction extends FloorBase {
     {
         return true;
     }
+    @Override
+    public String toString() {
+    	return "Obstruction";
+    }
 }

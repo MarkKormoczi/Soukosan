@@ -22,4 +22,8 @@ public abstract class Movable implements Updatable {
     {
 
     }
+    @Override
+    public String toString() {
+    	return "Movable";
+    }
 }

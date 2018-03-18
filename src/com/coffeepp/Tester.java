@@ -20,4 +20,8 @@ public class Tester {
         }
 
     }
+    @Override
+    public String toString() {
+    	return "Tester";
+    }
 }
