@@ -13,4 +13,8 @@ public class Hole extends FloorBase {
     {
         return true;
     }
+    @Override
+    public String toString() {
+    	return "Hole";
+    }
 }

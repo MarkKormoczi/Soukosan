@@ -5,4 +5,8 @@ public class Floor extends FloorBase {
     {
         return true;
     }
+    @Override
+    public String toString() {
+    	return "Floor";
+    }
 }

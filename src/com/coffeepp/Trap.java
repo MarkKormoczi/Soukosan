@@ -21,4 +21,8 @@ public class Trap extends FloorBase implements Updatable {
     {
         return state;
     }
+    @Override
+    public String toString() {
+    	return "Trap";
+    }
 }

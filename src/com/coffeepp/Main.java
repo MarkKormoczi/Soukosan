@@ -11,4 +11,8 @@ public class Main {
         tester.startTester();
 
     }
+    @Override
+    public String toString() {
+    	return "Main";
+    }
 }

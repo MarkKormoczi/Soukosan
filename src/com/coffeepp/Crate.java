@@ -18,6 +18,8 @@ public class Crate extends Movable {
     {
         return true;
     }
-
-
+    @Override
+    public String toString() {
+    	return "Crate";
+    }
 }

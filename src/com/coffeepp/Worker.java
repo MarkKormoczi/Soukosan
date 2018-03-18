@@ -23,5 +23,8 @@ public class Worker extends Movable {
     {
         return false;
     }
-
+    @Override
+    public String toString() {
+    	return "Worker";
+    }
 }

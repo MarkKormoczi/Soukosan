@@ -9,4 +9,8 @@ public class Tester {
         System.out.println("Choose test case: ");
 
     }
+    @Override
+    public String toString() {
+    	return "Tester";
+    }
 }
