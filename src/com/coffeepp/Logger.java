@@ -5,7 +5,7 @@ import java.io.FileWriter;
 
 /**
  * @author András
- *
+ *Logger osztály, a fv hívások menetét logolja ki file-ba.
  */
 public class Logger {
 	/**
