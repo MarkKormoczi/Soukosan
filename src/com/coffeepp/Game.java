@@ -82,25 +82,25 @@ public class Game {
             for ( colNum = 0; colNum < 100; colNum ++){
                 // handle top edge , all northern neighbor is null
                 if ( rowNum == 0 ) {
-                    FloorMatrix[rowNum][colNum].setNeighbor(Null, Direction.up);
+                    FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.up);
                 } else {
                     FloorMatrix[rowNum][colNum].setNeighbor( FloorMatrix[rowNum-1][colNum], Direction.up);
                 }
                 // handle bottom edge , all southern neighbor is null
                 if ( rowNum == FloorMatrix.length) {
-                    FloorMatrix[rowNum][colNum].setNeighbor(Null, Direction.down);
+                    FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.down);
                 } else {
                     FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum+1][colNum], Direction.down);
                 }
                 // handle left edge , all western neighbor is null
                 if ( colNum == 0 ) {
-                    FloorMatrix[rowNum][colNum].setNeighbor(Null, Direction.left);
+                    FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.left);
                 } else {
                     FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum-1], Direction.left);
                 }
                 // handle top edge , all eastern neighbor is null
                 if ( colNum == FloorMatrix[rowNum].length) {
-                    FloorMatrix[rowNum][colNum].setNeighbor(Null, Direction.right);
+                    FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.right);
                 } else {
                     FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum+1], Direction.right);
                 }
