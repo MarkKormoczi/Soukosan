@@ -9,7 +9,7 @@ public class Main {
         Logger.loggerInit();
 
 
-        Game g = new Game();
+        Game g = Game.getInstance();
         try {
             g.NewGame();
         } catch (IOException e) {

@@ -30,23 +30,23 @@ public class Game {
         return currentLevel;
     }
     public void NewGame() throws IOException {
-        FileReader fr = new FileReader("D:/map.txt");
+        FileReader fr = new FileReader("map.txt");
         BufferedReader br = new BufferedReader(fr);
 
         StringBuilder sb = new StringBuilder();
         String line = br.readLine();
 
         FloorBase[][] FloorMatrix = new FloorBase[100][100];
-        //mátrix elemeinek NULL értékere állítása
+        //FloorMatrix elemeinek NULL értékere állítása
         for(int i = 0; i < FloorMatrix.length; ++i)
             for(int j = 0; j < FloorMatrix[i].length; ++j)
                 FloorMatrix[i][j] = null;
 
-        //mátrix feltöltése
+        //FloorMatrix feltoltese
         int row =0;
         int mcol=0;
         while (line != null) {
-
+            //A palya tarolasa vegett 2-t kell leptetni és ezért kell az mcol valtozo is
            for(int col = 0; col< line.length(); col += 2)
            {
                char charfb = line.charAt(col);
