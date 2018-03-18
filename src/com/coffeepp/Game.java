@@ -7,8 +7,8 @@ public class Game {
     private int currentLevel;
     private WareHouse layout;
 
-    private static Game instance = null;
-    public Game() {}
+    public static Game instance = null;
+    private Game() {}
 
     public static Game getInstance() {
         if(instance == null) {
@@ -87,7 +87,7 @@ public class Game {
                     FloorMatrix[rowNum][colNum].setNeighbor( FloorMatrix[rowNum-1][colNum], Direction.up);
                 }
                 // handle bottom edge , all southern neighbor is null
-                if ( rowNum == FloorMatrix.length) {
+                if ( rowNum == FloorMatrix.length-1) {
                     FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.down);
                 } else {
                     FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum+1][colNum], Direction.down);
@@ -99,7 +99,7 @@ public class Game {
                     FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum-1], Direction.left);
                 }
                 // handle top edge , all eastern neighbor is null
-                if ( colNum == FloorMatrix[rowNum].length) {
+                if ( colNum == FloorMatrix[rowNum].length-1) {
                     FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.right);
                 } else {
                     FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum+1], Direction.right);
