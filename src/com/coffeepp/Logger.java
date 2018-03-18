@@ -20,7 +20,7 @@ public class Logger {
 	private static int numOfCalls = 0;
 	
 	/**
-	 * inicializálja a file-t, és létrehoz egy új .log file-t a sorszámuk alapján.
+	 * inicializálja a file-t, és létrehoz egy új .log file-t a sorszámuk alapján. 
 	 */
 	public static void loggerInit(){
 		int num = 0;
