@@ -39,6 +39,8 @@ public abstract class FloorBase implements Updatable {
             case down: down = fb;
             case left: left = fb;
             case right: right = fb;
+
+            
         }
     }
 
