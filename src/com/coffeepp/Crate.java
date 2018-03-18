@@ -10,7 +10,7 @@ public class Crate extends Movable {
     }
     public void Push(Direction d)
     {
-        
+
 
 
     }
@@ -27,4 +27,8 @@ public class Crate extends Movable {
         lastPusher=w;
     }
 
+    @Override
+    public String toString() {
+    	return "Crate";
+    }
 }

@@ -12,7 +12,16 @@ public class Tester {
 
     //Initialize a tester
     public void startTester(){
-        System.out.println("Choose test case: ");
+        while(true){
+            System.out.println("Choose test case: " +
+                    "\t1 ");
 
+
+        }
+
+    }
+    @Override
+    public String toString() {
+    	return "Tester";
     }
 }

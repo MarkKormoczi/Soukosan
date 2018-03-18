@@ -12,4 +12,8 @@ public class Switch extends FloorBase implements Updatable {
     {
         return state;
     }
+    @Override
+    public String toString() {
+    	return "Switch";
+    }
 }

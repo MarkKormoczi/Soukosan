@@ -5,4 +5,8 @@ public class TargetSpot extends FloorBase {
     {
         return true;
     }
+    @Override
+    public String toString() {
+    	return "TargetSpot";
+    }
 }
