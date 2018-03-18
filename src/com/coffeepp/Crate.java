@@ -14,13 +14,19 @@ public class Crate extends Movable {
     @Override
     public boolean Push(Movable m, Direction d)
     {
+        Logger l = new Logger();
+        l.enter(this, "Push");
+
         SetLastPusher(m);
         FloorBase pl= this.getPlace();
         pl = pl.GetNeighbor(d);
-        if(!pl.Accept(this, d))
+        if(!pl.Accept(this, d)) {
+            l.exit(this, "Push", "false");
             return false;
-        else
+        } else {
             this.getPlace().Remove(this);
+        }
+        l.exit(this, "Push", "true");
         return true;
     }
 
@@ -29,8 +35,13 @@ public class Crate extends Movable {
      */
     public void AddPoints()
     {
+        Logger l = new Logger();
+        l.enter(this, "AddPoints");
+
         Movable lp= this.GetLastPusher();
         lp.AddPoints();
+
+        l.exit(this, "AddPoints", "void");
     }
 
     /**
@@ -38,6 +49,9 @@ public class Crate extends Movable {
      */
     public boolean SwitchCapable()
     {
+        Logger l = new Logger();
+        l.enter(this, "SwitchCapable");
+        l.exit(this, "SwitchCapable", "true");
         return true;
     }
 
