@@ -2,7 +2,14 @@ package com.coffeepp;
 
 public class Worker extends Movable {
 
+    /**
+     * Holds the points of this worker.
+     */
     private int points;
+
+    /**
+     * Retruns the accumulated points of this worker.
+     */
     public int GetPoints()
     {
     	Logger l = new Logger();
@@ -11,29 +18,51 @@ public class Worker extends Movable {
     	l.exit(this, "GetPoints", Integer.toString(points));
         return points;
     }
-    public void Move(Movable m, Direction d)
+
+    /**
+     * Moves the worker in the specified direction.
+     */
+    public void Move(Direction d)
     {
     	Logger l = new Logger();
     	l.enter(this, "Move", d.toString());
-    	
+
+        if ( this.getPlace().GetNeighbor(d).Accept(this, d) )
+            this.getPlace().Remove(this);
+
     	l.exit(this, "Move", "void");
     }
+
+    /**
+     * Workes gets pushed. If called worker gets destroyed.
+     */
     public boolean Push(Direction d)
     {
     	Logger l = new Logger();
     	l.enter(this, "Push", d.toString());
-    	
+
+    	this.Destroy();
+
     	l.exit(this, "Push", "false");
         return false;
     }
+
+    /**
+     * Incrementing the point counter.
+     */
     public void AddPoints()
     {
     	Logger l = new Logger();
     	l.enter(this, "AddPoints");
     	
-    	
+    	this.points += 1;
+
     	l.exit(this, "AddPoints", "void");
     }
+
+    /**
+     * Incrementing the point counter.
+     */
     public boolean SwitchCapable()
     {
     	Logger l = new Logger();
