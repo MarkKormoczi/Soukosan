@@ -1,6 +1,6 @@
 package com.coffeepp;
 
-public abstract class FloorBase {
+public abstract class FloorBase implements Updatable {
 
     private FloorBase up;
     private FloorBase down;
@@ -42,6 +42,8 @@ public abstract class FloorBase {
     {
         entity = null;
     }
+    public void Update(){} //szándékosan üres, nem mindenki valósítja meg viszont szükséges a tárolás miatt
+
     @Override
     public String toString() {
     	return "FloorBase";
