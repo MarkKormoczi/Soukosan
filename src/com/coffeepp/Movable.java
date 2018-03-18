@@ -37,7 +37,7 @@ public abstract class Movable implements Updatable {
     public abstract boolean SwitchCapable();
     public void Update()
     {
-
+        //ez mi lesz 
     }
     @Override
     public String toString() {
