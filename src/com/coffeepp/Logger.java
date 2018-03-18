@@ -4,23 +4,23 @@ import java.io.File;
 import java.io.FileWriter;
 
 /**
- * @author András
- *Logger osztály, a fv hívások menetét logolja ki file-ba.
+ * @author Andras
+ *Logger osztaly, a fv hívasok menetet logolja ki file-ba.
  */
 public class Logger {
 	/**
 	 * file:
-	 * egyszeri futtatás alatt minden fv ugyanebbe a file-ba logol.
+	 * egyszeri futtatas alatt minden fv ugyanebbe a file-ba logol.
 	 */
 	private static File file;
 	/**
 	 * numOfCalls:
-	 * számolja milyen mélyen vagyunk a fv hívásokba. enter esetén növekszik, exit esetén csökken.
+	 * szamolja milyen melyen vagyunk a fv hívasokba. enter eseten novekszik, exit eseten csokken.
 	 */
 	private static int numOfCalls = 0;
 	
 	/**
-	 * inicializálja a file-t, és létrehoz egy új .log file-t a sorszámuk alapján. 
+	 * inicializalja a file-t, es letrehoz egy uj .log file-t a sorszamuk alapjan. 
 	 */
 	public static void loggerInit(){
 		int num = 0;
@@ -41,13 +41,13 @@ public class Logger {
 		
 	}
 	/**
-	 * fv-be lépéskor hívódik meg, logolja a híó objektumot fv-t és a fv paramétereit.
+	 * fv-be lepeskor hívodik meg, logolja a hío objektumot fv-t es a fv parametereit.
 	 * @param thisObj
 	 * az objektum ami meghívta a fv-t, kell hogy legyen toString-je
 	 * @param functionName
-	 * a fv neve amiben a hívás történt
+	 * a fv neve amiben a hívas tortent
 	 * @param params
-	 * a hívó fv paraméterei String-ként.
+	 * a hívo fv parameterei String-kent.
 	 */
 	public void enter(Object thisObj, String functionName, String... params){
 		try {
@@ -70,9 +70,9 @@ public class Logger {
 	 * @param thisObj
 	 * az objektum ami meghívta a fv-t, kell hogy legyen toString-je
 	 * @param functionName
-	 * a fv neve amiben a hívás történt
+	 * a fv neve amiben a hívas tortent
 	 * @param result
-	 * a visszatérési érték amivel a hívó fv visszatér, String-ként.
+	 * a visszateresi ertek amivel a hívo fv visszater, String-kent.
 	 */
 	public void exit(Object thisObj, String functionName, String result){
 		try {
