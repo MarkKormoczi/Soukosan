@@ -2,7 +2,7 @@ package com.coffeepp;
 
 public abstract class Movable implements Updatable {
 
-
+    Game game = Game.getInstance();
 
     private FloorBase place;
     private Movable lastPusher;
