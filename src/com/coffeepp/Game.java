@@ -1,4 +1,5 @@
 package com.coffeepp;
+import java.io.FileReader;
 
 public class Game {
     private int currentLevel;
@@ -29,6 +30,12 @@ public class Game {
     public void NewGame()
     {
         this.layout = new WareHouse();
+        FileReader fr = new FileReader("map.txt");
+
+        for (int i = 0;)
+        Floor f = new Floor();
+        f
+        fr.close();
     }
     public void GameOver()
     {
