@@ -58,6 +58,16 @@ public class Game {
                     case '4': FloorMatrix[row][mcol] = new Trap();break;
                     case '5': FloorMatrix[row][mcol] = new Hole();break;
                 }
+                charfb = line.charAt(col+1);
+                switch (charfb)
+                {
+                    case 'W':
+                        FloorMatrix[row][mcol].setEntity(new Worker());
+                        break;
+                    case 'C':
+                        FloorMatrix[row][mcol].setEntity(new Crate());
+                        break;
+                }
                mcol++;
            }
            row++;
