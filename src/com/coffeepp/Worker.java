@@ -36,7 +36,8 @@ public class Worker extends Movable {
     /**
      * Workes gets pushed. If called worker gets destroyed.
      */
-    public boolean Push(Direction d)
+    @Override
+    public boolean Push(Movable m, Direction d)
     {
     	Logger l = new Logger();
     	l.enter(this, "Push", d.toString());
