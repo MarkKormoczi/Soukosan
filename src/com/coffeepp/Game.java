@@ -78,8 +78,8 @@ public class Game {
 
         int colNum;
         int rowNum;
-        for ( rowNum = 0; rowNum < 100; rowNum ++){
-            for ( colNum = 0; colNum < 100; colNum ++){
+        for ( rowNum = 0; rowNum < FloorMatrix.length; rowNum ++){
+            for ( colNum = 0; colNum < FloorMatrix[rowNum].length; colNum ++){
                 // handle top edge , all northern neighbor is null
                 if ( rowNum == 0 ) {
                     FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.up);
