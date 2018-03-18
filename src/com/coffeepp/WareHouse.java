@@ -1,5 +1,8 @@
 package com.coffeepp;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class WareHouse
 {
@@ -40,7 +43,6 @@ public class WareHouse
     public void AddFloorbase(FloorBase fb){
         floorbases.add(fb);
     }
-
     public void RemoveWorker(Worker w){
         workers.remove(w);
     }
