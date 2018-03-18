@@ -19,7 +19,7 @@ public class Logger {
 			file = f;
 			file.createNewFile();
 		}
-		catch(Exception e) {System.err.println("hiba inicializ�l�skor.");
+		catch(Exception e) {System.err.println("Error during init");
 			e.printStackTrace(System.err);
 		}
 		
