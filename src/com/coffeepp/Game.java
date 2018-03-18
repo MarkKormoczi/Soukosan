@@ -2,6 +2,7 @@ package com.coffeepp;
 
 public class Game {
     private int currentLevel;
+
     public int GetCurrentLevel()
     {
         return currentLevel;
@@ -16,7 +17,7 @@ public class Game {
     }
     public void SetLevel(int level)
     {
-
+        currentLevel=level;
     }
     @Override
     public String toString() {

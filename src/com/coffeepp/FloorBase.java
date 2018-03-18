@@ -8,6 +8,15 @@ public abstract class FloorBase {
     private FloorBase right;
     private Movable entity;
 
+
+    public Movable getEntity() {
+        return entity;
+    }
+
+    public void setEntity(Movable entity) {
+        this.entity = entity;
+    }
+
     public FloorBase GetNeighbor(Direction d)
     {
         switch(d)
@@ -19,15 +28,15 @@ public abstract class FloorBase {
             default: return up;
         }
     }
-    public Movable GetEntity()
-    {
-        return entity;
-    }
+
     public boolean Accept(Movable m, Direction d)
     {
-        //ide még jönnek cuccok csak egy alapot írtam
-        entity = m;
-        return true;
+
+        if(entity!=null) {
+            entity = m;
+            return true;
+        }
+        return false;
     }
     public void Remove(Movable m)
     {
