@@ -2,29 +2,20 @@ package com.coffeepp;
 
 public class Crate extends Movable {
 
-    private Worker lastPusher;
-
-    public Worker GetLastPusher()
-    {
-        return lastPusher;
-    }
     public void Push(Direction d)
     {
-
-
-
+        FloorBase pl= this.getPlace();
+        pl = pl.GetNeighbor(d);
+        pl.
     }
     public void AddPoints()
     {
-        lastPusher.AddPoints();
+        Movable lp= this.GetLastPusher();
+        lp.AddPoints();
     }
     public boolean SwitchCapable()
     {
         return true;
-    }
-
-    public void SetLastPusher(Worker w){
-        lastPusher=w;
     }
 
     @Override
