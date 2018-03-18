@@ -6,7 +6,9 @@ public class Crate extends Movable {
     {
         FloorBase pl= this.getPlace();
         pl = pl.GetNeighbor(d);
-        pl.
+        if(pl.Accept(this,d)==false)
+            this.Destroy();
+
     }
     public void AddPoints()
     {
