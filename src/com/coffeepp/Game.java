@@ -51,12 +51,12 @@ public class Game {
            {
                char charfb = line.charAt(col);
                 switch(charfb) {
-                    case '0': FloorMatrix[row][mcol] = new Obstruction();
-                    case '1': FloorMatrix[row][mcol] = new Floor();
-                    case '2': FloorMatrix[row][mcol] = new TargetSpot();
-                    case '3': FloorMatrix[row][mcol] = new Switch();
-                    case '4': FloorMatrix[row][mcol] = new Trap();
-                    case '5': FloorMatrix[row][mcol] = new Hole();
+                    case '0': FloorMatrix[row][mcol] = new Obstruction(); break;
+                    case '1': FloorMatrix[row][mcol] = new Floor();break;
+                    case '2': FloorMatrix[row][mcol] = new TargetSpot();break;
+                    case '3': FloorMatrix[row][mcol] = new Switch();break;
+                    case '4': FloorMatrix[row][mcol] = new Trap();break;
+                    case '5': FloorMatrix[row][mcol] = new Hole();break;
                 }
                mcol++;
            }
@@ -71,7 +71,7 @@ public class Game {
         {
             for ( int j = 0; j<10; j++)
             {
-                System.out.print(FloorMatrix[i][j]+" ");
+                System.out.print(FloorMatrix[i][j]+"\t");
             }
             System.out.print("\n");
         }
