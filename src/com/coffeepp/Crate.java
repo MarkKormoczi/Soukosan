@@ -2,7 +2,7 @@ package com.coffeepp;
 
 public class Crate extends Movable {
 
-    public void Push(Direction d)
+    public void Push(Direction d) //ellök valamit az adott irányba
     {
         FloorBase pl= this.getPlace();
         pl = pl.GetNeighbor(d);
