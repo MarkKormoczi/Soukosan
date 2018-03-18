@@ -8,7 +8,6 @@ public abstract class FloorBase implements Updatable {
     private FloorBase right;
     private Movable entity;
 
-
     public Movable getEntity() {
         return entity;
     }
@@ -31,7 +30,7 @@ public abstract class FloorBase implements Updatable {
             default: return up;
         }
     }
-    public void GetNeighbor(FloorBase fb, Direction d)
+    public void setNeighbor(FloorBase fb, Direction d)
     {
         switch(d)
         {
@@ -39,8 +38,6 @@ public abstract class FloorBase implements Updatable {
             case down: down = fb;
             case left: left = fb;
             case right: right = fb;
-
-            
         }
     }
 
