@@ -2,6 +2,25 @@ package com.coffeepp;
 
 public class Game {
     private int currentLevel;
+    private WareHouse layout;
+
+    private static Game instance = null;
+    private Game() {}
+
+    public static Game getInstance() {
+        if(instance == null) {
+            instance = new Game();
+        }
+        return instance;
+    }
+
+    public WareHouse getLayout() {
+        return layout;
+    }
+
+    public void setLayout(WareHouse layout) {
+        this.layout = layout;
+    }
 
     public int GetCurrentLevel()
     {
@@ -9,11 +28,11 @@ public class Game {
     }
     public void NewGame()
     {
-
+        this.layout = new WareHouse();
     }
     public void GameOver()
     {
-
+        //Later
     }
     public void SetLevel(int level)
     {
