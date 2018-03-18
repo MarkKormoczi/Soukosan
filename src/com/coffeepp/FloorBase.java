@@ -17,6 +17,9 @@ public abstract class FloorBase implements Updatable {
         this.entity = entity;
     }
 
+    /**
+    * Visszaadja a megadott irányban lévő szomszédos FloorBase-t
+    */
     public FloorBase GetNeighbor(Direction d)
     {
         switch(d)
@@ -28,11 +31,21 @@ public abstract class FloorBase implements Updatable {
             default: return up;
         }
     }
+    public void GetNeighbor(FloorBase fb, Direction d)
+    {
+        switch(d)
+        {
+            case up: up = fb;
+            case down: down = fb;
+            case left: left = fb;
+            case right: right = fb;
+        }
+    }
 
     public boolean Accept(Movable m, Direction d)
     {
 
-        if(entity!=null) {
+        if(entity == null) {
             entity = m;
             return true;
         }
