@@ -17,10 +17,6 @@ public class Trap extends FloorBase implements Updatable {
     {
         return false;
     }
-    public void Remove()
-    {
-
-    }
     public boolean GetState()
     {
         return state;
