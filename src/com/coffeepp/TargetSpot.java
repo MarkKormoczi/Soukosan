@@ -5,8 +5,4 @@ public class TargetSpot extends FloorBase {
     {
         return true;
     }
-    public void Remove(Movable m)
-    {
-
-    }
 }

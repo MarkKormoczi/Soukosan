@@ -5,6 +5,4 @@ public class Obstruction extends FloorBase {
     {
         return true;
     }
-    public void Remove(Movable m)
-    {   }
 }
