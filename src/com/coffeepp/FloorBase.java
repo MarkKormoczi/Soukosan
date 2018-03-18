@@ -31,7 +31,7 @@ public abstract class FloorBase {
 
     public boolean Accept(Movable m, Direction d)
     {
-        //ide még jönnek cuccok csak egy alapot írtam
+
         if(entity!=null) {
             entity = m;
             return true;
