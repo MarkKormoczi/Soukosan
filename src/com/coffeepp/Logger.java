@@ -5,7 +5,7 @@ import java.io.FileWriter;
 
 /**
  * @author Andras
- *Logger osztaly, a fv hívasok menetet logolja ki file-ba.
+ *Logger osztaly, a fv hivasok menetet logolja ki file-ba. 
  */
 public class Logger {
 	/**
@@ -15,7 +15,7 @@ public class Logger {
 	private static File file;
 	/**
 	 * numOfCalls:
-	 * szamolja milyen melyen vagyunk a fv hívasokba. enter eseten novekszik, exit eseten csokken.
+	 * szamolja milyen melyen vagyunk a fv hivasokba. enter eseten novekszik, exit eseten csokken.
 	 */
 	private static int numOfCalls = 0;
 	
@@ -41,13 +41,13 @@ public class Logger {
 		
 	}
 	/**
-	 * fv-be lepeskor hívodik meg, logolja a hío objektumot fv-t es a fv parametereit.
+	 * fv-be lepeskor hivodik meg, logolja a hio objektumot fv-t es a fv parametereit.
 	 * @param thisObj
-	 * az objektum ami meghívta a fv-t, kell hogy legyen toString-je
+	 * az objektum ami meghivta a fv-t, kell hogy legyen toString-je
 	 * @param functionName
-	 * a fv neve amiben a hívas tortent
+	 * a fv neve amiben a hivas tortent
 	 * @param params
-	 * a hívo fv parameterei String-kent.
+	 * a hivo fv parameterei String-kent.
 	 */
 	public void enter(Object thisObj, String functionName, String... params){
 		try {
@@ -68,11 +68,11 @@ public class Logger {
 	}
 	/**
 	 * @param thisObj
-	 * az objektum ami meghívta a fv-t, kell hogy legyen toString-je
+	 * az objektum ami meghivta a fv-t, kell hogy legyen toString-je
 	 * @param functionName
-	 * a fv neve amiben a hívas tortent
+	 * a fv neve amiben a hivas tortent
 	 * @param result
-	 * a visszateresi ertek amivel a hívo fv visszater, String-kent.
+	 * a visszateresi ertek amivel a hivo fv visszater, String-kent.
 	 */
 	public void exit(Object thisObj, String functionName, String result){
 		try {
