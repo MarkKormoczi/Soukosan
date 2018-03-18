@@ -5,7 +5,7 @@ import java.io.FileWriter;
 
 /**
  * @author Andras
- *Logger osztaly, a fv hívasok menetet logolja ki file-ba.
+ *Logger osztaly, a fv hívasok menetet logolja ki file-ba. 
  */
 public class Logger {
 	/**
