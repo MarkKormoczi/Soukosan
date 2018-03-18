@@ -1,4 +1,5 @@
 package com.coffeepp;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -6,9 +7,9 @@ import java.util.stream.Collectors;
 
 public class WareHouse
 {
-    private List<Worker> workers;
-    private List<Crate> crates;
-    private List<FloorBase> floorbases; //mindenki updateable
+    private List<Worker> workers = new ArrayList<Worker>();
+    private List<Crate> crates = new ArrayList<Crate>();
+    private List<FloorBase> floorbases = new ArrayList<FloorBase>(); //mindenki updateable
 
     public void UpdateAll()
     {
