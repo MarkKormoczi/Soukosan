@@ -3,9 +3,12 @@ package com.coffeepp;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.print("Killer Sokoban");
+        System.out.print("Sokoban-san");
         Logger.loggerInit();
 
-        //Application goes here
+        //Tester class call
+        Tester tester = new Tester();
+        tester.startTester();
+
     }
 }
