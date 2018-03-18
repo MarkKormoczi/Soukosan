@@ -30,6 +30,7 @@ public class Game {
         return currentLevel;
     }
     public void NewGame() throws IOException {
+        WareHouse wh = new WareHouse();
         FileReader fr = new FileReader("map.txt");
         BufferedReader br = new BufferedReader(fr);
 
@@ -116,6 +117,8 @@ public class Game {
                     } else {
                         FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum+1], Direction.right);
                     }
+                    System.out.print(FloorMatrix[rowNum][colNum]);
+                    wh.AddFloorbase(FloorMatrix[rowNum][colNum]);
                 }
             }
         }
