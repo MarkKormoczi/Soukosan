@@ -64,6 +64,15 @@ public class Crate extends Movable {
         l.exit(this, "SwitchCapable", "true");
         return true;
     }
+    public void Destroy()
+    {
+        Logger l = new Logger();
+        l.enter(this, "Destroy");
+
+        this.setPlace(null);
+        l.exit(this, "Destroy", "void");
+        Game.getInstance().GameOver();
+    }
 
     @Override
     public String toString() {
