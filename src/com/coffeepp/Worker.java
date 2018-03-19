@@ -26,7 +26,6 @@ public class Worker extends Movable {
     {
     	Logger l = new Logger();
     	l.enter(this, "Move", d.toString());
-
         if ( this.getPlace().GetNeighbor(d).Accept(this, d) )
             this.getPlace().Remove(this);
 

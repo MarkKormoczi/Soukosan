@@ -71,6 +71,8 @@ public class Game {
         l.enter(this, "NewGame");
 
         layout = new WareHouse();
+
+        /* Commented out since file loading is not implemented into skeleton
         FileReader fr = new FileReader("map.txt");
         BufferedReader br = new BufferedReader(fr);
 
@@ -162,6 +164,7 @@ public class Game {
                 }
             }
         }
+        */
         l.exit(this, "NewGame", "void");
     }
 

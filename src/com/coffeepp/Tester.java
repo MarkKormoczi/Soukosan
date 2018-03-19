@@ -1,5 +1,6 @@
 package com.coffeepp;
 
+import java.lang.annotation.Target;
 import java.util.Scanner;
 import java.util.logging.ConsoleHandler;
 
@@ -24,14 +25,12 @@ public class Tester {
                     "\t3 Worker pushes Crate\n" +
                     "\t4 Worker pushed\n" +
                     "\t5 Crate pushed\n" +
-                    "\t6 Step to Floorbase\n" +
-                    "\t7 Update cycle\n" +
-                    "\t8 Switch\n" +
-                    "\t9 Add point\n" +
-                    "\t10 Destroy Crate\n" +
-                    "\t11 Destroy Worker\n" +
-                    "\t12 New game\n" +
-                    "\t13 Game over\n" +
+                    "\t6 Update cycle\n" +
+                    "\t7 Add point\n" +
+                    "\t8 Destroy Crate\n" +
+                    "\t9 Destroy Worker\n" +
+                    "\t10 New game\n" +
+                    "\t11 Game over\n" +
                     "\n\nEnter your choice: ");
 
             String input = sc.nextLine();
@@ -71,51 +70,51 @@ public class Tester {
                     String altInput = sc.nextLine();
 
                     switch (altInput){
-                        case "2.1":
-                            Floor f1_1 = new Floor();
-                            Floor f2_1 = new Floor();
-                            Worker w1_1 = new Worker();
-                            f1_1.setNeighbor(f2_1, Direction.right);
-                            f2_1.setNeighbor(f1_1, Direction.left);
+                        case "2.1": {
+                            Floor f1 = new Floor();
+                            Floor f2 = new Floor();
+                            Worker w1 = new Worker();
+                            f1.setNeighbor(f2, Direction.right);
+                            f2.setNeighbor(f1, Direction.left);
 
-                            f1_1.setEntity(w1_1);
-                            w1_1.setPlace(f1_1);
+                            f1.setEntity(w1);
+                            w1.setPlace(f1);
 
-                            w1_1.Move(Direction.right); //Worker moves in given direction
+                            w1.Move(Direction.right); //Worker moves in given direction
 
                             System.out.println("Worker moved to Floor.\n");
                             break;
+                        }
+                        case "2.2": {
+                            Floor f1 = new Floor();
+                            Obstruction f2 = new Obstruction();
+                            Worker w1 = new Worker();
+                            f1.setNeighbor(f2, Direction.right);
+                            f2.setNeighbor(f1, Direction.left);
 
-                        case "2.2":
-                            Floor f1_2 = new Floor();
-                            Obstruction f2_2 = new Obstruction();
-                            Worker w1_2 = new Worker();
-                            f1_2.setNeighbor(f2_2, Direction.right);
-                            f2_2.setNeighbor(f1_2, Direction.left);
+                            f1.setEntity(w1);
+                            w1.setPlace(f1);
 
-                            f1_2.setEntity(w1_2);
-                            w1_2.setPlace(f1_2);
-
-                            w1_2.Move(Direction.right); //Worker moves in given direction
+                            w1.Move(Direction.right); //Worker moves in given direction
 
                             System.out.println("Worker moved to Obstruction.\n");
                             break;
+                        }
+                        case "2.3": {
+                            Floor f1 = new Floor();
+                            Hole f2 = new Hole();
+                            Worker w1 = new Worker();
+                            f1.setNeighbor(f2, Direction.right);
+                            f2.setNeighbor(f1, Direction.left);
 
-                        case "2.3":
-                            Floor f1_3 = new Floor();
-                            Hole f2_3 = new Hole();
-                            Worker w1_3 = new Worker();
-                            f1_3.setNeighbor(f2_3, Direction.right);
-                            f2_3.setNeighbor(f1_3, Direction.left);
+                            f1.setEntity(w1);
+                            w1.setPlace(f1);
 
-                            f1_3.setEntity(w1_3);
-                            w1_3.setPlace(f1_3);
-
-                            w1_3.Move(Direction.right); //Worker moves in given direction
+                            w1.Move(Direction.right); //Worker moves in given direction
 
                             System.out.println("Worker moved to Hole.\n");
                             break;
-
+                        }
                         case "2.4":
                             Floor f1_4 = new Floor();
                             Trap f2_4 = new Trap();
@@ -209,8 +208,104 @@ public class Tester {
                     }
                     break;
 
-                case "4": // Worker pushed
+                case "4":{// Worker pushed to Obstruction and dies brutally
+                    Worker w1 = new Worker();
+                    Floor f1 = new Floor();
+                    Crate c1 = new Crate();
+                    Obstruction f2 = new Obstruction();
+                    f1.setNeighbor(f2, Direction.right);
+                    f2.setNeighbor(f1, Direction.left);
 
+                    f1.setEntity(w1);
+                    w1.setPlace(f1);
+
+                    w1.Push(c1, Direction.left); // Poor guy got casted into a bloodpool on the Obstruction
+
+                    System.out.println("Worker got pushed to the wall. The end.\n");
+                    break;
+                }
+
+                case "5":{//Crate pushed
+                    Crate c1 = new Crate();
+                    Crate c2 = new Crate();
+                    Floor f1 = new Floor();
+                    Floor f2 = new Floor();
+                    Floor f3 = new Floor();
+                    f1.setNeighbor(f2, Direction.right);
+                    f2.setNeighbor(f1, Direction.left);
+                    f2.setNeighbor(f3, Direction.right);
+                    f3.setNeighbor(f2, Direction.left);
+
+                    f1.setEntity(c2); //Pushing Crate
+                    c2.setPlace(f1);
+
+                    f2.setEntity(c1); //Pushed Crate
+                    c1.setPlace(f2);
+
+                    c1.Push(c2, Direction.left);
+                    break;
+                }
+                case "6":{ // Update cycle
+                    Game game = Game.getInstance();
+                    game.getLayout().UpdateAll();
+                    System.out.println("Updated.");
+                    break;
+                }
+                case "7":{//Add point - Worker pushed Crate, pushes Crate to TargetSpot
+                    Floor f1 = new Floor();
+                    Floor f2 = new Floor();
+                    Floor f3 = new Floor();
+                    TargetSpot f4 = new TargetSpot();
+
+                    f1.setNeighbor(f2, Direction.right);
+                    f2.setNeighbor(f3, Direction.right);
+                    f3.setNeighbor(f4, Direction.right);
+                    f4.setNeighbor(f3, Direction.left);
+                    f3.setNeighbor(f2, Direction.left);
+                    f2.setNeighbor(f1, Direction.left);
+
+                    Worker w = new Worker(); //Add Worker
+                    f1.setEntity(w);
+                    w.setPlace(f1);
+
+                    Crate c1 = new Crate(); // Add Crate
+                    f2.setEntity(c1);
+                    c1.setPlace(f2);
+
+                    Crate c2 = new Crate(); // Add Crate
+                    f3.setEntity(c2);
+                    c2.setPlace(f3);
+
+                    w.Move(Direction.right);
+                    System.out.println("Crate moved, point added.");
+                    break;
+
+                }
+
+                case "8":{//Destroy Crate
+                    Worker monika = new Worker();
+                    Crate ink = new Crate();
+                    Floor floor = new Floor();
+                    Floor floor2 = new Floor();
+                    Hole puddle = new Hole();
+
+                    floor.setNeighbor(puddle, Direction.right);
+                    puddle.setNeighbor(floor, Direction.left);
+
+                    floor2.setNeighbor(floor, Direction.right);
+                    floor.setNeighbor(floor2, Direction.left);
+
+                    floor.setEntity(ink);
+                    ink.setPlace(floor);
+
+                    monika.setPlace(floor2);
+                    floor2.setEntity(monika);
+
+                    ink.Push(monika, Direction.right);
+                    System.out.println("The ink flows down into a dark puddle.");
+                    break;
+
+                }
 
 
 

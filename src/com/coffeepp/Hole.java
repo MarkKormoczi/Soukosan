@@ -18,7 +18,7 @@ public class Hole extends FloorBase {
     }
 
     /**
-     * Always accepst and always kills the movable.
+     * Always accept and always kills the movable.
      * @param m The to be accepted movavble.
      * @param d The direction which the accepted comes from.
      * @return true always.
