@@ -231,6 +231,7 @@ public class Tester {
                 case "5":{//Crate pushed
                     Crate c1 = new Crate();
                     Crate c2 = new Crate();
+                    Worker w = new Worker();
                     Floor f1 = new Floor();
                     Floor f2 = new Floor();
                     Floor f3 = new Floor();
@@ -242,13 +243,19 @@ public class Tester {
                     f3.setNeighbor(f4, Direction.right);
                     f4.setNeighbor(f3, Direction.left);
 
-                    f1.setEntity(c2); //Pushing Crate
-                    c2.setPlace(f1);
+                    f2.setEntity(c2); //Pushing Crate
+                    c2.setPlace(f2);
 
-                    f2.setEntity(c1); //Pushed Crate
-                    c1.setPlace(f2);
+                    f3.setEntity(c1); //Pushed Crate
+                    c1.setPlace(f3);
 
-                    c1.Push(c2, Direction.right);
+                    f1.setEntity(w);
+                    w.setPlace(f1);
+
+                    w.Move(Direction.right);
+
+                    System.out.println("Crate pushed another crate.\n");
+
                     break;
                 }
                 case "6":{ // Update cycle

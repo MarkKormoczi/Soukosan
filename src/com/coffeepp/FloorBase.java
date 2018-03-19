@@ -17,6 +17,7 @@ public abstract class FloorBase implements Updatable {
     public Movable getEntity() {
         Logger l = new Logger();
         l.enter(this, "getEntity");
+        if(entity!=null)
         l.exit(this, "getEntity", entity.toString());
         return entity;
 
