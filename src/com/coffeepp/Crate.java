@@ -33,6 +33,7 @@ public class Crate extends Movable {
             l.exit(this, "Push", "false");
             return false;
         } else {
+            if(this.getPlace()!=null)
             this.getPlace().Remove(this);
         }
         l.exit(this, "Push", "true");

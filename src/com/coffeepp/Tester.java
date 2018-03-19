@@ -10,6 +10,7 @@ import java.util.logging.ConsoleHandler;
  */
 
 public class Tester {
+
     Scanner sc = new Scanner(System.in);
     public Tester(){
 

@@ -26,6 +26,7 @@ public abstract class Movable implements Updatable {
     public FloorBase getPlace() {
         Logger l = new Logger();
         l.enter(this, "getPlace");
+        if(place != null)
         l.exit(this, "getPlace", place.toString());
         return place;
     }

@@ -22,12 +22,12 @@ public class Worker extends Movable {
     /**
      * Moves the worker in the specified direction.
      */
-    public void Move(Direction d)
-    {
-    	Logger l = new Logger();
-    	l.enter(this, "Move", d.toString());
-        if ( this.getPlace().GetNeighbor(d).Accept(this, d) )
-            this.getPlace().Remove(this);
+    public void Move(Direction d) {
+        Logger l = new Logger();
+        l.enter(this, "Move", d.toString());
+        if (this.getPlace().GetNeighbor(d).Accept(this, d))
+            if(this.getPlace() != null)
+                this.getPlace().Remove(this);
 
     	l.exit(this, "Move", "void");
     }
