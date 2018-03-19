@@ -35,6 +35,8 @@ public class Worker extends Movable {
 
     /**
      * Workes gets pushed. If called worker gets destroyed.
+     * @param m The pusher that tries to push.
+     * @param d The dirction which the worker was pushed.
      */
     @Override
     public boolean Push(Movable m, Direction d)
@@ -62,7 +64,7 @@ public class Worker extends Movable {
     }
 
     /**
-     * Incrementing the point counter.
+     * Returns that the worker can"t switch the traps
      */
     public boolean SwitchCapable()
     {
