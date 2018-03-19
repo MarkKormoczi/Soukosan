@@ -3,13 +3,24 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Responsible for starting the game, level loading, and general game control.
+ */
 public class Game {
     private int currentLevel;
     private WareHouse layout;
 
     public static Game instance = null;
+
+    /**
+     * Private constructor bc singleton.
+     */
     private Game() {}
 
+    /**
+     * Singleton instance getter.
+     * @return the only instance
+     */
     public static Game getInstance() {
         if(instance == null) {
             instance = new Game();
@@ -17,19 +28,49 @@ public class Game {
         return instance;
     }
 
+    /**
+     * Returns the current layout.
+     * @return
+     */
     public WareHouse getLayout() {
+        Logger l = new Logger();
+        l.enter(this, "getLayout");
+        l.exit(this, "getLayout", layout.toString());
         return layout;
     }
 
+    /**
+     * Sets the current layout.
+     * @return
+     */
     public void setLayout(WareHouse layout) {
+        Logger l = new Logger();
+        l.enter(this, "setLayout");
         this.layout = layout;
+        l.exit(this, "setLayout", "void");
     }
 
+    /**
+     * Returns the current level
+     * @return
+     */
     public int GetCurrentLevel()
     {
+        Logger l = new Logger();
+        l.enter(this, "setLayout");
+        l.exit(this, "setLayout", Integer.toString(currentLevel));
         return currentLevel;
     }
+
+    /**
+     * Loads and starts a new game.
+     * @throws IOException
+     */
     public void NewGame() throws IOException {
+        Logger l = new Logger();
+        l.enter(this, "NewGame");
+
+        layout = new WareHouse();
         FileReader fr = new FileReader("map.txt");
         BufferedReader br = new BufferedReader(fr);
 
@@ -121,14 +162,30 @@ public class Game {
                 }
             }
         }
+        l.exit(this, "NewGame", "void");
     }
+
+    /**
+     * Ends the game.
+     */
     public void GameOver()
     {
+        Logger l = new Logger();
+        l.enter(this, "GameOver");
+        l.exit(this, "GameOver", "void");
         //Later
     }
+
+    /**
+     * Sets the current level to be played.
+     * @param level The desired level.
+     */
     public void SetLevel(int level)
     {
+        Logger l = new Logger();
+        l.enter(this, "SetLevel");
         currentLevel=level;
+        l.exit(this, "SetLevel", "void");
     }
     @Override
     public String toString() {
