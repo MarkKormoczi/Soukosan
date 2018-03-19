@@ -64,10 +64,10 @@ public abstract class FloorBase implements Updatable {
         l.exit(this, "setNeighbor", "void");
         switch(d)
         {
-            case up: up = fb;
-            case down: down = fb;
-            case left: left = fb;
-            case right: right = fb;
+            case up: up = fb; break;
+            case down: down = fb; break;
+            case left: left = fb; break;
+            case right: right = fb; break;
         }
     }
 
@@ -83,6 +83,13 @@ public abstract class FloorBase implements Updatable {
         l.enter(this, "Accept");
 
         if(entity == null) {
+            entity = m;
+            l.exit(this, "Accept", "true");
+            return true;
+        }
+        // If something is on this floor. We try to push
+        if (this.entity.Push(m, d)) {
+            //on success we move to this
             entity = m;
             l.exit(this, "Accept", "true");
             return true;

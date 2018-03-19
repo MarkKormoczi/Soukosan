@@ -26,9 +26,9 @@ public class Hole extends FloorBase {
     public boolean Accept(Movable m, Direction d) //mindig mindent megeszik
     {
         Logger l = new Logger();
-        l.enter(this, "GetPoints");
+        l.enter(this, "Accept");
         Kill(m);
-        l.exit(this, "AddPoints", "true");
+        l.exit(this, "Accept", "true");
         return true;
     }
 

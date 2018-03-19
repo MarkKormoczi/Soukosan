@@ -45,8 +45,8 @@ public class Worker extends Movable {
 
     	this.Destroy();
 
-    	l.exit(this, "Push", "false");
-        return false;
+    	l.exit(this, "Push", "true");
+        return true;
     }
 
     /**

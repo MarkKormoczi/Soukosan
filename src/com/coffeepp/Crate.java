@@ -19,6 +19,15 @@ public class Crate extends Movable {
 
         SetLastPusher(m);
         FloorBase pl= this.getPlace();
+        /*if (d == Direction.up)
+            d = Direction.down;
+        else if (d == Direction.down)
+            d = Direction.up;
+        else if (d == Direction.left)
+            d = Direction.right;
+        else if (d == Direction.right)
+            d = Direction.left;*/
+
         pl = pl.GetNeighbor(d);
         if(!pl.Accept(this, d)) {
             l.exit(this, "Push", "false");

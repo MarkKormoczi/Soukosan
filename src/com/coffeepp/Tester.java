@@ -175,6 +175,7 @@ public class Tester {
                             f1_1.setEntity(w1_1);
                             f2_1.setEntity(c_1);
                             w1_1.setPlace(f1_1);
+                            c_1.setPlace(f2_1);
 
                             w1_1.Move(Direction.right); //Worker moves in given direction
 
@@ -195,6 +196,7 @@ public class Tester {
                             f1_2.setEntity(w1_2);
                             f2_2.setEntity(c_2);
                             w1_2.setPlace(f1_2);
+                            c_2.setPlace(f2_2);
 
                             w1_2.Move(Direction.right); //Worker moves in given direction
 
@@ -231,10 +233,13 @@ public class Tester {
                     Floor f1 = new Floor();
                     Floor f2 = new Floor();
                     Floor f3 = new Floor();
+                    Floor f4 = new Floor();
                     f1.setNeighbor(f2, Direction.right);
                     f2.setNeighbor(f1, Direction.left);
                     f2.setNeighbor(f3, Direction.right);
                     f3.setNeighbor(f2, Direction.left);
+                    f3.setNeighbor(f4, Direction.right);
+                    f4.setNeighbor(f3, Direction.left);
 
                     f1.setEntity(c2); //Pushing Crate
                     c2.setPlace(f1);
@@ -242,7 +247,7 @@ public class Tester {
                     f2.setEntity(c1); //Pushed Crate
                     c1.setPlace(f2);
 
-                    c1.Push(c2, Direction.left);
+                    c1.Push(c2, Direction.right);
                     break;
                 }
                 case "6":{ // Update cycle
@@ -258,11 +263,14 @@ public class Tester {
                     TargetSpot f4 = new TargetSpot();
 
                     f1.setNeighbor(f2, Direction.right);
-                    f2.setNeighbor(f3, Direction.right);
-                    f3.setNeighbor(f4, Direction.right);
-                    f4.setNeighbor(f3, Direction.left);
-                    f3.setNeighbor(f2, Direction.left);
+
                     f2.setNeighbor(f1, Direction.left);
+                    f2.setNeighbor(f3, Direction.right);
+
+                    f3.setNeighbor(f2, Direction.left);
+                    f3.setNeighbor(f4, Direction.right);
+
+                    f4.setNeighbor(f3, Direction.left);
 
                     Worker w = new Worker(); //Add Worker
                     f1.setEntity(w);
