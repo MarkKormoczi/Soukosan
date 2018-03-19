@@ -317,7 +317,8 @@ public class Tester {
                     monika.setPlace(floor2);
                     floor2.setEntity(monika);
 
-                    ink.Push(monika, Direction.right);
+                    //ink.Push(monika, Direction.right);
+                    monika.Move((Direction.right));
                     System.out.println("The ink flows down into a dark puddle.");
                     break;
 
@@ -352,8 +353,10 @@ public class Tester {
                     f2.setEntity(c1);
                     c1.setPlace(f2);
 
-                    c1.Push(w, Direction.right);
+                    //c1.Push(w, Direction.right);
+                    w.Move(Direction.right);
                     System.out.println("Game over... I'm sorry.");
+                    break;
                 }
                 default:
                     System.out.println("Invalid command.\n");
