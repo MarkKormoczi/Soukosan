@@ -306,9 +306,41 @@ public class Tester {
                     break;
 
                 }
+                case "9":{//Seppuku
+                    Worker w = new Worker();
+                    w.Destroy();
+                    System.out.print("Life is meaningless - Worker#1023");
+                    break;
+                }
+                case "10":{//New game
+                    Game game = Game.getInstance();
+                    game.SetLevel(1);
+                    System.out.print("Level set");
+                    break;
+                }
+                case "11":{//Game over when a Crate gets destroyed... rip Crate 2018-2018
+                    Floor f1 = new Floor();
+                    Floor f2 = new Floor();
+                    Hole f3 = new Hole();
 
+                    f1.setNeighbor(f2, Direction.right);
+                    f2.setNeighbor(f3, Direction.right);
+                    f3.setNeighbor(f2, Direction.left);
+                    f2.setNeighbor(f1, Direction.left);
 
+                    Worker w = new Worker(); //Add Worker
+                    f1.setEntity(w);
+                    w.setPlace(f1);
 
+                    Crate c1 = new Crate(); // Add Crate
+                    f2.setEntity(c1);
+                    c1.setPlace(f2);
+
+                    c1.Push(w, Direction.right);
+                    System.out.println("Game over... I'm sorry.");
+                }
+                default:
+                    System.out.println("Invalid command.\n");
 
             }
 
