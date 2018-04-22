@@ -72,7 +72,7 @@ public class Game {
 
         layout = new WareHouse();
 
-        /* Commented out since file loading is not implemented into skeleton
+        // Commented out since file loading is not implemented into skeleton
         FileReader fr = new FileReader("map.txt");
         BufferedReader br = new BufferedReader(fr);
 
@@ -90,7 +90,7 @@ public class Game {
         int mcol=0;
         while (line != null) {
             //A palya tarolasa vegett 2-t kell leptetni és ezért kell az mcol valtozo is
-           for(int col = 0; col< line.length(); col += 2)
+           for(int col = 0; col< line.length(); col += 3)
            {
                char charfb = line.charAt(col);
                 switch(charfb) {
@@ -102,15 +102,24 @@ public class Game {
                     case '5': FloorMatrix[row][mcol] = new Hole();break;
                 }
                 charfb = line.charAt(col+1);
-                switch (charfb)
-                {
-                    case 'W':
-                        FloorMatrix[row][mcol].setEntity(new Worker());
-                        break;
-                    case 'C':
-                        FloorMatrix[row][mcol].setEntity(new Crate());
-                        break;
-                }
+               switch (charfb)
+               {
+                   case 'W':
+                       FloorMatrix[row][mcol].setEntity(new Worker());
+                       break;
+                   case 'C':
+                       FloorMatrix[row][mcol].setEntity(new Crate());
+                       break;
+               }
+               switch (charfb)
+               {
+                   case 'H':
+                       FloorMatrix[row][mcol].setLiquid('H');
+                       break;
+                   case 'O':
+                       FloorMatrix[row][mcol].setLiquid('O');
+                       break;
+               }
                mcol++;
            }
            row++;
@@ -164,7 +173,6 @@ public class Game {
                 }
             }
         }
-        */
         l.exit(this, "NewGame", "void");
     }
 

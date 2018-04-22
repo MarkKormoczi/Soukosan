@@ -9,6 +9,8 @@ public abstract class FloorBase implements Updatable {
     private FloorBase left;
     private FloorBase right;
     private Movable entity;
+    private char liquid;
+    private double liquid_modifier;
     //TODO liquid
 
     /**
@@ -21,7 +23,6 @@ public abstract class FloorBase implements Updatable {
         if(entity!=null)
         l.exit(this, "getEntity", entity.toString());
         return entity;
-
     }
 
     /**
@@ -34,7 +35,25 @@ public abstract class FloorBase implements Updatable {
         this.entity = entity;
         l.exit(this, "setEntity", "void");
     }
-
+    public void setLiquid(char _liquid) {
+        Logger l = new Logger();
+        l.enter(this, "setEntity");
+        this.liquid = _liquid;
+        switch(_liquid)
+        {
+            case 'H':
+                liquid_modifier = 3;
+                break;
+            case 'O':
+                liquid_modifier = -3;
+                break;
+            default:
+                liquid = 'n';
+                liquid_modifier = 0;
+                break;
+        }
+        l.exit(this, "setEntity", "void");
+    }
     /**
     * Visszaadja a megadott irányban lévő szomszédos FloorBase-t
     * @param d The direction which we are asking about.
