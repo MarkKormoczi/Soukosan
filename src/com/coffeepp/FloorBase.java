@@ -9,7 +9,7 @@ public abstract class FloorBase implements Updatable {
     private FloorBase left;
     private FloorBase right;
     private Movable entity;
-    private char liquid;
+    private String liquid;
     private double liquid_modifier;
     //TODO liquid
 
@@ -24,7 +24,13 @@ public abstract class FloorBase implements Updatable {
         l.exit(this, "getEntity", entity.toString());
         return entity;
     }
-
+    public String getLiquid() {
+        Logger l = new Logger();
+        l.enter(this, "getEntity");
+        if(entity!=null)
+            l.exit(this, "getEntity", entity.toString());
+        return liquid;
+    }
     /**
      * Sets the contained entity in this floor.
      * @param entity the new entity to be set
@@ -38,17 +44,18 @@ public abstract class FloorBase implements Updatable {
     public void setLiquid(char _liquid) {
         Logger l = new Logger();
         l.enter(this, "setEntity");
-        this.liquid = _liquid;
         switch(_liquid)
         {
             case 'H':
+                liquid = "Honey";
                 liquid_modifier = 3;
                 break;
             case 'O':
+                liquid = "Oil";
                 liquid_modifier = -3;
                 break;
             default:
-                liquid = 'n';
+                liquid = "Nothing";
                 liquid_modifier = 0;
                 break;
         }
