@@ -1,9 +1,7 @@
 input:
 loadLevel testlevel1.txt
-addWorker
-addCrate 60
-moveWorker worker01 right
+moveWorker 0 right
 showLevel
 listPoints
 output:
-worker01 1
+0 1
