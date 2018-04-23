@@ -1,5 +1,5 @@
 input:
-loadLevel 00
+loadLevel testlevel1.txt
 addWorker
 addCrate 60
 moveWorker worker01 right
