@@ -1,8 +1,12 @@
 input:
 loadLevel testlevel1.txt
-addWorker
-addCrate 60
-pushCrate worker01 right
+moveworker 0 up
+moveworker 0 right
+moveworker 0 down
+moveworker 0 down
+moveworker 0 left
+moveworker 0 down
+moveworker 0 right
 listswitchstates
 output:
 switch1 enabled
