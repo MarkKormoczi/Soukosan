@@ -1,5 +1,7 @@
 package com.coffeepp;
 
+import java.lang.annotation.Target;
+
 /**
  * This class represents the crates that needed to complete the stages.
  * Can be pushed by Workers or other Crates.
@@ -59,10 +61,10 @@ public class Crate extends Movable {
     {
         Logger l = new Logger();
         l.enter(this, "AddPoints");
-
-        Movable lp= this.GetLastPusher();
-        lp.AddPoints();
-
+        //if(isGivepoint == true) {
+            Movable lp = this.GetLastPusher();
+            lp.AddPoints();
+        //}
         l.exit(this, "AddPoints", "void");
     }
 

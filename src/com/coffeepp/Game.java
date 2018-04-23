@@ -9,8 +9,9 @@ import java.io.IOException;
 public class Game {
     private int currentLevel;
     private WareHouse layout;
-    public FloorBase[][] FloorMatrix = new FloorBase[100][100];
-
+    public FloorBase[][] FloorMatrix;
+    private int maxcol = 0;
+    private int maxrow = 0;
 
     public static Game instance = null;
 
@@ -25,9 +26,9 @@ public class Game {
      */
     public void ShowLevel()
     {
-        for(int i = 0; i < 4;i++)
+        for(int i = 0; i < maxrow;i++)
         {
-            for ( int j = 0; j<4; j++)
+            for ( int j = 0; j<maxcol; j++)
             {
                 if(FloorMatrix[i][j].getEntity() != null)
                     System.out.print(FloorMatrix[i][j].getEntity()+"\t");
@@ -102,6 +103,14 @@ public class Game {
 
         StringBuilder sb = new StringBuilder();
         String line = br.readLine();
+         maxcol = Integer.parseInt(line);
+        System.out.println(maxcol);
+        line = br.readLine();
+         maxrow = Integer.parseInt(line);
+        System.out.println(maxrow);
+        line = br.readLine();
+
+        FloorMatrix = new FloorBase[maxrow][maxcol];
 
         //FloorMatrix elemeinek NULL értékere állítása
         for(int i = 0; i < FloorMatrix.length; ++i)
@@ -111,6 +120,7 @@ public class Game {
         //FloorMatrix feltoltese
         int row =0;
         int mcol=0;
+
         while (line != null) {
             //A palya tarolasa vegett 3-t kell leptetni és ezért kell az mcol valtozo is
            for(int col = 0; col< line.length(); col += 3)

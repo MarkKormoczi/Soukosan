@@ -100,6 +100,11 @@ public class Worker extends Movable {
     	l.exit(this, "SwitchCapable", "false");
         return false;
     }
+    public Movable GetLasPusher()
+    {
+        System.out.println(this);
+        return this;
+    }
     @Override
     public String toString() {
     	return "Worker";
