@@ -1,7 +1,10 @@
 input:
 loadLevel testmap1.txt
-addWorker 100
-moveWorker worker01 right
+moveWorker 0 down
+moveWorker 0 right
+moveWorker 0 right
+moveWorker 0 up
+moveWorker 0 right
 listWorkers
 output:
-
+No workers.
