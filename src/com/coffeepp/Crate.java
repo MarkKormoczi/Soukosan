@@ -14,6 +14,7 @@ public class Crate extends Movable {
 
     public Crate()
     {
+        this.setWeight(5);
     }
     public Crate(double _weight)
     {

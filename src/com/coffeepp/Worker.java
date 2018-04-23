@@ -12,7 +12,7 @@ public class Worker extends Movable {
      */
 
     public Worker()
-    {    }
+    {   this.setStrength(100); }
     public Worker(double _strength)
     {
         this.setStrength(_strength);
