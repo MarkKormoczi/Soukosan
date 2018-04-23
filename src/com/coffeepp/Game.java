@@ -114,10 +114,10 @@ public class Game {
                switch (charfb)
                {
                    case 'H':
-                       FloorMatrix[row][mcol].setLiquid('H');
+                      // FloorMatrix[row][mcol].setLiquid('H');
                        break;
                    case 'O':
-                       FloorMatrix[row][mcol].setLiquid('O');
+                      // FloorMatrix[row][mcol].setLiquid('O');
                        break;
                }
                mcol++;

@@ -8,11 +8,19 @@ public class Crate extends Movable {
 
     /**
      * Crate gets pushed.
-     * @param m the movable that tries to push this object.
-     * @param d the Direction which in the object is being pushed.
+     //* @param m the movable that tries to push this object.
+     //* @param d the Direction which in the object is being pushed.
      */
+
+    public Crate()
+    {
+    }
+    public Crate(double _weight)
+    {
+        this.setWeight(_weight);
+    }
     @Override
-    public boolean Push(Movable m, Direction d)
+    public boolean Push(Movable m, Direction d, double strength)
     {
         Logger l = new Logger();
         l.enter(this, "Push");
@@ -29,12 +37,15 @@ public class Crate extends Movable {
             d = Direction.left;*/
 
         pl = pl.GetNeighbor(d);
-        if(!pl.Accept(this, d)) {
+        if(!pl.Accept(this, d, strength - this.GetWeight() )){//- (this.GetWeight() * this.getPlace().getLiquid().getModifier())
             l.exit(this, "Push", "false");
             return false;
         } else {
+
             if(this.getPlace()!=null)
             this.getPlace().Remove(this);
+            this.setPlace(pl);
+            pl.setEntity(this);
         }
         l.exit(this, "Push", "true");
         return true;

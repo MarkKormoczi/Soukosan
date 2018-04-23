@@ -6,11 +6,28 @@ public abstract class Movable implements Updatable {
 
     private FloorBase place;
     private Movable lastPusher;
+    private double weight;
+    private double strength;
+
 
     /**
      * The last movable that pushed this item.
      * @return
      */
+    public double GetStrength()
+    {
+        Logger l = new Logger();
+        l.enter(this, "GetStrength");
+        l.exit(this, "GetStrength", Double.toString(strength));
+        return strength;
+    }
+    public double GetWeight()
+    {
+        Logger l = new Logger();
+        l.enter(this, "GetWeight");
+        l.exit(this, "GetWeight", Double.toString(weight));
+        return weight;
+    }
     public Movable GetLastPusher()
     {
         Logger l = new Logger();
@@ -41,7 +58,18 @@ public abstract class Movable implements Updatable {
         l.exit(this, "setPlace", "void");
         this.place = place;
     }
-
+    public void setWeight(double _weight) {
+        Logger l = new Logger();
+        l.enter(this, "setWeight");
+        l.exit(this, "setWeight", "void");
+        this.weight = _weight;
+    }
+    public void setStrength(double _strength) {
+        Logger l = new Logger();
+        l.enter(this, "setStrength");
+        l.exit(this, "setStrength", "void");
+        this.strength = _strength;
+    }
     /**
      * Setst the Last pusher of this object.
      * @param w The last pusher.
@@ -59,7 +87,8 @@ public abstract class Movable implements Updatable {
      * @param d The direction.
      * @return returns if the push was succesful.
      */
-    abstract public boolean Push(Movable m, Direction d);
+
+    abstract public boolean Push(Movable m, Direction d, double strength);
 
     /**
      * Destroys this movable.

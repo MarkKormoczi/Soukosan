@@ -222,7 +222,7 @@ public class Tester {
                     f1.setEntity(w1);
                     w1.setPlace(f1);
 
-                    w1.Push(c1, Direction.left); // Poor guy got casted into a bloodpool on the Obstruction
+                    w1.Push(c1, Direction.left, 50); // Poor guy got casted into a bloodpool on the Obstruction
 
                     System.out.println("Worker got pushed to the wall. The end.\n");
                     break;
@@ -358,6 +358,69 @@ public class Tester {
                     System.out.println("Game over... I'm sorry.");
                     break;
                 }
+                case "12":
+                    Floor f1 = new Floor("f1");
+                    Floor f2 = new Floor("f2");
+                    Floor f3 = new Floor("f3");
+                    Floor f4 = new Floor("f4");
+                    Floor f5 = new Floor("f5");
+                    Floor f6 = new Floor("f6");
+
+
+
+
+                    f1.setNeighbor(f2, Direction.right);
+                    f2.setNeighbor(f3, Direction.right);
+                    f3.setNeighbor(f4, Direction.right);
+                    f4.setNeighbor(f5, Direction.right);
+                    f5.setNeighbor(f6, Direction.right);
+                    f2.setNeighbor(f1, Direction.left);
+                    f3.setNeighbor(f2, Direction.left);
+                    f4.setNeighbor(f3, Direction.left);
+                    f5.setNeighbor(f4, Direction.left);
+                    f6.setNeighbor(f5, Direction.left);
+
+                    Worker w = new Worker(149);
+                    Crate c1 = new Crate(50);
+                    Crate c2 = new Crate(50);
+                    Crate c3 = new Crate(50);
+
+                    f1.setEntity(w);
+                    w.setPlace(f1);
+                    f2.setEntity(c1);
+                    c1.setPlace(f2);
+                    f3.setEntity(c2);
+                    c2.setPlace(f3);
+                    f4.setEntity(c3);
+                    c3.setPlace(f4);
+
+                    System.out.println(f1.getEntity());
+                    System.out.println(f2.getEntity());
+                    System.out.println(f3.getEntity());
+                    System.out.println(f4.getEntity());
+                    System.out.println(f5.getEntity());
+                    System.out.println(f6.getEntity());
+                    System.out.println("0");
+
+                    System.out.println(w.getPlace().nam);
+                    w.Move(Direction.right);
+                    System.out.println(w.getPlace().nam);
+                    w.Move(Direction.right);
+
+                    System.out.println(w.getPlace().nam);
+
+                    System.out.println(f1.getEntity());
+                    System.out.println(f2.getEntity());
+                    System.out.println(f3.getEntity());
+                    System.out.println(f4.getEntity());
+                    System.out.println(f5.getEntity());
+                    System.out.println(f6.getEntity()+"\n");
+                    System.out.println(w.getPlace().nam);
+                    System.out.println(c1.getPlace().nam);
+                    System.out.println(c2.getPlace().nam);
+
+
+                    break;
                 default:
                     System.out.println("Invalid command.\n");
 

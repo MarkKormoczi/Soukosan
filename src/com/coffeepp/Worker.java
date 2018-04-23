@@ -10,6 +10,13 @@ public class Worker extends Movable {
     /**
      * Retruns the accumulated points of this worker.
      */
+
+    public Worker()
+    {    }
+    public Worker(double _strength)
+    {
+        this.setStrength(_strength);
+    }
     public int GetPoints()
     {
     	Logger l = new Logger();
@@ -25,10 +32,13 @@ public class Worker extends Movable {
     public void Move(Direction d) {
         Logger l = new Logger();
         l.enter(this, "Move", d.toString());
-        if (this.getPlace().GetNeighbor(d).Accept(this, d))
-            if(this.getPlace() != null)
-                this.getPlace().Remove(this);
+        FloorBase fl = this.getPlace().GetNeighbor(d);
+        if (fl.Accept(this, d, this.GetStrength())) {
 
+            if (this.getPlace() != null)
+                this.getPlace().Remove(this);
+            this.setPlace(fl);
+        }
     	l.exit(this, "Move", "void");
     }
 
@@ -38,7 +48,7 @@ public class Worker extends Movable {
      * @param d The dirction which the worker was pushed.
      */
     @Override
-    public boolean Push(Movable m, Direction d)
+    public boolean Push(Movable m, Direction d, double _strength)
     {
     	Logger l = new Logger();
     	l.enter(this, "Push", d.toString());

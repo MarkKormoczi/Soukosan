@@ -9,14 +9,20 @@ public abstract class FloorBase implements Updatable {
     private FloorBase left;
     private FloorBase right;
     private Movable entity;
-    private String liquid;
-    private double liquid_modifier;
+    private Liquid liquid;
     //TODO liquid
 
     /**
      * Returns the entity contained in this floor.
      * @return the entity
      */
+    public String nam;
+    public FloorBase()
+    {
+
+    }
+    public FloorBase(String m)
+    {nam = m;}
     public Movable getEntity() {
         Logger l = new Logger();
         l.enter(this, "getEntity");
@@ -24,11 +30,11 @@ public abstract class FloorBase implements Updatable {
         l.exit(this, "getEntity", entity.toString());
         return entity;
     }
-    public String getLiquid() {
+    public Liquid getLiquid() {
         Logger l = new Logger();
-        l.enter(this, "getEntity");
+        l.enter(this, "getLiquid");
         if(entity!=null)
-            l.exit(this, "getEntity", entity.toString());
+            l.exit(this, "getLiquid", entity.toString());
         return liquid;
     }
     /**
@@ -41,7 +47,7 @@ public abstract class FloorBase implements Updatable {
         this.entity = entity;
         l.exit(this, "setEntity", "void");
     }
-    public void setLiquid(char _liquid) {
+    /*public void setLiquid(char _liquid) {
         Logger l = new Logger();
         l.enter(this, "setEntity");
         switch(_liquid)
@@ -60,7 +66,7 @@ public abstract class FloorBase implements Updatable {
                 break;
         }
         l.exit(this, "setEntity", "void");
-    }
+    }*/
     /**
     * Visszaadja a megadott irányban lévő szomszédos FloorBase-t
     * @param d The direction which we are asking about.
@@ -105,20 +111,33 @@ public abstract class FloorBase implements Updatable {
      * @param d The direction which the accepted comes from.
      * @return returns if the acceptance was succesful.
      */
-    public boolean Accept(Movable m, Direction d)
+    public boolean Accept(Movable m, Direction d, double strength)
     {
         Logger l = new Logger();
         l.enter(this, "Accept");
+        System.out.println("\nstrength:"+strength +"\nWeight: "+m.GetWeight());
+        if(entity == null ) {
+            if(0 < strength)
+            {
+                entity = m;
+                setEntity(m);
+                l.exit(this, "Accept", "true");
+                return true;
 
-        if(entity == null) {
-            entity = m;
-            l.exit(this, "Accept", "true");
-            return true;
+            } else
+                {
+                l.exit(this, "Accept", "false");
+                    return false;
+            }
         }
+
         // If something is on this floor. We try to push
-        if (this.entity.Push(m, d)) {
+        if (this.entity.Push(m, d, strength)) {
             //on success we move to this
+
             entity = m;
+            setEntity(m);
+
             l.exit(this, "Accept", "true");
             return true;
         }

@@ -11,13 +11,13 @@ public class TargetSpot extends FloorBase {
      * @param d The direction which the accepted comes from.
      * @return
      */
-    public boolean Accept(Movable m, Direction d)
+    public boolean Accept(Movable m, Direction d, double strength)
     {
         Logger l = new Logger();
         l.enter(this, "Accept");
 
         // szerintem ez kell ide, de nézzétek meg.
-        super.Accept(m, d);
+        super.Accept(m, d, strength);
         if(this.getEntity()!=null){
             m.AddPoints();
             l.exit(this, "AddPoints", "false");
