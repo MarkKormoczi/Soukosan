@@ -1,7 +1,0 @@
-input:
-loadLevel testlevel1.txt
-addWorker
-addCrate 60
-moveWorker worker01 right
-output:
-Destroyed crate. Game Over.

@@ -1,0 +1,6 @@
+input:
+loadLevel testlevel1.txt
+moveWorker 0 right
+moveWorker 0 right
+output:
+Destroyed crate. Game Over.
