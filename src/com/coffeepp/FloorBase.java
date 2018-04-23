@@ -48,25 +48,11 @@ public abstract class FloorBase implements Updatable {
         this.entity = entity;
         l.exit(this, "setEntity", "void");
     }
-    public void setLiquid(char _liquid) {
+    public void setLiquid(Liquid _liquid) {
         Logger l = new Logger();
         l.enter(this, "setLiquid");
-        liquid = new Liquid();
-        switch(_liquid)
-        {
-            case 'H':
-                liquid.setName("Honey");
-                liquid.setModifier(3);
-                break;
-            case 'O':
-                liquid.setName("Oil");
-                liquid.setModifier(0.5);
-                break;
-            default:
-                liquid.setName("Nothing");
-                liquid.setModifier(0);
-                break;
-        }
+        liquid = _liquid;
+
         l.exit(this, "setLiquid", "void");
     }
     /**

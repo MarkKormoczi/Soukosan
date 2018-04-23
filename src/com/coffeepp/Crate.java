@@ -38,7 +38,8 @@ public class Crate extends Movable {
             d = Direction.left;*/
 
         pl = pl.GetNeighbor(d);
-        if(!pl.Accept(this, d, strength - this.GetWeight() )){//- (this.GetWeight() * this.getPlace().getLiquid().getModifier())
+        if(!pl.Accept(this, d, strength - (this.GetWeight() * this.getPlace().getLiquid().getModifier())))
+        {//- (this.GetWeight() )
             l.exit(this, "Push", "false");
             return false;
         } else {

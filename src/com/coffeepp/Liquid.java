@@ -3,6 +3,24 @@ package com.coffeepp;
 public class Liquid {
     private String name;
     private double modifier;
+    public Liquid(char c)
+    {
+        switch(c)
+        {
+            case 'H':
+                name = "Honey";
+                modifier= 2;
+                break;
+            case 'O':
+                name = "Oil";
+                modifier = 0.5;
+                break;
+            default:
+                name = "Nothing";
+                modifier = 0;
+                break;
+        }
+    }
     public void setName(String _name)
     {
         Logger l = new Logger();

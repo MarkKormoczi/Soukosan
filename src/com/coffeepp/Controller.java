@@ -18,7 +18,7 @@ public class Controller {
 
             case "loadlevel": //Betölti a megadott pályát
                 String level = input[1]; //A betolteni kivant file neve
-                game.NewGame(level);
+                game.LoadMap(level);
                 break;
 
             case "savelevel": //Elmenti egy .txt fájlba az adott pálya állását

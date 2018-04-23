@@ -23,13 +23,16 @@ public class Game {
      * Singleton instance getter.
      * @return the only instance
      */
-    public void DrawWorkersPos()
+    public void ShowLevel()
     {
         for(int i = 0; i < 4;i++)
         {
             for ( int j = 0; j<4; j++)
             {
-                System.out.print(FloorMatrix[i][j].getEntity()+"\t");
+                if(FloorMatrix[i][j].getEntity() != null)
+                    System.out.print(FloorMatrix[i][j].getEntity()+"\t");
+                else
+                    System.out.print(FloorMatrix[i][j]+"\t");
             }
             System.out.print("\n");
         }
@@ -79,7 +82,15 @@ public class Game {
      * Loads and starts a new game.
      * @throws IOException
      */
-    public void NewGame(String level) throws IOException {
+    public void NewGame()
+    {
+        try {
+            LoadMap("map.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void LoadMap(String level) throws IOException {
         Logger l = new Logger();
         l.enter(this, "NewGame");
 
@@ -101,7 +112,7 @@ public class Game {
         int row =0;
         int mcol=0;
         while (line != null) {
-            //A palya tarolasa vegett 2-t kell leptetni és ezért kell az mcol valtozo is
+            //A palya tarolasa vegett 3-t kell leptetni és ezért kell az mcol valtozo is
            for(int col = 0; col< line.length(); col += 3)
            {
                char charfb = line.charAt(col);
@@ -117,7 +128,7 @@ public class Game {
                switch (charfb)
                {
                    case 'W':
-                       Worker w = new Worker(1000);
+                       Worker w = new Worker(40);
                        layout.AddWorker(w);
                        w.setPlace(FloorMatrix[row][mcol]);
                        FloorMatrix[row][mcol].setEntity(w);
@@ -129,17 +140,20 @@ public class Game {
                        FloorMatrix[row][mcol].setEntity(c);
                        break;
                }
-               charfb = line.charAt(col+1);
+               charfb = line.charAt(col+2);
                switch (charfb)
                {
                    case 'H':
-                       FloorMatrix[row][mcol].setLiquid('H');
+                       FloorMatrix[row][mcol].setLiquid(new Liquid('H'));
                        break;
                    case 'O':
-                       FloorMatrix[row][mcol].setLiquid('O');
+                       FloorMatrix[row][mcol].setLiquid(new Liquid('O'));
                        break;
                    case 'N':
-                       FloorMatrix[row][mcol].setLiquid('N');
+                       FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
+                       break;
+                   default:
+                       FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
                        break;
                }
                mcol++;
@@ -151,7 +165,7 @@ public class Game {
         br.close();
         System.out.print("\n");
 
-        DrawWorkersPos();
+        ShowLevel();
 
         int colNum;
         int rowNum;
@@ -183,7 +197,6 @@ public class Game {
                     } else {
                         FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum+1], Direction.right);
                     }
-                    System.out.print(FloorMatrix[rowNum][colNum]);
                     layout.AddFloorbase(FloorMatrix[rowNum][colNum]);
                 }
             }

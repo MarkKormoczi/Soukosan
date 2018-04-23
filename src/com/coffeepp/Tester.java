@@ -425,13 +425,13 @@ public class Tester {
                 case "13":
                     Game game = new Game();
                     try {
-                        game.NewGame("map.txt"); //beolvassa a pályát
+                        game.LoadMap("map.txt"); //beolvassa a pályát
                         game.getLayout().GetWorkers().get(0).Move(Direction.right);
                         game.getLayout().GetWorkers().get(0).Move(Direction.right);
                         game.getLayout().GetWorkers().get(0).Move(Direction.up);
                         game.getLayout().GetWorkers().get(0).Move(Direction.left);
                         game.getLayout().GetWorkers().get(0).Move(Direction.up);
-                        game.DrawWorkersPos();
+                        game.ShowLevel();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

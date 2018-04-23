@@ -73,6 +73,22 @@ public class Worker extends Movable {
     }
 
     /**
+     * Removes the liquid from the floor where the worker stands
+     */
+    public void RemoveLiquid()
+    {
+        this.getPlace().setLiquid(new Liquid('N'));
+    }
+    /**
+     * Lays the given liquid to the floor where the worker stands
+     * @param c
+     */
+    public void LaysLiquid(Liquid _liquid)
+    {
+        this.getPlace().setLiquid(_liquid);
+    }
+
+    /**
      * Returns that the worker can"t switch the traps
      */
     public boolean SwitchCapable()
