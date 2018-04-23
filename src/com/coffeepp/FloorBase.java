@@ -26,9 +26,10 @@ public abstract class FloorBase implements Updatable {
     public Movable getEntity() {
         Logger l = new Logger();
         l.enter(this, "getEntity");
-        if(entity!=null)
+        if(entity!=null){
         l.exit(this, "getEntity", entity.toString());
-        return entity;
+        return entity;}
+        return null;
     }
     public Liquid getLiquid() {
         Logger l = new Logger();
@@ -47,26 +48,27 @@ public abstract class FloorBase implements Updatable {
         this.entity = entity;
         l.exit(this, "setEntity", "void");
     }
-    /*public void setLiquid(char _liquid) {
+    public void setLiquid(char _liquid) {
         Logger l = new Logger();
-        l.enter(this, "setEntity");
+        l.enter(this, "setLiquid");
+        liquid = new Liquid();
         switch(_liquid)
         {
             case 'H':
-                liquid = "Honey";
-                liquid_modifier = 3;
+                liquid.setName("Honey");
+                liquid.setModifier(3);
                 break;
             case 'O':
-                liquid = "Oil";
-                liquid_modifier = -3;
+                liquid.setName("Oil");
+                liquid.setModifier(0.5);
                 break;
             default:
-                liquid = "Nothing";
-                liquid_modifier = 0;
+                liquid.setName("Nothing");
+                liquid.setModifier(0);
                 break;
         }
-        l.exit(this, "setEntity", "void");
-    }*/
+        l.exit(this, "setLiquid", "void");
+    }
     /**
     * Visszaadja a megadott irányban lévő szomszédos FloorBase-t
     * @param d The direction which we are asking about.

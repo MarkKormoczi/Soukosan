@@ -1,25 +1,21 @@
 package com.coffeepp;
 
 public class Liquid {
-    String name;
-    double modifier;
-    public Liquid(char c)
+    private String name;
+    private double modifier;
+    public void setName(String _name)
     {
-        switch(c)
-        {
-            case 'H':
-                name = "Honey";
-                modifier = 1.5;
-                break;
-            case 'O':
-                name = "Oil";
-                modifier = 0.5;
-                break;
-            default:
-                name = "Nothing";
-                modifier = 0;
-                break;
-        }
+        Logger l = new Logger();
+        l.enter(this, "SetLiquidName");
+        l.exit(this, "SetLiquidName", "void");
+        name = _name;
+    }
+    public void setModifier(double _modifier)
+    {
+        Logger l = new Logger();
+        l.enter(this, "SetLiquidName");
+        l.exit(this, "SetLiquidName", "void");
+        modifier = _modifier;
     }
     public String getName()
     {

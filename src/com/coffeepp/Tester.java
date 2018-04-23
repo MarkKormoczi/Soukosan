@@ -1,5 +1,6 @@
 package com.coffeepp;
 
+import java.io.IOException;
 import java.lang.annotation.Target;
 import java.util.Scanner;
 import java.util.logging.ConsoleHandler;
@@ -10,7 +11,6 @@ import java.util.logging.ConsoleHandler;
  */
 
 public class Tester {
-
     Scanner sc = new Scanner(System.in);
     public Tester(){
 
@@ -39,7 +39,7 @@ public class Tester {
             switch(input){
                 case "1": //During the first test case, the steps of the map creation is logged
                     //Default 3x3 map plus border around it, with a Worker in the middle
-                    Game game3x3 = Game.getInstance();
+                    /*Game game3x3 = Game.getInstance();
                     WareHouse wh3x3 = new WareHouse();
                     Worker player3x3 = new Worker();
                     FloorBase[][] floorBases3x3 = new FloorBase[4][4];
@@ -57,7 +57,7 @@ public class Tester {
                         }
                     }
                     wh3x3.AddWorker(player3x3);
-                    System.out.println("Map created.\n");
+                    System.out.println("Map created.\n");*/
                     break;
                 case "2":
                     System.out.print("\n~Empty fields in every test case\n" +
@@ -359,6 +359,7 @@ public class Tester {
                     break;
                 }
                 case "12":
+                    Game g = new Game();
                     Floor f1 = new Floor("f1");
                     Floor f2 = new Floor("f2");
                     Floor f3 = new Floor("f3");
@@ -420,6 +421,20 @@ public class Tester {
                     System.out.println(c2.getPlace().nam);
 
 
+                    break;
+                case "13":
+                    Game game = new Game();
+                    try {
+                        game.NewGame(); //beolvassa a pályát
+                        game.getLayout().GetWorkers().get(0).Move(Direction.right);
+                        game.getLayout().GetWorkers().get(0).Move(Direction.right);
+                        game.getLayout().GetWorkers().get(0).Move(Direction.up);
+                        game.getLayout().GetWorkers().get(0).Move(Direction.left);
+                        game.getLayout().GetWorkers().get(0).Move(Direction.up);
+                        game.DrawWorkersPos();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 default:
                     System.out.println("Invalid command.\n");

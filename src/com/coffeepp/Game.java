@@ -9,18 +9,31 @@ import java.io.IOException;
 public class Game {
     private int currentLevel;
     private WareHouse layout;
+    public FloorBase[][] FloorMatrix = new FloorBase[100][100];
+
 
     public static Game instance = null;
 
     /**
      * Private constructor bc singleton.
      */
-    private Game() {}
+    public Game() {}
 
     /**
      * Singleton instance getter.
      * @return the only instance
      */
+    public void DrawWorkersPos()
+    {
+        for(int i = 0; i < 4;i++)
+        {
+            for ( int j = 0; j<4; j++)
+            {
+                System.out.print(FloorMatrix[i][j].getEntity()+"\t");
+            }
+            System.out.print("\n");
+        }
+    }
     public static Game getInstance() {
         if(instance == null) {
             instance = new Game();
@@ -79,7 +92,6 @@ public class Game {
         StringBuilder sb = new StringBuilder();
         String line = br.readLine();
 
-        FloorBase[][] FloorMatrix = new FloorBase[100][100];
         //FloorMatrix elemeinek NULL értékere állítása
         for(int i = 0; i < FloorMatrix.length; ++i)
             for(int j = 0; j < FloorMatrix[i].length; ++j)
@@ -105,19 +117,28 @@ public class Game {
                switch (charfb)
                {
                    case 'W':
-                       FloorMatrix[row][mcol].setEntity(new Worker());
+                       Worker w = new Worker(1000);
+                       layout.AddWorker(w);
+                       w.setPlace(FloorMatrix[row][mcol]);
+                       FloorMatrix[row][mcol].setEntity(w);
                        break;
                    case 'C':
-                       FloorMatrix[row][mcol].setEntity(new Crate());
+                       Crate c = new Crate(50);
+                       layout.AddCrate(c);
+                       c.setPlace(FloorMatrix[row][mcol]);
+                       FloorMatrix[row][mcol].setEntity(c);
                        break;
                }
                switch (charfb)
                {
                    case 'H':
-                      // FloorMatrix[row][mcol].setLiquid('H');
+                       FloorMatrix[row][mcol].setLiquid('H');
                        break;
                    case 'O':
-                      // FloorMatrix[row][mcol].setLiquid('O');
+                       FloorMatrix[row][mcol].setLiquid('O');
+                       break;
+                   case 'N':
+                       FloorMatrix[row][mcol].setLiquid('N');
                        break;
                }
                mcol++;
@@ -129,14 +150,7 @@ public class Game {
         br.close();
         System.out.print("\n");
 
-        for(int i = 0; i < 10;i++)
-        {
-            for ( int j = 0; j<10; j++)
-            {
-                System.out.print(FloorMatrix[i][j]+"\t");
-            }
-            System.out.print("\n");
-        }
+        DrawWorkersPos();
 
         int colNum;
         int rowNum;
