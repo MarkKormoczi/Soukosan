@@ -25,6 +25,7 @@ public class TargetSpot extends FloorBase {
                 setEntity(m);
                 m.AddPoints();
 
+
                 l.exit(this, "Accept", "true");
                 return true;
             } else

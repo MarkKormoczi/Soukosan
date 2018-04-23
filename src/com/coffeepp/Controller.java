@@ -54,6 +54,17 @@ public class Controller {
                 }
                 break;
 
+            case "listswitchstates": //Kiirja a Switch-ek allapotat.
+                for (FloorBase fb:game.getLayout().GetFloorbases()) {
+                    if(fb instanceof Switch) {
+                        if(((Switch) fb).getState())
+                            System.out.println(fb.toString()+" enabled");
+                        else
+                            System.out.println(fb.toString()+" disabled");
+                    }
+                }
+                break;
+
             case "listpoints": // Kilistázza a munkások pontjait
                 for (Worker w:game.getLayout().GetWorkers()) {
                     System.out.println(w.toString() + ": " + w.GetPoints());
