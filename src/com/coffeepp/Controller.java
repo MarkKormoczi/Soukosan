@@ -43,13 +43,14 @@ public class Controller {
 
             case "listfloorbases": //A betöltött pályán kilistázza a FloorBaseket
                 for (FloorBase fb:game.getLayout().GetFloorbases()) {
-                    System.out.println(fb.toString() + " " + fb.getEntity().toString() );
+                    if(fb != null)
+                    System.out.println(fb.toString() + " and there is " + fb.getEntity().toString() + " on it.");
                 }
                 break;
 
             case "listworkers": //A betöltött pályán kilistázza a munkásokat
                 for (Worker w:game.getLayout().GetWorkers()) {
-                    System.out.println(w.toString());
+                    System.out.println(w.toString() + " Number " + game.getLayout().GetWorkers().indexOf(w));
                 }
                 break;
 

@@ -129,6 +129,7 @@ public class Game {
                        FloorMatrix[row][mcol].setEntity(c);
                        break;
                }
+               charfb = line.charAt(col+1);
                switch (charfb)
                {
                    case 'H':
