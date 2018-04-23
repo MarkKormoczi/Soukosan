@@ -2,4 +2,4 @@ input:
 loadLevel testmap1.txt
 saveLevel
 output:
-testmap1_save.txt
+Map saved.
