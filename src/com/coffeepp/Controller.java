@@ -21,10 +21,6 @@ public class Controller {
                 game.LoadMap(level);
                 break;
 
-            case "savelevel": //Elmenti egy .txt fájlba az adott pálya állását
-                //TODO same as previous but writes to file
-                break;
-
             case "moveworker": //A megadott irányba mozgatja a munkást
                 int workerIndex = Integer.parseInt(input[1]);
                 String direction = input[2];
