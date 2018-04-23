@@ -1,0 +1,9 @@
+input:
+loadLevel 00
+addWorker
+addCrate 60
+moveWorker worker01 right
+showLevel
+listPoints
+output:
+worker01 1

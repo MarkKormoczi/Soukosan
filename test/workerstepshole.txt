@@ -1,0 +1,7 @@
+input:
+loadLevel testmap1.txt
+addWorker 100
+moveWorker worker01 right
+listWorkers
+output:
+
