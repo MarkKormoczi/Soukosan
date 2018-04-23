@@ -1,10 +1,8 @@
 input:
-loadLevel testmap.txt
+loadLevel testlevel1.txt
 showLevel
 output:
-0NN 0NN 0NN 0NN 0NN 0NN
-0NN 1NN 1CN 3NN 2NN 0NN
-0NN 1NN 1NN 1NN 1NN 0NN
-0NN 1NN 1NN 1NN 1NN 0NN
-5NN 1NN 1NN 1NN 1NN 5NN
-0NN 0NN 0NN 0NN 0NN 0NN
+floor floor floor targetspot
+worker crate floor obstacle
+floor floor floor hole
+floor floor switch trap
