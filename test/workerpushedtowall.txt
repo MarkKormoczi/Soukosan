@@ -1,8 +1,6 @@
 input:
-loadLevel testmap1.txt
-addCrate 80
-addWorker 100
-cratePushWorker worker01 left
+loadLevel testmap4.txt
+moveworker 0 right
 listWorkers
 output:
-
+Worker 1 dead.
