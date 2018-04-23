@@ -128,7 +128,7 @@ public class Game {
                switch (charfb)
                {
                    case 'W':
-                       Worker w = new Worker(40);
+                       Worker w = new Worker(101);
                        layout.AddWorker(w);
                        w.setPlace(FloorMatrix[row][mcol]);
                        FloorMatrix[row][mcol].setEntity(w);

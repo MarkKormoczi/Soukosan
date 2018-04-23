@@ -17,13 +17,31 @@ public class TargetSpot extends FloorBase {
         l.enter(this, "Accept");
 
         // szerintem ez kell ide, de nézzétek meg.
-        super.Accept(m, d, strength);
-        if(this.getEntity()!=null){
-            m.AddPoints();
-            l.exit(this, "AddPoints", "false");
+        //super.Accept(m, d, strength);
+        if(this.getEntity()==null)
+        {
+            if(0 < strength)
+            {
+                setEntity(m);
+                m.AddPoints();
+
+                l.exit(this, "Accept", "true");
+                return true;
+            } else
+            {
+                l.exit(this, "Accept", "false");
+                return false;
+            }
+        }
+        if (this.getEntity().Push(m, d, strength)) {
+            //on success we move to this
+
+            setEntity(m);
+
+            l.exit(this, "Accept", "true");
             return true;
         }
-        l.exit(this, "AddPoints", "true");
+        l.exit(this, "AddPoints", "false");
         return false;
 
     }

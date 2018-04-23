@@ -107,7 +107,6 @@ public abstract class FloorBase implements Updatable {
         if(entity == null ) {
             if(0 < strength)
             {
-                entity = m;
                 setEntity(m);
                 l.exit(this, "Accept", "true");
                 return true;
@@ -123,7 +122,6 @@ public abstract class FloorBase implements Updatable {
         if (this.entity.Push(m, d, strength)) {
             //on success we move to this
 
-            entity = m;
             setEntity(m);
 
             l.exit(this, "Accept", "true");
