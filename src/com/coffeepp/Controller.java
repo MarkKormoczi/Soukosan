@@ -1,31 +1,31 @@
 package com.coffeepp;
 
+import java.io.IOException;
+
 public class Controller {
     static Game game;
-    public Controller(Game game){
-        this.game = game;
+    public Controller(){
+
     }
 
-    public static void Command(String input_raw){
+    public static void setGame (Game gameArg){game = gameArg;}
+    public static void Command(String input_raw) throws IOException {
         String[] input = input_raw.trim().split("\\s+");
-        switch(input[0]){
-            case "loadCommands": //Beolvassa és végrehajtja a fájlból beolvasott parancsokat
+        switch(input[0].toLowerCase()){
+            case "loadcommands": //Beolvassa és végrehajtja a fájlból beolvasott parancsokat
                 //TODO Read commands from the file, for cycle
                 break;
 
-            case "newGame": //Betölti az első pályát
-                break;
-
-            case "loadLevel": //Betölti a megadott pályát
+            case "loadlevel": //Betölti a megadott pályát
                 String level = input[1]; //A betolteni kivant file neve
-                //TODO write the loading from a file
+                game.NewGame(level);
                 break;
 
-            case "saveLevel": //Elmenti egy .txt fájlba az adott pálya állását
+            case "savelevel": //Elmenti egy .txt fájlba az adott pálya állását
                 //TODO same as previous but writes to file
                 break;
 
-            case "moveWorker": //A megadott irányba mozgatja a munkást
+            case "moveworker": //A megadott irányba mozgatja a munkást
                 int workerIndex = Integer.parseInt(input[1]);
                 String direction = input[2];
                 Worker currentWorker = game.getLayout().GetWorkers().get(workerIndex);
@@ -37,31 +37,27 @@ public class Controller {
                 }
                 break;
 
-            case "showLevel": //Kirajzolja a pályát
+            case "showlevel": //Kirajzolja a pályát
                 //TODO draw the map
                 break;
 
-            case "listFloorBases": //A betöltött pályán kilistázza a FloorBaseket
+            case "listfloorbases": //A betöltött pályán kilistázza a FloorBaseket
                 for (FloorBase fb:game.getLayout().GetFloorbases()) {
-                    System.out.println(fb.toString() + " " + fb.getEntity().toString() + " " );
-                    fb.getEntity().toString();
+                    System.out.println(fb.toString() + " " + fb.getEntity().toString() );
                 }
                 break;
 
-            case "listWorkers": //A betöltött pályán kilistázza a munkásokat
+            case "listworkers": //A betöltött pályán kilistázza a munkásokat
+                for (Worker w:game.getLayout().GetWorkers()) {
+                    System.out.println(w.toString());
+                }
                 break;
 
-            case "listPoints": // Kilistázza a munkások pontjait
+            case "listpoints": // Kilistázza a munkások pontjait
+                for (Worker w:game.getLayout().GetWorkers()) {
+                    System.out.println(w.toString() + ": " + w.GetPoints());
+                }
                 break;
-
-                //???
-            case "winGame": //Minden láda a TargetSpoton található
-                break;
-
-                //???
-            case "gameOver": //Egy ládát összetörünk és vége a játéknak
-                break;
-
 
 
         }

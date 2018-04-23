@@ -79,14 +79,14 @@ public class Game {
      * Loads and starts a new game.
      * @throws IOException
      */
-    public void NewGame() throws IOException {
+    public void NewGame(String level) throws IOException {
         Logger l = new Logger();
         l.enter(this, "NewGame");
 
         layout = new WareHouse();
 
         // Commented out since file loading is not implemented into skeleton
-        FileReader fr = new FileReader("map.txt");
+        FileReader fr = new FileReader(level);
         BufferedReader br = new BufferedReader(fr);
 
         StringBuilder sb = new StringBuilder();
