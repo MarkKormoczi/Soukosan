@@ -38,13 +38,17 @@ public class Controller {
                 break;
 
             case "showlevel": //Kirajzolja a pályát
-                //TODO draw the map
+                game.ShowLevel();
                 break;
 
             case "listfloorbases": //A betöltött pályán kilistázza a FloorBaseket
                 for (FloorBase fb:game.getLayout().GetFloorbases()) {
-                    if(fb != null)
-                    System.out.println(fb.toString() + " and there is " + fb.getEntity().toString() + " on it.");
+                    if(fb != null){
+                        if(fb.getEntity() != null)
+                            System.out.println(fb.toString() + " and there is " + fb.getEntity().toString() + " on it.");
+                        else
+                            System.out.println(fb.toString());
+                    }
                 }
                 break;
 
