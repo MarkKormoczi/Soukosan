@@ -103,18 +103,17 @@ public abstract class FloorBase implements Updatable {
     {
         Logger l = new Logger();
         l.enter(this, "Accept");
-        System.out.println("\nstrength:"+strength +"\nWeight: "+m.GetWeight());
+
         if(entity == null ) {
+            System.out.println("\nstrength:"+strength +" Weight: "+m.GetWeight());
             if(0 < strength)
             {
                 setEntity(m);
                 l.exit(this, "Accept", "true");
                 return true;
-
-            } else
-                {
+            } else {
                 l.exit(this, "Accept", "false");
-                    return false;
+                return false;
             }
         }
 

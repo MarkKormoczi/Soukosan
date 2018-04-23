@@ -1,5 +1,5 @@
 input:
-loadLevel testlevel1.txt
+loadLevel test/testlevel1.txt
 showLevel
 output:
 floor floor floor targetspot

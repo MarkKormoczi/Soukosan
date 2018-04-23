@@ -1,7 +1,19 @@
 input:
-loadLevel testlevel1.txt
+loadLevel test/testlevel1.txt
+moveWorker 0 down
+showLevel
+moveWorker 0 right
+showLevel
+moveWorker 0 up
+showLevel
+moveWorker 0 left
+showLevel
+moveWorker 0 up
+showLevel
+moveWorker 0 right
+showLevel
 moveWorker 0 right
 showLevel
 listPoints
 output:
-0 1
+Worker: 1

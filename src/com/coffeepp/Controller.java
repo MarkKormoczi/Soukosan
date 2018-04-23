@@ -1,6 +1,10 @@
 package com.coffeepp;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.ByteArrayOutputStream;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,18 +20,19 @@ public class Controller {
         String[] input = input_raw.trim().split("\\s+");
         switch(input[0].toLowerCase()){
             case "loadcommands": //Beolvassa és végrehajtja a fájlból beolvasott parancsokat
-                //TODO Read commands from the file, for cycle
-                FileReader fr = new FileReader(input[1]);
-                BufferedReader br = new BufferedReader(fr);
-                String line = br.readLine();
-                while(line != null)
-                {
-                    System.out.println();
-                    Command(line);
-                    line = br.readLine();
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                PrintStream ps = new PrintStream(baos);
+                PrintStream old = System.out;
+                System.setOut(ps);
 
-                }
+                TestProcessor tp = new TestProcessor(baos);
+                tp.ProcessTest("addpoint.txt");
+
+                System.out.flush();
+                System.setOut(old);
+                System.out.println(baos.toString());
                 break;
+
 
             case "loadlevel": //Betölti a megadott pályát
                 String level = input[1]; //A betolteni kivant file neve

@@ -1,2 +1,4 @@
--> Object: Game function: NewGame parameters: 
-<- Object: Game function: NewGame returned value: void
+-> Object: Menu function: test1 parameters: 2; Sanyi; 
+  -> Object: Menu function: test2 parameters: 
+  <- Object: Menu function: test2 returned value: 5
+<- Object: Menu function: test1 returned value: void

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static void main(String[] args) throws IOException{
-        System.out.print("Sokoban-san");
+        System.out.println("Sokoban-san");
         Logger.loggerInit();
 
 
@@ -31,6 +31,6 @@ public class Main {
     }
     @Override
     public String toString() {
-    	return "Main";
+        return "Main";
     }
 }

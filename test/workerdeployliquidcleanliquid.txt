@@ -1,6 +1,5 @@
 input:
-loadLevel testlevel1.txt
-
+loadLevel test/testlevel1.txt
 moveWorker 0 down
 workerLaysLiquid 0 Honey
 moveWorker 0 right

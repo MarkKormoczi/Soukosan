@@ -1,5 +1,5 @@
 input:
-loadLevel testlevel3.txt
+loadLevel test/testlevel3.txt
 moveWorker worker01 right
 showLevel
 output:

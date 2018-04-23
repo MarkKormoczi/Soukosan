@@ -17,7 +17,7 @@ public class Liquid {
                 break;
             default:
                 name = "Nothing";
-                modifier = 0;
+                modifier = 1;
                 break;
         }
     }
