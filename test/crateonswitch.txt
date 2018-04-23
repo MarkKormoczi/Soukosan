@@ -1,0 +1,8 @@
+input:
+loadLevel testlevel1.txt
+addWorker
+addCrate 60
+pushCrate worker01 right
+listswitchstates
+output:
+switch1 enabled

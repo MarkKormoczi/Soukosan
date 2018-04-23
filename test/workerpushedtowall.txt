@@ -1,0 +1,8 @@
+input:
+loadLevel testmap1.txt
+addCrate 80
+addWorker 100
+cratePushWorker worker01 left
+listWorkers
+output:
+
