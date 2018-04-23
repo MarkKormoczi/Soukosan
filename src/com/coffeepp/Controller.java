@@ -1,6 +1,9 @@
 package com.coffeepp;
 
 import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Controller {
     static Game game;
@@ -14,6 +17,16 @@ public class Controller {
         switch(input[0].toLowerCase()){
             case "loadcommands": //Beolvassa és végrehajtja a fájlból beolvasott parancsokat
                 //TODO Read commands from the file, for cycle
+                FileReader fr = new FileReader(input[1]);
+                BufferedReader br = new BufferedReader(fr);
+                String line = br.readLine();
+                while(line != null)
+                {
+                    System.out.println();
+                    Command(line);
+                    line = br.readLine();
+
+                }
                 break;
 
             case "loadlevel": //Betölti a megadott pályát

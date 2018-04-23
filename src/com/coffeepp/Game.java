@@ -101,7 +101,6 @@ public class Game {
         FileReader fr = new FileReader(level);
         BufferedReader br = new BufferedReader(fr);
 
-        StringBuilder sb = new StringBuilder();
         String line = br.readLine();
          maxcol = Integer.parseInt(line);
         System.out.println(maxcol);
