@@ -1,7 +1,11 @@
 input:
 loadLevel testlevel1.txt
-addWorker
-addCrate 60
-moveWorker worker01 right
+moveWorker 0 down
+moveWorker 0 right
+moveWorker 0 up
+moveWorker 0 left
+moveWorker 0 up
+moveWorker 0 right
+moveWorker 0 right
 output:
 Crates on spots. Map completed.
