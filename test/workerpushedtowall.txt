@@ -3,4 +3,4 @@ loadLevel testmap4.txt
 moveworker 0 right
 listWorkers
 output:
-Worker 0
+0
