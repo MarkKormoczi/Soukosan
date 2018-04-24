@@ -20,13 +20,14 @@ public class Controller {
         String[] input = input_raw.trim().split("\\s+");
         switch(input[0].toLowerCase()){
             case "loadcommands": //Beolvassa és végrehajtja a fájlból beolvasott parancsokat
+                String fileName = input[1];
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 PrintStream ps = new PrintStream(baos);
                 PrintStream old = System.out;
                 System.setOut(ps);
 
                 TestProcessor tp = new TestProcessor(baos);
-                tp.ProcessTest("addpoint.txt");
+                tp.ProcessTest(fileName);
 
                 System.out.flush();
                 System.setOut(old);
