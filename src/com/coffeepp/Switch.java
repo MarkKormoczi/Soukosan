@@ -20,6 +20,22 @@ public class Switch extends FloorBase implements Updatable {
         return trapdoor;
     }
 
+
+    /**
+     * @param m The to be accepted movavble.
+     * @param d The direction which the accepted comes from.
+     * @return true always.
+     */
+    public boolean Accept(Movable m, Direction d, double s) //mindig mindent megeszik
+    {
+        super.Accept(m, d, s);
+        state = true;
+        Logger l = new Logger();
+        l.enter(this, "Accept");
+        l.exit(this, "Accept", "true");
+        return true;
+    }
+
     /**
      * Sets this switches trapdoor.
      * @param trapdoor
@@ -60,6 +76,7 @@ public class Switch extends FloorBase implements Updatable {
     public void Update() {
 
     }
+
     @Override
     public String toString() {
     	return "Switch";
