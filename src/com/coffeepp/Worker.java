@@ -38,7 +38,7 @@ public class Worker extends Movable {
             if (this.getPlace() != null)
                 this.getPlace().Remove(this);
             this.setPlace(fl);
-            System.out.println("OK");
+            //System.out.println("OK");
         }
     	l.exit(this, "Move", "void");
     }
