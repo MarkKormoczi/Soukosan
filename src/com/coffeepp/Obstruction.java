@@ -11,7 +11,7 @@ public class Obstruction extends FloorBase {
      * @param d The direction which the accepted comes from.
      * @return
      */
-    public boolean Accept(Movable m, Direction d)
+    public boolean Accept(Movable m, Direction d, double s)
     {
         Logger l = new Logger();
         l.enter(this, "GetPoints");

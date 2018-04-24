@@ -23,8 +23,9 @@ public class Hole extends FloorBase {
      * @param d The direction which the accepted comes from.
      * @return true always.
      */
-    public boolean Accept(Movable m, Direction d) //mindig mindent megeszik
+    public boolean Accept(Movable m, Direction d, double s) //mindig mindent megeszik
     {
+        super.Accept(m, d, s);
         Logger l = new Logger();
         l.enter(this, "Accept");
         Kill(m);
