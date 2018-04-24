@@ -12,7 +12,7 @@ workerRemovesLiquid 0
 moveWorker 0 up
 showlevel
 output:
-floor   floor   floor   targetspot
-worker  crate   floor   hole
-floor   floor   floor   obstacle
-floor   floor   switch  trap
+floor	floor	floor	targetspot
+worker	crate	floor	hole
+floor	floor	floor	obstruction
+floor	floor	switch	trap

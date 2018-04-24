@@ -9,4 +9,4 @@ moveworker 0 down
 moveworker 0 right
 listswitchstates
 output:
-switch1 enabled
+switch enabled
