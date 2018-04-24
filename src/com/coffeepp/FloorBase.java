@@ -105,7 +105,7 @@ public abstract class FloorBase implements Updatable {
         l.enter(this, "Accept");
 
         if(entity == null ) {
-            System.out.println("\nstrength:"+strength +" Weight: "+m.GetWeight());
+            //System.out.println("\nstrength:"+strength +" Weight: "+m.GetWeight());
             if(0 < strength)
             {
                 setEntity(m);

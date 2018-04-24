@@ -1,9 +1,9 @@
 input:
 loadLevel test/testlevel3.txt
-moveWorker worker01 right
+moveWorker 0 right
 showLevel
 output:
-worker crate floor floor
-floor floor floor floor
-floor floor floor floor
-floor floor floor floor
+worker	crate	floor	floor
+floor	floor	floor	floor
+floor	floor	floor	floor
+floor	floor	floor	floor

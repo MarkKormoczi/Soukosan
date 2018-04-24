@@ -42,8 +42,9 @@ public class TestProcessor {
                 Controller.Command(lines[i]);
                 i++;
             }
+            i++;
             for (; i < lines.length ; i++){
-                System.out.println(lines[i]);
+                //System.out.println(lines[i]);
                 output.add(lines[i]);
             }
 
@@ -57,6 +58,26 @@ public class TestProcessor {
 
     private boolean Validate(){
         String console[] = baos.toString().split("\\r?\\n");
-        return console[console.length - 1].contains(output.get(output.size() - 1));
+        String lastCommandResut[] = new String[20];
+        // az output sizeig megyünk.
+        for (int i = 0; i < output.size(); i++){
+            // a konzol utolsó soraira vagyunk kiváncsial.
+            lastCommandResut[i] = console[console.length-output.size()+i].toLowerCase();
+
+            if (!lastCommandResut[i].trim().equals(output.get(i).trim().toLowerCase())){
+                System.out.println(lastCommandResut[i]);
+                System.out.println(output.get(i).toLowerCase());
+                System.out.println("Test Failed on this lines");
+                return false;
+            }
+        }
+
+        System.out.println("Expected output:");
+        for (int i = 0; i < output.size();i++){
+
+            System.out.println(output.get(i));
+        }
+        return  true;
+        //return console[console.length - 1].contains(output.get(output.size() - 1));
     }
 }
