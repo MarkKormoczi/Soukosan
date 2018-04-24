@@ -134,16 +134,43 @@ public class Game {
                     case '5': FloorMatrix[row][mcol] = new Hole();break;
                 }
                 charfb = line.charAt(col+1);
+
+               Worker w;
+               Crate c;
                switch (charfb)
                {
-                   case 'W':
-                       Worker w = new Worker(101);
+                   case 'K':
+                       w = new Worker(61);
                        layout.AddWorker(w);
                        w.setPlace(FloorMatrix[row][mcol]);
                        FloorMatrix[row][mcol].setEntity(w);
                        break;
-                   case 'C':
-                       Crate c = new Crate(50);
+                   case 'T':
+                       w = new Worker(121);
+                       layout.AddWorker(w);
+                       w.setPlace(FloorMatrix[row][mcol]);
+                       FloorMatrix[row][mcol].setEntity(w);
+                       break;
+                   case 'A':
+                       w = new Worker(161);
+                       layout.AddWorker(w);
+                       w.setPlace(FloorMatrix[row][mcol]);
+                       FloorMatrix[row][mcol].setEntity(w);
+                       break;
+                   case 'S':
+                       c = new Crate(30);
+                       layout.AddCrate(c);
+                       c.setPlace(FloorMatrix[row][mcol]);
+                       FloorMatrix[row][mcol].setEntity(c);
+                       break;
+                   case 'M':
+                       c = new Crate(60);
+                       layout.AddCrate(c);
+                       c.setPlace(FloorMatrix[row][mcol]);
+                       FloorMatrix[row][mcol].setEntity(c);
+                       break;
+                   case 'L':
+                       c = new Crate(80);
                        layout.AddCrate(c);
                        c.setPlace(FloorMatrix[row][mcol]);
                        FloorMatrix[row][mcol].setEntity(c);
