@@ -29,11 +29,26 @@ public class Switch extends FloorBase implements Updatable {
     public boolean Accept(Movable m, Direction d, double s) //mindig mindent megeszik
     {
         super.Accept(m, d, s);
-        state = true;
+        if(m.SwitchCapable()){
+            state = true;
+        }
         Logger l = new Logger();
         l.enter(this, "Accept");
         l.exit(this, "Accept", "true");
         return true;
+    }
+
+    /**
+     * Removes the movable from this floor.
+     * @param m the movable to be removed.
+     */
+    public void Remove(Movable m)
+    {
+        super.Remove(m);
+        this.state = false;
+        Logger l = new Logger();
+        l.enter(this, "Remove");
+        l.exit(this, "Remove", "void");
     }
 
     /**
