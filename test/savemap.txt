@@ -1,5 +1,0 @@
-input:
-loadLevel test/testmap1.txt
-saveLevel
-output:
-Map saved.

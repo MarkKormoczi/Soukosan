@@ -3,6 +3,6 @@ loadLevel test/testlevel1.txt
 showLevel
 output:
 floor	floor	floor	targetspot
-worker	crate	floor	obstruction
-floor	floor	floor	hole
+worker	crate	floor	hole
+floor	floor	floor	obstruction
 floor	floor	switch	trap

@@ -1,4 +1,538 @@
--> Object: Menu function: test1 parameters: 2; Sanyi; 
-  -> Object: Menu function: test2 parameters: 
-  <- Object: Menu function: test2 returned value: 5
-<- Object: Menu function: test1 returned value: void
+-> Object: Game function: NewGame parameters: 
+  -> Object: TargetSpot function: setLiquid parameters: 
+  <- Object: TargetSpot function: setLiquid returned value: void
+  -> Object: TargetSpot function: setLiquid parameters: 
+  <- Object: TargetSpot function: setLiquid returned value: void
+  -> Object: Switch function: setLiquid parameters: 
+  <- Object: Switch function: setLiquid returned value: void
+  -> Object: Trap function: setLiquid parameters: 
+  <- Object: Trap function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: TargetSpot function: setLiquid parameters: 
+  <- Object: TargetSpot function: setLiquid returned value: void
+  -> Object: TargetSpot function: setLiquid parameters: 
+  <- Object: TargetSpot function: setLiquid returned value: void
+  -> Object: Hole function: setLiquid parameters: 
+  <- Object: Hole function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: Crate function: setWeight parameters: 
+  <- Object: Crate function: setWeight returned value: void
+  -> Object: WareHouse function: AddCrate parameters: 
+  <- Object: WareHouse function: AddPoints returned value: void
+  -> Object: Crate function: setPlace parameters: 
+  <- Object: Crate function: setPlace returned value: void
+  -> Object: Floor function: setEntity parameters: 
+  <- Object: Floor function: setEntity returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: Switch function: setLiquid parameters: 
+  <- Object: Switch function: setLiquid returned value: void
+  -> Object: Worker function: setStrength parameters: 
+  <- Object: Worker function: setStrength returned value: void
+  -> Object: WareHouse function: AddWorker parameters: 
+  <- Object: WareHouse function: AddWorker returned value: void
+  -> Object: Worker function: setPlace parameters: 
+  <- Object: Worker function: setPlace returned value: void
+  -> Object: Floor function: setEntity parameters: 
+  <- Object: Floor function: setEntity returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: TargetSpot function: setLiquid parameters: 
+  <- Object: TargetSpot function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: Floor function: setLiquid parameters: 
+  <- Object: Floor function: setLiquid returned value: void
+  -> Object: TargetSpot function: getEntity parameters: 
+    -> Object: TargetSpot function: getEntity parameters: 
+      -> Object: Switch function: getEntity parameters: 
+        -> Object: Trap function: getEntity parameters: 
+          -> Object: Floor function: getEntity parameters: 
+            -> Object: TargetSpot function: getEntity parameters: 
+              -> Object: TargetSpot function: getEntity parameters: 
+                -> Object: Hole function: getEntity parameters: 
+                  -> Object: Floor function: getEntity parameters: 
+                    -> Object: Floor function: getEntity parameters: 
+                    <- Object: Floor function: getEntity returned value: Crate
+                    -> Object: Floor function: getEntity parameters: 
+                    <- Object: Floor function: getEntity returned value: Crate
+                    -> Object: Floor function: getEntity parameters: 
+                      -> Object: Floor function: getEntity parameters: 
+                        -> Object: Switch function: getEntity parameters: 
+                          -> Object: Floor function: getEntity parameters: 
+                          <- Object: Floor function: getEntity returned value: Worker
+                          -> Object: Floor function: getEntity parameters: 
+                          <- Object: Floor function: getEntity returned value: Worker
+                          -> Object: Floor function: getEntity parameters: 
+                            -> Object: Floor function: getEntity parameters: 
+                              -> Object: TargetSpot function: getEntity parameters: 
+                                -> Object: Floor function: getEntity parameters: 
+                                  -> Object: Floor function: getEntity parameters: 
+                                    -> Object: Floor function: getEntity parameters: 
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Switch function: setNeighbor parameters: 
+                                      <- Object: Switch function: setNeighbor returned value: void
+                                      -> Object: Switch function: setNeighbor parameters: 
+                                      <- Object: Switch function: setNeighbor returned value: void
+                                      -> Object: Switch function: setNeighbor parameters: 
+                                      <- Object: Switch function: setNeighbor returned value: void
+                                      -> Object: Switch function: setNeighbor parameters: 
+                                      <- Object: Switch function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Trap function: setNeighbor parameters: 
+                                      <- Object: Trap function: setNeighbor returned value: void
+                                      -> Object: Trap function: setNeighbor parameters: 
+                                      <- Object: Trap function: setNeighbor returned value: void
+                                      -> Object: Trap function: setNeighbor parameters: 
+                                      <- Object: Trap function: setNeighbor returned value: void
+                                      -> Object: Trap function: setNeighbor parameters: 
+                                      <- Object: Trap function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Hole function: setNeighbor parameters: 
+                                      <- Object: Hole function: setNeighbor returned value: void
+                                      -> Object: Hole function: setNeighbor parameters: 
+                                      <- Object: Hole function: setNeighbor returned value: void
+                                      -> Object: Hole function: setNeighbor parameters: 
+                                      <- Object: Hole function: setNeighbor returned value: void
+                                      -> Object: Hole function: setNeighbor parameters: 
+                                      <- Object: Hole function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Switch function: setNeighbor parameters: 
+                                      <- Object: Switch function: setNeighbor returned value: void
+                                      -> Object: Switch function: setNeighbor parameters: 
+                                      <- Object: Switch function: setNeighbor returned value: void
+                                      -> Object: Switch function: setNeighbor parameters: 
+                                      <- Object: Switch function: setNeighbor returned value: void
+                                      -> Object: Switch function: setNeighbor parameters: 
+                                      <- Object: Switch function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: TargetSpot function: setNeighbor parameters: 
+                                      <- Object: TargetSpot function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: Floor function: setNeighbor parameters: 
+                                      <- Object: Floor function: setNeighbor returned value: void
+                                      -> Object: WareHouse function: AddFloorbase parameters: 
+                                      <- Object: WareHouse function: AddFloorbase returned value: void
+                                    <- Object: Game function: NewGame returned value: void
+                                    -> Object: Game function: NewGame parameters: 
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: TargetSpot function: setLiquid parameters: 
+                                      <- Object: TargetSpot function: setLiquid returned value: void
+                                      -> Object: Worker function: setStrength parameters: 
+                                      <- Object: Worker function: setStrength returned value: void
+                                      -> Object: WareHouse function: AddWorker parameters: 
+                                      <- Object: WareHouse function: AddWorker returned value: void
+                                      -> Object: Worker function: setPlace parameters: 
+                                      <- Object: Worker function: setPlace returned value: void
+                                      -> Object: Floor function: setEntity parameters: 
+                                      <- Object: Floor function: setEntity returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Crate function: setWeight parameters: 
+                                      <- Object: Crate function: setWeight returned value: void
+                                      -> Object: WareHouse function: AddCrate parameters: 
+                                      <- Object: WareHouse function: AddPoints returned value: void
+                                      -> Object: Crate function: setPlace parameters: 
+                                      <- Object: Crate function: setPlace returned value: void
+                                      -> Object: Floor function: setEntity parameters: 
+                                      <- Object: Floor function: setEntity returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Hole function: setLiquid parameters: 
+                                      <- Object: Hole function: setLiquid returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Obstruction function: setLiquid parameters: 
+                                      <- Object: Obstruction function: setLiquid returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Floor function: setLiquid parameters: 
+                                      <- Object: Floor function: setLiquid returned value: void
+                                      -> Object: Switch function: setLiquid parameters: 
+                                      <- Object: Switch function: setLiquid returned value: void
+                                      -> Object: Trap function: setLiquid parameters: 
+                                      <- Object: Trap function: setLiquid returned value: void
+                                      -> Object: Floor function: getEntity parameters: 
+                                        -> Object: Floor function: getEntity parameters: 
+                                          -> Object: Floor function: getEntity parameters: 
+                                            -> Object: TargetSpot function: getEntity parameters: 
+                                              -> Object: Floor function: getEntity parameters: 
+                                              <- Object: Floor function: getEntity returned value: Worker
+                                              -> Object: Floor function: getEntity parameters: 
+                                              <- Object: Floor function: getEntity returned value: Worker
+                                              -> Object: Floor function: getEntity parameters: 
+                                              <- Object: Floor function: getEntity returned value: Crate
+                                              -> Object: Floor function: getEntity parameters: 
+                                              <- Object: Floor function: getEntity returned value: Crate
+                                              -> Object: Floor function: getEntity parameters: 
+                                                -> Object: Hole function: getEntity parameters: 
+                                                  -> Object: Floor function: getEntity parameters: 
+                                                    -> Object: Floor function: getEntity parameters: 
+                                                      -> Object: Floor function: getEntity parameters: 
+                                                        -> Object: Obstruction function: getEntity parameters: 
+                                                          -> Object: Floor function: getEntity parameters: 
+                                                            -> Object: Floor function: getEntity parameters: 
+                                                              -> Object: Switch function: getEntity parameters: 
+                                                                -> Object: Trap function: getEntity parameters: 
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: TargetSpot function: setNeighbor parameters: 
+                                                                  <- Object: TargetSpot function: setNeighbor returned value: void
+                                                                  -> Object: TargetSpot function: setNeighbor parameters: 
+                                                                  <- Object: TargetSpot function: setNeighbor returned value: void
+                                                                  -> Object: TargetSpot function: setNeighbor parameters: 
+                                                                  <- Object: TargetSpot function: setNeighbor returned value: void
+                                                                  -> Object: TargetSpot function: setNeighbor parameters: 
+                                                                  <- Object: TargetSpot function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Hole function: setNeighbor parameters: 
+                                                                  <- Object: Hole function: setNeighbor returned value: void
+                                                                  -> Object: Hole function: setNeighbor parameters: 
+                                                                  <- Object: Hole function: setNeighbor returned value: void
+                                                                  -> Object: Hole function: setNeighbor parameters: 
+                                                                  <- Object: Hole function: setNeighbor returned value: void
+                                                                  -> Object: Hole function: setNeighbor parameters: 
+                                                                  <- Object: Hole function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Obstruction function: setNeighbor parameters: 
+                                                                  <- Object: Obstruction function: setNeighbor returned value: void
+                                                                  -> Object: Obstruction function: setNeighbor parameters: 
+                                                                  <- Object: Obstruction function: setNeighbor returned value: void
+                                                                  -> Object: Obstruction function: setNeighbor parameters: 
+                                                                  <- Object: Obstruction function: setNeighbor returned value: void
+                                                                  -> Object: Obstruction function: setNeighbor parameters: 
+                                                                  <- Object: Obstruction function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: Floor function: setNeighbor parameters: 
+                                                                  <- Object: Floor function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Switch function: setNeighbor parameters: 
+                                                                  <- Object: Switch function: setNeighbor returned value: void
+                                                                  -> Object: Switch function: setNeighbor parameters: 
+                                                                  <- Object: Switch function: setNeighbor returned value: void
+                                                                  -> Object: Switch function: setNeighbor parameters: 
+                                                                  <- Object: Switch function: setNeighbor returned value: void
+                                                                  -> Object: Switch function: setNeighbor parameters: 
+                                                                  <- Object: Switch function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                  -> Object: Trap function: setNeighbor parameters: 
+                                                                  <- Object: Trap function: setNeighbor returned value: void
+                                                                  -> Object: Trap function: setNeighbor parameters: 
+                                                                  <- Object: Trap function: setNeighbor returned value: void
+                                                                  -> Object: Trap function: setNeighbor parameters: 
+                                                                  <- Object: Trap function: setNeighbor returned value: void
+                                                                  -> Object: Trap function: setNeighbor parameters: 
+                                                                  <- Object: Trap function: setNeighbor returned value: void
+                                                                  -> Object: WareHouse function: AddFloorbase parameters: 
+                                                                  <- Object: WareHouse function: AddFloorbase returned value: void
+                                                                <- Object: Game function: NewGame returned value: void
+                                                                -> Object: Floor function: getEntity parameters: 
+                                                                  -> Object: Floor function: getEntity parameters: 
+                                                                    -> Object: Floor function: getEntity parameters: 
+                                                                      -> Object: TargetSpot function: getEntity parameters: 
+                                                                        -> Object: Floor function: getEntity parameters: 
+                                                                        <- Object: Floor function: getEntity returned value: Worker
+                                                                        -> Object: Floor function: getEntity parameters: 
+                                                                        <- Object: Floor function: getEntity returned value: Worker
+                                                                        -> Object: Floor function: getEntity parameters: 
+                                                                        <- Object: Floor function: getEntity returned value: Crate
+                                                                        -> Object: Floor function: getEntity parameters: 
+                                                                        <- Object: Floor function: getEntity returned value: Crate
+                                                                        -> Object: Floor function: getEntity parameters: 
+                                                                          -> Object: Hole function: getEntity parameters: 
+                                                                            -> Object: Floor function: getEntity parameters: 
+                                                                              -> Object: Floor function: getEntity parameters: 
+                                                                                -> Object: Floor function: getEntity parameters: 
+                                                                                  -> Object: Obstruction function: getEntity parameters: 
+                                                                                    -> Object: Floor function: getEntity parameters: 
+                                                                                      -> Object: Floor function: getEntity parameters: 
+                                                                                        -> Object: Switch function: getEntity parameters: 
+                                                                                          -> Object: Trap function: getEntity parameters: 
