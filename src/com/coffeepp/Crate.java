@@ -86,7 +86,9 @@ public class Crate extends Movable {
 
         this.setPlace(null);
         l.exit(this, "Destroy", "void");
+        System.out.println("Destroyed crate. Game Over.");
         Game.getInstance().GameOver();
+
     }
 
     @Override

@@ -5,7 +5,6 @@ workerLaysLiquid 0 Honey
 moveWorker 0 right
 workerLaysLiquid 0 Oil
 moveWorker 0 right
-showLevel
 moveWorker 0 left
 workerRemovesLiquid 0 
 moveWorker 0 left

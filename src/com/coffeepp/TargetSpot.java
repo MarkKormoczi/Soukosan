@@ -16,8 +16,6 @@ public class TargetSpot extends FloorBase {
         Logger l = new Logger();
         l.enter(this, "Accept");
 
-        // szerintem ez kell ide, de nézzétek meg.
-        //super.Accept(m, d, strength);
         if(this.getEntity()==null)
         {
             if(0 < strength)
