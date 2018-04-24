@@ -1,5 +1,5 @@
 input:
-loadLevel test/testmap1.txt
+loadLevel test/testlevel1.txt
 moveWorker 0 down
 moveWorker 0 right
 moveWorker 0 right

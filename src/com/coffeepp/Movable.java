@@ -99,6 +99,7 @@ public abstract class Movable implements Updatable {
         l.enter(this, "Destroy");
 
         this.place = null;
+        game.getLayout().GetWorkers().remove(this);
         l.exit(this, "Destroy", "void");
     }
 

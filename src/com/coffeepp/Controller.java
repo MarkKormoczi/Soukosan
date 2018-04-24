@@ -71,6 +71,8 @@ public class Controller {
                 for (Worker w:game.getLayout().GetWorkers()) {
                     System.out.println(w.toString() + " Number " + game.getLayout().GetWorkers().indexOf(w));
                 }
+                if(game.getLayout().GetWorkers().size() == 0)
+                    System.out.println("No workers.");
                 break;
 
             case "listswitchstates": //Kiirja a Switch-ek allapotat.

@@ -1,6 +1,6 @@
 input:
-loadLevel test/testmap4.txt
+loadLevel test/testlevel4.txt
 moveworker 0 right
 listWorkers
 output:
-0
+Worker Number 0
