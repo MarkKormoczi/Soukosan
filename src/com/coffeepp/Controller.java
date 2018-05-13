@@ -95,4 +95,26 @@ public class Controller {
 
         }
     }
+
+    public static void WorkerControl(int workerIndex, Direction d){
+        Worker currentWorker = null;
+        //currentWorker = game.getLayout().GetWorkers().get(workerIndex);
+        //if(currentWorker != null) {
+            /*switch (d) {
+                case left:
+                    currentWorker.Move(Direction.left);
+                    break;
+                case right:
+                    currentWorker.Move(Direction.right);
+                    break;
+                case up:
+                    currentWorker.Move(Direction.up);
+                    break;
+                case down:
+                    currentWorker.Move(Direction.down);
+                    break;
+            }*/
+            System.out.println("Worker " + workerIndex + " Direction " + d.toString());
+        //}
+    }
 }

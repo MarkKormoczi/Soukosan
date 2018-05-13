@@ -8,6 +8,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -94,6 +95,9 @@ public class Window extends Application{
         Scene scene = new Scene(root, 600, 660);
         primaryStage.setTitle("倉庫さん");
         primaryStage.setScene(scene);
+
+        primaryStage.addEventHandler(KeyEvent.KEY_PRESSED, new KeyboardEventHandler());
+
         primaryStage.show();
     }
 
