@@ -13,12 +13,23 @@ public class Game {
     private int maxcol = 0;
     private int maxrow = 0;
 
+    private int FPS = 60;
+    private View view;
+
     public static Game instance = null;
 
     /**
      * Private constructor bc singleton.
      */
     public Game() {}
+
+    public View getView(){
+        return view;
+    }
+
+    public void setFPS(int i){
+        FPS = i;
+    }
 
     /**
      * Singleton instance getter.
