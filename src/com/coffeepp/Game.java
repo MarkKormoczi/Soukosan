@@ -41,10 +41,11 @@ public class Game {
         {
             for ( int j = 0; j<maxcol; j++)
             {
-                if(FloorMatrix[i][j].getEntity() != null)
-                    System.out.print(FloorMatrix[i][j].getEntity()+"\t");
+                if(FloorMatrix[i][j].GetPosition() != null){
+                    System.out.print(FloorMatrix[i][j].GetPosition().GetX()+",");
+                System.out.print(FloorMatrix[i][j].GetPosition().GetY()+"\t");}
                 else
-                    System.out.print(FloorMatrix[i][j]+"\t");
+                    System.out.println("asfasf ");
             }
             System.out.print("\n");
         }
@@ -61,9 +62,6 @@ public class Game {
      * @return
      */
     public WareHouse getLayout() {
-        Logger l = new Logger();
-        l.enter(this, "getLayout");
-        l.exit(this, "getLayout", layout.toString());
         return layout;
     }
 
@@ -72,10 +70,7 @@ public class Game {
      * @return
      */
     public void setLayout(WareHouse layout) {
-        Logger l = new Logger();
-        l.enter(this, "setLayout");
         this.layout = layout;
-        l.exit(this, "setLayout", "void");
     }
 
     /**
@@ -113,152 +108,159 @@ public class Game {
         BufferedReader br = new BufferedReader(fr);
 
         String line = br.readLine();
-         maxcol = Integer.parseInt(line);
+        maxcol = Integer.parseInt(line);
         System.out.println(maxcol);
         line = br.readLine();
-         maxrow = Integer.parseInt(line);
+        maxrow = Integer.parseInt(line);
         System.out.println(maxrow);
         line = br.readLine();
 
         FloorMatrix = new FloorBase[maxrow][maxcol];
 
         //FloorMatrix elemeinek NULL értékere állítása
-        for(int i = 0; i < FloorMatrix.length; ++i)
-            for(int j = 0; j < FloorMatrix[i].length; ++j)
+        for (int i = 0; i < FloorMatrix.length; ++i)
+            for (int j = 0; j < FloorMatrix[i].length; ++j)
                 FloorMatrix[i][j] = null;
 
         //FloorMatrix feltoltese
-        int row =0;
-        int mcol=0;
+        int row = 0;
+        int mcol = 0;
 
         while (line != null) {
             //A palya tarolasa vegett 3-t kell leptetni és ezért kell az mcol valtozo is
-           for(int col = 0; col< line.length(); col += 3)
-           {
-               char charfb = line.charAt(col);
-                switch(charfb) {
-                    case '0': FloorMatrix[row][mcol] = new Obstruction(); break;
-                    case '1': FloorMatrix[row][mcol] = new Floor();break;
-                    case '2': FloorMatrix[row][mcol] = new TargetSpot();break;
-                    case '3': FloorMatrix[row][mcol] = new Switch();break;
-                    case '4': FloorMatrix[row][mcol] = new Trap();break;
-                    case '5': FloorMatrix[row][mcol] = new Hole();break;
+            for (int col = 0; col < line.length(); col += 3) {
+                char charfb = line.charAt(col);
+                switch (charfb) {
+                    case '0':
+                        FloorMatrix[row][mcol] = new Obstruction();
+                        break;
+                    case '1':
+                        FloorMatrix[row][mcol] = new Floor();
+                        break;
+                    case '2':
+                        FloorMatrix[row][mcol] = new TargetSpot();
+                        break;
+                    case '3':
+                        FloorMatrix[row][mcol] = new Switch();
+                        break;
+                    case '4':
+                        FloorMatrix[row][mcol] = new Trap();
+                        break;
+                    case '5':
+                        FloorMatrix[row][mcol] = new Hole();
+                        break;
                 }
-                charfb = line.charAt(col+1);
+                charfb = line.charAt(col + 1);
 
-               Worker w;
-               Crate c;
-               switch (charfb)
-               {
-                   case 'K':
-                       w = new Worker(61);
-                       layout.AddWorker(w);
-                       w.setPlace(FloorMatrix[row][mcol]);
-                       FloorMatrix[row][mcol].setEntity(w);
-                       break;
-                   case 'T':
-                       w = new Worker(121);
-                       layout.AddWorker(w);
-                       w.setPlace(FloorMatrix[row][mcol]);
-                       FloorMatrix[row][mcol].setEntity(w);
-                       break;
-                   case 'A':
-                       w = new Worker(161);
-                       layout.AddWorker(w);
-                       w.setPlace(FloorMatrix[row][mcol]);
-                       FloorMatrix[row][mcol].setEntity(w);
-                       break;
-                   case 'S':
-                       c = new Crate(30);
-                       layout.AddCrate(c);
-                       c.setPlace(FloorMatrix[row][mcol]);
-                       FloorMatrix[row][mcol].setEntity(c);
-                       break;
-                   case 'M':
-                       c = new Crate(60);
-                       layout.AddCrate(c);
-                       c.setPlace(FloorMatrix[row][mcol]);
-                       FloorMatrix[row][mcol].setEntity(c);
-                       break;
-                   case 'L':
-                       c = new Crate(80);
-                       layout.AddCrate(c);
-                       c.setPlace(FloorMatrix[row][mcol]);
-                       FloorMatrix[row][mcol].setEntity(c);
-                       break;
-               }
-               charfb = line.charAt(col+2);
-               switch (charfb)
-               {
-                   case 'H':
-                       FloorMatrix[row][mcol].setLiquid(new Liquid('H'));
-                       break;
-                   case 'O':
-                       FloorMatrix[row][mcol].setLiquid(new Liquid('O'));
-                       break;
-                   case 'N':
-                       FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
-                       break;
-                   default:
-                       FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
-                       break;
-               }
-               mcol++;
-           }
-           row++;
-           mcol = 0;
+                Worker w;
+                Crate c;
+                switch (charfb) {
+                    case 'K':
+                        w = new Worker(61);
+                        layout.AddWorker(w);
+                        w.setPlace(FloorMatrix[row][mcol]);
+                        FloorMatrix[row][mcol].setEntity(w);
+                        break;
+                    case 'T':
+                        w = new Worker(121);
+                        layout.AddWorker(w);
+                        w.setPlace(FloorMatrix[row][mcol]);
+                        FloorMatrix[row][mcol].setEntity(w);
+                        break;
+                    case 'A':
+                        w = new Worker(161);
+                        layout.AddWorker(w);
+                        w.setPlace(FloorMatrix[row][mcol]);
+                        FloorMatrix[row][mcol].setEntity(w);
+                        break;
+                    case 'S':
+                        c = new Crate(30);
+                        layout.AddCrate(c);
+                        c.setPlace(FloorMatrix[row][mcol]);
+                        FloorMatrix[row][mcol].setEntity(c);
+                        break;
+                    case 'M':
+                        c = new Crate(60);
+                        layout.AddCrate(c);
+                        c.setPlace(FloorMatrix[row][mcol]);
+                        FloorMatrix[row][mcol].setEntity(c);
+                        break;
+                    case 'L':
+                        c = new Crate(80);
+                        layout.AddCrate(c);
+                        c.setPlace(FloorMatrix[row][mcol]);
+                        FloorMatrix[row][mcol].setEntity(c);
+                        break;
+                }
+                charfb = line.charAt(col + 2);
+                switch (charfb) {
+                    case 'H':
+                        FloorMatrix[row][mcol].setLiquid(new Liquid('H'));
+                        break;
+                    case 'O':
+                        FloorMatrix[row][mcol].setLiquid(new Liquid('O'));
+                        break;
+                    case 'N':
+                        FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
+                        break;
+                    default:
+                        FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
+                        break;
+                }
+                mcol++;
+            }
+            row++;
+            mcol = 0;
             line = br.readLine();
         }
         br.close();
         System.out.print("\n");
 
-        ShowLevel();
 
         int colNum;
         int rowNum;
-        for ( rowNum = 0; rowNum < FloorMatrix.length; rowNum ++){
-            for ( colNum = 0; colNum < FloorMatrix[rowNum].length; colNum ++){
+        for (rowNum = 0; rowNum < FloorMatrix.length; rowNum++) {
+            for (colNum = 0; colNum < FloorMatrix[rowNum].length; colNum++) {
                 // handle top edge , all northern neighbor is null
-                if( FloorMatrix[rowNum][colNum] != null)
-                {
-                    if ( rowNum == 0 ) {
+                if (FloorMatrix[rowNum][colNum] != null) {
+                    if (rowNum == 0) {
                         FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.up);
                     } else {
-                        FloorMatrix[rowNum][colNum].setNeighbor( FloorMatrix[rowNum-1][colNum], Direction.up);
+                        FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum - 1][colNum], Direction.up);
                     }
                     // handle bottom edge , all southern neighbor is null
-                    if ( rowNum == FloorMatrix.length-1) {
+                    if (rowNum == FloorMatrix.length - 1) {
                         FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.down);
                     } else {
-                        FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum+1][colNum], Direction.down);
+                        FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum + 1][colNum], Direction.down);
                     }
                     // handle left edge , all western neighbor is null
-                    if ( colNum == 0 ) {
+                    if (colNum == 0) {
                         FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.left);
                     } else {
-                        FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum-1], Direction.left);
+                        FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum - 1], Direction.left);
                     }
                     // handle top edge , all eastern neighbor is null
-                    if ( colNum == FloorMatrix[rowNum].length-1) {
+                    if (colNum == FloorMatrix[rowNum].length - 1) {
                         FloorMatrix[rowNum][colNum].setNeighbor(null, Direction.right);
                     } else {
-                        FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum+1], Direction.right);
+                        FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum + 1], Direction.right);
                     }
+                    FloorMatrix[rowNum][colNum].SetPosition(new Position(rowNum, colNum));
                     layout.AddFloorbase(FloorMatrix[rowNum][colNum]);
                 }
             }
         }
-        l.exit(this, "NewGame", "void");
+        ShowLevel();
+
     }
+
 
     /**
      * Ends the game.
      */
     public void GameOver()
     {
-        Logger l = new Logger();
-        l.enter(this, "GameOver");
-        l.exit(this, "GameOver", "void");
         //Later
     }
 
@@ -268,10 +270,7 @@ public class Game {
      */
     public void SetLevel(int level)
     {
-        Logger l = new Logger();
-        l.enter(this, "SetLevel");
         currentLevel=level;
-        l.exit(this, "SetLevel", "void");
     }
     @Override
     public String toString() {

@@ -24,7 +24,12 @@ public class Main{
 
         Window window = new Window();
         window.run(args);
-
+        Game g = Game.getInstance();
+        try {
+            g.LoadMap("map.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         /*
         System.out.println("Sokoban-san");
         Logger.loggerInit();
