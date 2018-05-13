@@ -25,6 +25,8 @@ public class Window extends Application{
         this.game = game;
     }
 
+    private Game game;
+
     public Menu getMenu() {
         return menu;
     }
@@ -33,8 +35,7 @@ public class Window extends Application{
         this.menu = menu;
     }
 
-    private Game game;
-    private Menu menu;
+    private Menu menu = new Menu();
 
     @Override
     public void start(Stage primaryStage) throws Exception {

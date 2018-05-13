@@ -22,10 +22,7 @@ public class Main{
 
     public static void main(String[] args) throws IOException{
 
-        Menu menu = new Menu();
-
         Window window = new Window();
-        window.setMenu(menu);
         window.run(args);
 
         /*
