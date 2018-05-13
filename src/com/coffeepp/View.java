@@ -10,31 +10,34 @@ public class View {
 
 
     public void drawAll(){
-        //TODO
+        for (int i=0; i<drawables.size(); i++){
+            Drawable dr= drawables.get(i);
+            dr.Draw();
+        }
     }
-
+    //még nincs kész
     public void addCrate(Crate m){
-        //TODO
+       // drawables.add(m);
     }
 
     public void addWorker(Worker w){
-        //TODO
+        //drawables.add(w);
     }
 
     public void addFloorBase(FloorBase fb){
-        //TODO
+        //drawables.add(fb);
     }
 
     public void addLiquid(Liquid l){
-        //TODO
+        //drawables.add(l);
     }
 
     public void removeMovable(Movable m){
-        //TODO
+        drawables.remove(m);
     }
 
     public void removeLiquid(Liquid l){
-        //TODO
+        drawables.remove(l);
     }
 
 }
