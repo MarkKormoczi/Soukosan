@@ -14,6 +14,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -45,6 +46,24 @@ public class Menu{
 		titleText.setY(70);
 		titleText.setText("Load game");
 		list.add(titleText);
+
+		File folder = new File("maps/");
+		File[] listOfFiles = folder.listFiles();
+
+		for (int i = 0; i < listOfFiles.length; i++) {
+			if (listOfFiles[i].isFile()) {
+				//Writes out 1 map
+				String mapName = listOfFiles[i].getName();
+				Text mapText = new Text();
+				mapText.setFont(new Font(35));
+				mapText.setX(100);
+				mapText.setY(150 + (i * 80));
+				mapText.setText(mapName);
+				list.add(mapText);
+				mapText.addEventHandler(MouseEvent.MOUSE_CLICKED,
+						e -> System.out.print(mapName));
+			}
+		}
 
 		//Return text
 		Text returnText = new Text();
