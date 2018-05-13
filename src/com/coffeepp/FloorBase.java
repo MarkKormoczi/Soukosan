@@ -16,7 +16,6 @@ public abstract class FloorBase implements Updatable {
     private FloorBase right;
     private Movable entity;
     private Liquid liquid;
-    public Graphic_FloorBase graphic;
 
     /**
      * Returns the entity contained in this floor.
