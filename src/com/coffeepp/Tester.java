@@ -431,7 +431,6 @@ public class Tester {
                         game.getLayout().GetWorkers().get(0).Move(Direction.up);
                         game.getLayout().GetWorkers().get(0).Move(Direction.left);
                         game.getLayout().GetWorkers().get(0).Move(Direction.up);
-                        game.ShowLevel();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

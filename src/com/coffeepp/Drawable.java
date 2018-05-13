@@ -2,5 +2,5 @@ package com.coffeepp;
 
 public interface Drawable {
 
-    public void Draw();
+    public void Draw() throws Exception;
 }

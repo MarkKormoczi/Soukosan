@@ -16,31 +16,42 @@ public abstract class FloorBase implements Updatable {
     private FloorBase right;
     private Movable entity;
     private Liquid liquid;
+    public Graphic_FloorBase graphic;
 
     /**
      * Returns the entity contained in this floor.
+     *
      * @return the entity
      */
     public String nam;
-    public FloorBase()
-    {
+
+    public FloorBase() {
 
     }
-    public Position GetPosition()
-    {
+
+    public Position GetPosition() {
         return p;
     }
-    public void SetPosition(Position _p)
-    {
+
+    public void SetPosition(Position _p) {
         p = _p;
     }
-    public FloorBase(String m)
-    {nam = m;}
+
+    public FloorBase(String m) {
+        nam = m;
+    }
+
     public Movable getEntity() {
-        if(entity!=null){
-        return entity;}
+        if (entity != null) {
+            return entity;
+        }
         return null;
 
+    }
+
+    public Graphic_FloorBase GetGraphics()
+    {
+        return graphic;
     }
     public Liquid getLiquid() {
         return liquid;

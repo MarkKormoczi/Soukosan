@@ -12,7 +12,11 @@ public class View {
     public void drawAll(){
         for (int i=0; i<drawables.size(); i++){
             Drawable dr= drawables.get(i);
-            dr.Draw();
+            try {
+                dr.Draw();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
     //még nincs kész

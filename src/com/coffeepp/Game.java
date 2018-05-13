@@ -35,8 +35,7 @@ public class Game {
      * Singleton instance getter.
      * @return the only instance
      */
-    public void ShowLevel()
-    {
+    public void ShowLevel() {
         for(int i = 0; i < maxrow;i++)
         {
             for ( int j = 0; j<maxcol; j++)
@@ -98,9 +97,6 @@ public class Game {
         }
     }
     public void LoadMap(String level) throws IOException {
-        Logger l = new Logger();
-        l.enter(this, "NewGame");
-
         layout = new WareHouse();
 
         // Commented out since file loading is not implemented into skeleton
@@ -251,7 +247,7 @@ public class Game {
                 }
             }
         }
-        ShowLevel();
+
 
     }
 
