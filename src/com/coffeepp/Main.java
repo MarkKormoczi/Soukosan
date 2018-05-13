@@ -21,15 +21,14 @@ public class Main{
 
 
     public static void main(String[] args) throws IOException{
-
-        Window window = new Window();
-        window.run(args);
         Game g = Game.getInstance();
         try {
             g.LoadMap("map.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Window window = new Window();
+        window.run(args);
         /*
         System.out.println("Sokoban-san");
         Logger.loggerInit();

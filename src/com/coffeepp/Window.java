@@ -65,6 +65,14 @@ public class Window extends Application{
         newGameText.setY(300);
         newGameText.setText("New Game");
         list.add(newGameText);
+        EventHandler<MouseEvent> newEventHandler = e -> {
+            try {
+                menu.newGame(primaryStage);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        };
+        newGameText.addEventFilter(MouseEvent.MOUSE_CLICKED, newEventHandler);
 
         //Load Game text
         Text loadGameText = new Text();
