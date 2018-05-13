@@ -1,9 +1,15 @@
 package com.coffeepp;
+
+import javafx.geometry.Pos;
+
+import java.io.PipedOutputStream;
+
 /**
  * This is the basic floortype whch the more special types inherit form
  */
 public abstract class FloorBase implements Updatable {
 
+    private Position p;
     private FloorBase up;
     private FloorBase down;
     private FloorBase left;
@@ -20,21 +26,22 @@ public abstract class FloorBase implements Updatable {
     {
 
     }
+    public Position GetPosition()
+    {
+        return p;
+    }
+    public void SetPosition(Position _p)
+    {
+        p = _p;
+    }
     public FloorBase(String m)
     {nam = m;}
     public Movable getEntity() {
-        Logger l = new Logger();
-        l.enter(this, "getEntity");
         if(entity!=null){
-        l.exit(this, "getEntity", entity.toString());
         return entity;}
         return null;
     }
     public Liquid getLiquid() {
-        Logger l = new Logger();
-        l.enter(this, "getLiquid");
-        if(entity!=null)
-            l.exit(this, "getLiquid", entity.toString());
         return liquid;
     }
     /**
