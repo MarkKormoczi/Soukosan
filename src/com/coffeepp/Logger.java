@@ -51,16 +51,6 @@ public class Logger {
 	 */
 	public void enter(Object thisObj, String functionName, String... params){
 		try {
-			FileWriter writer = new FileWriter(file,true);
-			for(int i = 0; i < numOfCalls; i++)writer.write("  ");
-			writer.write("-> Object: " + thisObj.toString() + " function: " + functionName + " parameters: ");
-			for (String s : params) {
-				writer.write(s + "; ");
-			}
-			writer.write(String.format("%n"));
-			writer.flush();
-		    writer.close();
-		    numOfCalls++;
 		}
 		catch (Exception e) {
 			e.printStackTrace(System.err);
@@ -77,12 +67,6 @@ public class Logger {
 	public void exit(Object thisObj, String functionName, String result){
 		try {
 			numOfCalls--;
-			FileWriter writer = new FileWriter(file,true);
-			for(int i = 0; i < numOfCalls; i++)writer.write("  ");
-			writer.write("<- Object: " + thisObj.toString() + " function: " + functionName + " returned value: " + result);
-			writer.write(String.format("%n"));
-			writer.flush();
-		    writer.close();
 		}
 	    catch (Exception e) {
 			e.printStackTrace(System.err);
