@@ -47,11 +47,6 @@ public abstract class FloorBase implements Updatable {
         return null;
 
     }
-
-    public Graphic_FloorBase GetGraphics()
-    {
-        return graphic;
-    }
     public Liquid getLiquid() {
         return liquid;
     }

@@ -14,10 +14,10 @@ public class Graphic_FloorBase implements Drawable{
     @Override
     public void Draw() throws Exception
     {
-        Image img = new Image(new FileInputStream(new File("img/asd.jpg").getAbsolutePath()));
-        ImageView imageView = new ImageView(img);
-        imageView.setX(0);
-        imageView.setY(0);
+       // Image img = ;
+        //ImageView imageView = new ImageView(img);
+        //imageView.setX(0);
+        //imageView.setY(0);
         //list.add(imageView);
     }
 }
