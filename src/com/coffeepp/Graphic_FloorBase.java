@@ -14,10 +14,6 @@ public class Graphic_FloorBase implements Drawable{
     @Override
     public void Draw() throws Exception
     {
-       // Image img = ;
-        //ImageView imageView = new ImageView(img);
-        //imageView.setX(0);
-        //imageView.setY(0);
-        //list.add(imageView);
+
     }
 }

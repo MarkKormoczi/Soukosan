@@ -5,6 +5,7 @@ public class Graphic_Crate extends Graphic_Movable{
 
     @Override
     public void Draw() {
+
         super.Draw();
     }
 }
