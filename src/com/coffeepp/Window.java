@@ -71,6 +71,14 @@ public class Window extends Application{
         loadGameText.setY(350);
         loadGameText.setText("Load Game");
         list.add(loadGameText);
+        EventHandler<MouseEvent> loadEventHandler = e -> {
+            try {
+                menu.loadGame(primaryStage);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        };
+        loadGameText.addEventFilter(MouseEvent.MOUSE_CLICKED, loadEventHandler);
 
         //Exit text
         Text exitText = new Text();
