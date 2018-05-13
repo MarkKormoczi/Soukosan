@@ -1,12 +1,34 @@
 package com.coffeepp;
 
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-public class Main {
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class Main{
+
 
     public static void main(String[] args) throws IOException{
+
+        Menu menu = new Menu();
+
+        Window window = new Window();
+        window.setMenu(menu);
+        window.run(args);
+
+        /*
         System.out.println("Sokoban-san");
         Logger.loggerInit();
 
@@ -27,6 +49,7 @@ public class Main {
         while(true){
             Controller.Command(br.readLine());
         }
+        */
 
     }
     @Override
