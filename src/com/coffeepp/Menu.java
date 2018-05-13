@@ -27,30 +27,46 @@ public class Menu{
 		//TODO
 	}
 
-	public void loadGame(Stage stage) throws Exception {
+	public void loadGame(Stage stage, Window window) throws Exception {
 		Group root = new Group();
 		ObservableList list = root.getChildren();
 
-		//Background
-		Image image = new Image(new FileInputStream(new File("img/back.jpg").getAbsolutePath()));
-		ImageView imageView = new ImageView(image);
+	//Background
+	Image image = new Image(new FileInputStream(new File("img/back.jpg").getAbsolutePath()));
+	ImageView imageView = new ImageView(image);
 		imageView.setX(0);
 		imageView.setY(0);
 		list.add(imageView);
 
-		//Title text
-		Text titleText = new Text();
+	//Title text
+	Text titleText = new Text();
 		titleText.setFont(new Font(45));
 		titleText.setX(30);
 		titleText.setY(70);
 		titleText.setText("Load game");
 		list.add(titleText);
 
-		Scene scene = new Scene(root, 600, 660);
+		//Return text
+		Text returnText = new Text();
+		returnText.setFont(new Font(35));
+		returnText.setX(470);
+		returnText.setY(620);
+		returnText.setText("Return");
+		list.add(returnText);
+		EventHandler<MouseEvent> returnEventHandler = e -> {
+			try {
+				window.start(stage);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		};
+		returnText.addEventFilter(MouseEvent.MOUSE_CLICKED, returnEventHandler);
+
+	Scene scene = new Scene(root, 600, 660);
 		stage.setTitle("倉庫さん");
 		stage.setScene(scene);
 		stage.show();
-	}
+}
 
 	public void exit(){
 		Platform.exit();

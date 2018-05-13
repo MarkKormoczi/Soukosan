@@ -74,7 +74,7 @@ public class Window extends Application{
         list.add(loadGameText);
         EventHandler<MouseEvent> loadEventHandler = e -> {
             try {
-                menu.loadGame(primaryStage);
+                menu.loadGame(primaryStage, this);
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
