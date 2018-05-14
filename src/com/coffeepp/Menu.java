@@ -27,13 +27,12 @@ public class Menu{
 	public Game newGame(Stage stage){
 		//TODO
 		View view = new View();
-		view.LoadDrawables();
 		Game game= new Game();
 		game.NewGame();
 
 
 
-		game.getView().drawAll();
+		game.getView().drawAll(stage);
 		return game;
 	}
 
@@ -43,7 +42,7 @@ public class Menu{
 
 	//Background
 	Image image = new Image(new FileInputStream(new File("img/back.jpg").getAbsolutePath()));
-	ImageView imageView = new ImageView(image);
+		ImageView imageView = new ImageView(image);
 		imageView.setX(0);
 		imageView.setY(0);
 		list.add(imageView);
@@ -70,7 +69,13 @@ public class Menu{
 				mapText.setText(mapName);
 				list.add(mapText);
 				mapText.addEventHandler(MouseEvent.MOUSE_CLICKED,
-						e -> System.out.print(mapName));
+						e -> {
+							try {
+								Game.getInstance().getView().SetStage(stage, window);
+							} catch (FileNotFoundException e1) {
+								e1.printStackTrace();
+							}
+						});
 			}
 		}
 
