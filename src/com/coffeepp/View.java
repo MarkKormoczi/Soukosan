@@ -1,10 +1,15 @@
 package com.coffeepp;
 
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javafx.scene.image.ImageView;
@@ -23,17 +28,15 @@ public class View {
     public void SetStage(Stage stage, Window window)
     {
         stage = stage;
-        Group root = new Group();
-        list = root.getChildren();
-        scene = new Scene(root, 600,660);
-        stage.setScene(drawAll());
-        drawAll();
+        scene = new Scene(drawAll(), 600,660);
+        stage.setScene(scene);
         stage.show();
     }
-    public Scene drawAll(){
+    public Group drawAll(){
         Group root = new Group();
         ObservableList dList = root.getChildren();
 System.out.println(drawables.size());
+
         for (int i=0; i<drawables.size(); i++){
             Drawable dr= drawables.get(i);
             try {
@@ -42,7 +45,20 @@ System.out.println(drawables.size());
                 e.printStackTrace();
             }
         }
-        return new Scene(root, 600,660);
+
+        //
+        //Exit text
+        Text exitText = new Text();
+        exitText.setFont(new Font(35));
+        exitText.setX(200);
+        exitText.setY(400);
+        exitText.setText("Test Text");
+        dList.add(exitText);
+        EventHandler<MouseEvent> exitEventHandler = e -> Platform.exit();
+        exitText.addEventFilter(MouseEvent.MOUSE_CLICKED, exitEventHandler);
+        //
+
+        return root;
 
     }
 
