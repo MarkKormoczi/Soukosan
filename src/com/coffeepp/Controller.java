@@ -117,4 +117,16 @@ public class Controller {
             System.out.println("Worker " + workerIndex + " Direction " + d.toString());
         //}
     }
+
+    public static void LiquidControl(int workerIndex, Liquid l){
+        Worker currentWorker = null;
+        currentWorker = game.getLayout().GetWorkers().get(workerIndex);
+        if (currentWorker != null){
+            if (l!=null)
+                currentWorker.LaysLiquid(l);
+            else
+                currentWorker.RemoveLiquid();
+
+        }
+    }
 }

@@ -10,7 +10,8 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>{
     @Override
     public void handle(KeyEvent event) {
         int workerIndex= 0;
-        if(event.getCode().isArrowKey())
+        if(event.getCode().isArrowKey() || event.getCode().equals(KeyCode.CONTROL) || event.getCode().equals(KeyCode.SHIFT)
+                || event.getCode().equals(KeyCode.ENTER))
             workerIndex = 1;
 
         if(event.getCode().equals(KeyCode.UP)) {
@@ -36,6 +37,24 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>{
         }
         if(event.getCode().equals(KeyCode.D)) {
             Controller.WorkerControl(workerIndex, Direction.left);
+        }
+        if(event.getCode().equals(KeyCode.Q)) {
+            Controller.LiquidControl(workerIndex, new Liquid('H'));
+        }
+        if(event.getCode().equals(KeyCode.E)) {
+            Controller.LiquidControl(workerIndex, new Liquid('O'));
+        }
+        if(event.getCode().equals(KeyCode.R)) {
+            Controller.LiquidControl(workerIndex, null);
+        }
+        if(event.getCode().equals(KeyCode.CONTROL)) {
+            Controller.LiquidControl(workerIndex, new Liquid('O'));
+        }
+        if(event.getCode().equals(KeyCode.SHIFT)) {
+            Controller.LiquidControl(workerIndex, new Liquid('O'));
+        }
+        if(event.getCode().equals(KeyCode.ENTER)) {
+            Controller.LiquidControl(workerIndex, null);
         }
     }
 }
