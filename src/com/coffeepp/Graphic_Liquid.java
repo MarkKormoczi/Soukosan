@@ -15,7 +15,6 @@ public class Graphic_Liquid implements Drawable {
 
     public Graphic_Liquid(Liquid gr){
         graphic=gr;
-
             Honey = Resources.getInstance().img_Honey;
             Oil = Resources.getInstance().img_Oil;
             z_index = 1;
