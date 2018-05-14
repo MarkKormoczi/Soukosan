@@ -21,7 +21,7 @@ public class Game {
     /**
      * Private constructor bc singleton.
      */
-    public Game() {}
+    public Game() { }
 
     public View getView(){
         return view;

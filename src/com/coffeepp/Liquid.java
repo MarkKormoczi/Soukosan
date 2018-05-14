@@ -3,6 +3,7 @@ package com.coffeepp;
 public class Liquid {
     private String name;
     private double modifier;
+
     public Liquid(char c)
     {
         switch(c)

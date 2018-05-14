@@ -1,6 +1,7 @@
 package com.coffeepp;
 
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +22,7 @@ public class Graphic_Liquid implements Drawable {
     }
 
     @Override
-    public void Draw() {
+    public void Draw(Stage stage) {
 
     }
 }

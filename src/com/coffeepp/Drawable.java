@@ -1,6 +1,8 @@
 package com.coffeepp;
 
+import javafx.stage.Stage;
+
 public interface Drawable {
 
-    public void Draw() throws Exception;
+    public void Draw(Stage stage) throws Exception;
 }

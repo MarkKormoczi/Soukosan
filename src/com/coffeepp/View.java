@@ -22,7 +22,7 @@ public class View {
         for (int i=0; i<drawables.size(); i++){
             Drawable dr= drawables.get(i);
             try {
-                dr.Draw();
+                dr.Draw(stage);
             } catch (Exception e) {
                 e.printStackTrace();
             }

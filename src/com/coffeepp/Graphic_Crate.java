@@ -1,6 +1,10 @@
 package com.coffeepp;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Group;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,12 +25,18 @@ public class Graphic_Crate extends Graphic_Movable{
     }
 
     @Override
-    public void Draw() {
+    public void Draw(Stage stage) {
+        Group root = new Group();
+        ObservableList list = root.getChildren();
+
         int x= graphic.getPlace().GetPosition().GetX();
         int y= graphic.getPlace().GetPosition().GetY();
-        //ImageView imageView = new ImageView(img);
-        //imageView.setX(x);
-        //imageView.setY(y);
+
+        ImageView imageView = new ImageView(img);
+        imageView.setX(x);
+        imageView.setY(y);
+        list.add(imageView);
+        stage.show();
 
     }
 
