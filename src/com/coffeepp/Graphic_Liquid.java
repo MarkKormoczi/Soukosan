@@ -16,9 +16,8 @@ public class Graphic_Liquid implements Drawable {
     public Graphic_Liquid(Liquid gr){
         graphic=gr;
 
-            //img = new Image(new FileInputStream(new File("img/crate.png").getAbsolutePath())); //ez nem oké
-            //Honey = Resources.getInstance().img_Honey;
-            //Oil = Resources.getInstance().img_Oil;
+            Honey = Resources.getInstance().img_Honey;
+            Oil = Resources.getInstance().img_Oil;
             z_index = 1;
     }
     public Graphic_Liquid()
