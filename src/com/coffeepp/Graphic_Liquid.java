@@ -7,17 +7,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Graphic_Liquid implements Drawable {
-    private Image img;
+    private Image Oil;
+    private Image Honey;
     private int z_index;
     private Liquid graphic;
 
     public Graphic_Liquid(Liquid gr){
         graphic=gr;
-        try {
-            img = new Image(new FileInputStream(new File("img/crate.png").getAbsolutePath())); //ez nem oké
-        }
-        catch (IOException e) {
-        }
+
+            //img = new Image(new FileInputStream(new File("img/crate.png").getAbsolutePath())); //ez nem oké
+            Honey = Resources.getInstance().img_Honey;
+            Oil = Resources.getInstance().img_Oil;
+
     }
 
     @Override

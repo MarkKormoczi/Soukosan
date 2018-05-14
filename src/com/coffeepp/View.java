@@ -28,10 +28,12 @@ public class View {
             }
         }
     }
+    public void LoadDrawables()
+    {
 
-    public void addCrate(Graphic_Crate m){
-        drawables.add(m);
     }
+
+     public void addCrate(Graphic_Crate m){drawables.add(m);}
 
     public void addWorker(Graphic_Worker w){
         drawables.add(w);

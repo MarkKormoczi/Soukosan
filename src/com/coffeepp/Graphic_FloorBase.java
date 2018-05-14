@@ -20,6 +20,10 @@ public class Graphic_FloorBase implements Drawable{
         catch (IOException e) {
         }
     }
+    public void SetImage(Image img)
+    {
+        img = img;
+    }
 
     @Override
     public void Draw() throws Exception

@@ -14,18 +14,18 @@ public class Resources
         }
         return instance;
     }
-    private Image img_Floor;
-    private Image img_Trap;
-    private Image img_Hole;
-    private Image img_Obstruction;
-    private Image img_Crate;
-    private Image img_SwitchOn;
-    private Image img_SwitchOff;
-    private Image img_TargetSpot;
-    private Image img_Honey;
-    private Image img_Oil;
-    private Image[] worker1 = new Image[4];
-    private Image[] worker2 = new Image[4];
+    public Image img_Floor;
+    public Image img_Trap;
+    public Image img_Hole;
+    public Image img_Obstruction;
+    public Image img_Crate;
+    public Image img_SwitchOn;
+    public Image img_SwitchOff;
+    public Image img_TargetSpot;
+    public Image img_Honey;
+    public Image img_Oil;
+    public Image[] worker2 = new Image[4];
+    public Image[] worker1 = new Image[4];
     public Resources()
     {
         img_Floor       = new Image(new File("img/floor.png").getAbsolutePath());
