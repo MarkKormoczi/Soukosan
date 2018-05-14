@@ -14,7 +14,7 @@ public class Game {
     private int maxrow = 0;
 
     private int FPS = 60;
-    private View view;
+    private View view= new View();
 
     public static Game instance = null;
 

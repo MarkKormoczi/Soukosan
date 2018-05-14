@@ -67,7 +67,7 @@ public class Window extends Application{
         list.add(newGameText);
         EventHandler<MouseEvent> newEventHandler = e -> {
             try {
-                menu.newGame(primaryStage);
+                game= menu.newGame(primaryStage);
             } catch (Exception e1) {
                 e1.printStackTrace();
             }

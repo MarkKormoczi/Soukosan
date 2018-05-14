@@ -24,8 +24,15 @@ public class Menu{
 	private Pane pane;
 	private ArrayList mapList;
 
-	public void newGame(Stage stage){
+	public Game newGame(Stage stage){
 		//TODO
+		Game game= new Game();
+		game.NewGame();
+
+
+
+		game.getView().drawAll();
+		return game;
 	}
 
 	public void loadGame(Stage stage, Window window) throws Exception {

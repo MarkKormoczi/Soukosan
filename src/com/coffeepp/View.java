@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class View {
     private Pane map;
-    private ArrayList<Drawable> drawables;
+    private ArrayList<Drawable> drawables= new ArrayList<Drawable>();
     private Stage stage;
     ObservableList list;
     public void SetStage(Stage stage, Window window)
@@ -28,28 +28,28 @@ public class View {
             }
         }
     }
-    //még nincs kész
-    public void addCrate(Crate m){
-       // drawables.add(m);
+
+    public void addCrate(Graphic_Crate m){
+        drawables.add(m);
     }
 
-    public void addWorker(Worker w){
-        //drawables.add(w);
+    public void addWorker(Graphic_Worker w){
+        drawables.add(w);
     }
 
-    public void addFloorBase(FloorBase fb){
-        //drawables.add(fb);
+    public void addFloorBase(Graphic_FloorBase fb){
+        drawables.add(fb);
     }
 
-    public void addLiquid(Liquid l){
-        //drawables.add(l);
+    public void addLiquid(Graphic_Liquid l){
+        drawables.add(l);
     }
 
-    public void removeMovable(Movable m){
+    public void removeMovable(Graphic_Movable m){
         drawables.remove(m);
     }
 
-    public void removeLiquid(Liquid l){
+    public void removeLiquid(Graphic_Liquid l){
         drawables.remove(l);
     }
 
