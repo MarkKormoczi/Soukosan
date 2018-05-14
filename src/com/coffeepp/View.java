@@ -16,10 +16,8 @@ import javafx.scene.image.ImageView;
 import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class View {
     private Pane map;
@@ -27,36 +25,84 @@ public class View {
     private Stage stage;
     private Scene scene;
     ObservableList list;
-    public void SetStage(Stage stage, Window window)
+    private int cnt = 0;
+    public void SetStage(Stage _stage, Window window)
     {
-        stage = stage;
-        scene = new Scene(drawAll(), 600,660);
+        stage = _stage;
+        scene = new Scene(drawAll());
         stage.setScene(scene);
-        stage.show();
-        StartGame();
+
+
+       // StartTimer(stage);
     }
-    public void StartGame()
+    public void Update()
     {
+        stage.setScene(new Scene(drawAll()));
+
+    }
+    public void StartTimer(Stage s)
+    {
+
         Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
+        TimerTask task = new TimerTask()
+        {
+            public void run()
+            {
+                System.out.println(cnt++);
+                //Update();
             }
         };
+        timer.scheduleAtFixedRate(task, 500, 500);
+
+
+    }
+    public int compareTo(int o1, int o2) {
+        int v1 = (o1);
+        int v2 = (o2);
+        if(v1 == v2) {
+            return 0;
+        }
+        if(v1 < v2) {
+            return 2; //return negative integer if first argument is less than second
+        }
+        return 1;
     }
     public Group drawAll(){
         Group root = new Group();
         ObservableList dList = root.getChildren();
-
+       // drawables.sort(e->e.getZ());
         for (int i=0; i<drawables.size(); i++){
-            Drawable dr= drawables.get(i);
-            try {
-                dr.Draw(dList);
-                System.out.println(drawables.get(i).toString());
-            } catch (Exception e) {
-                e.printStackTrace();
+
+            if(drawables.get(i).getZ()==0)
+            {
+                try {
+                    drawables.get(i).Draw(dList);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
+        for (int i=0; i < drawables.size(); i++){
+            if(drawables.get(i).getZ()==1)
+            {
+                try {
+                    drawables.get(i).Draw(dList);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        for (int i=0; i < drawables.size(); i++){
+            if(drawables.get(i).getZ()==2)
+            {
+                try {
+                    drawables.get(i).Draw(dList);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
 
         //
         //Exit text

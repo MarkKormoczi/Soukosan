@@ -39,15 +39,16 @@ public class Game {
      * @return the only instance
      */
     public void ShowLevel() {
+        System.out.println("asd");
         for(int i = 0; i < maxrow;i++)
         {
             for ( int j = 0; j<maxcol; j++)
             {
-                if(FloorMatrix[i][j].GetPosition() != null){
-                    System.out.print(FloorMatrix[i][j].GetPosition().GetX()+",");
-                System.out.print(FloorMatrix[i][j].GetPosition().GetY()+"\t");}
+                if(FloorMatrix[i][j].getEntity() != null){
+                    System.out.print(FloorMatrix[i][j].getEntity()+"\t");
+                }
                 else
-                    System.out.println("asfasf ");
+                    System.out.println(FloorMatrix[i][j].toString());
             }
             System.out.print("\n");
         }
@@ -223,14 +224,14 @@ public class Game {
                         l = new Liquid('H');
                         FloorMatrix[row][mcol].setLiquid(l);
                         l.SetPlace(FloorMatrix[row][mcol]);
-                        gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        gl = new Graphic_Honey(FloorMatrix[row][mcol].getLiquid());
                         gameView.addLiquid(gl);
                         break;
                     case 'O':
                         l = new Liquid('O');
                         FloorMatrix[row][mcol].setLiquid(l);
                         l.SetPlace(FloorMatrix[row][mcol]);
-                        gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        gl = new Graphic_Oil(FloorMatrix[row][mcol].getLiquid());
                         gameView.addLiquid(gl);
                         break;
                     case 'N':

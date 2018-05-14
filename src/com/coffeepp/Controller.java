@@ -45,10 +45,21 @@ public class Controller {
                 String direction = input[2];
                 Worker currentWorker = game.getLayout().GetWorkers().get(workerIndex);
                 switch (direction.toLowerCase()){
-                    case "left": currentWorker.Move(Direction.left); break;
-                    case "right": currentWorker.Move(Direction.right); break;
-                    case "up": currentWorker.Move(Direction.up); break;
-                    case "down": currentWorker.Move(Direction.down); break;
+                    case "left": currentWorker.Move(Direction.left);
+                    Game.getInstance().getView().Update();
+                    game.ShowLevel();
+                        break;
+                    case "right": currentWorker.Move(Direction.right);
+                        game.ShowLevel();
+                    Game.getInstance().getView().Update();
+                        break;
+                    case "up": currentWorker.Move(Direction.up);
+                    Game.getInstance().getView().Update();game.ShowLevel();
+                        break;
+                    case "down": currentWorker.Move(Direction.down);
+                    Game.getInstance().getView().Update();
+                    game.ShowLevel();
+                        break;
                 }
                 break;
 
@@ -98,9 +109,9 @@ public class Controller {
 
     public static void WorkerControl(int workerIndex, Direction d){
         Worker currentWorker = null;
-        //currentWorker = game.getLayout().GetWorkers().get(workerIndex);
-        //if(currentWorker != null) {
-            /*switch (d) {
+            currentWorker = Game.getInstance().getLayout().GetWorkers().get(workerIndex);
+        if(currentWorker != null) {
+            switch (d) {
                 case left:
                     currentWorker.Move(Direction.left);
                     break;
@@ -113,20 +124,24 @@ public class Controller {
                 case down:
                     currentWorker.Move(Direction.down);
                     break;
-            }*/
+
+            }
+            Game.getInstance().getView().drawAll();
+            Game.getInstance().getView().Update();
+
             System.out.println("Worker " + workerIndex + " Direction " + d.toString());
         //}
     }
 
-    public static void LiquidControl(int workerIndex, Liquid l){
-        Worker currentWorker = null;
+  //  public static void LiquidControl(int workerIndex, Liquid l){
+       /* Worker currentWorker = null;
         currentWorker = game.getLayout().GetWorkers().get(workerIndex);
         if (currentWorker != null){
-            if (l!=null)
+            if (l !=null)
                 currentWorker.LaysLiquid(l);
             else
                 currentWorker.RemoveLiquid();
 
-        }
+        }*/
     }
 }

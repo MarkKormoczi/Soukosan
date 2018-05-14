@@ -33,12 +33,12 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>{
             Controller.WorkerControl(workerIndex, Direction.down);
         }
         if(event.getCode().equals(KeyCode.A)) {
-            Controller.WorkerControl(workerIndex, Direction.right);
-        }
-        if(event.getCode().equals(KeyCode.D)) {
             Controller.WorkerControl(workerIndex, Direction.left);
         }
-        if(event.getCode().equals(KeyCode.Q)) {
+        if(event.getCode().equals(KeyCode.D)) {
+            Controller.WorkerControl(workerIndex, Direction.right);
+        }
+       /* if(event.getCode().equals(KeyCode.Q)) {
             Controller.LiquidControl(workerIndex, new Liquid('H'));
         }
         if(event.getCode().equals(KeyCode.E)) {
@@ -55,6 +55,6 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>{
         }
         if(event.getCode().equals(KeyCode.ENTER)) {
             Controller.LiquidControl(workerIndex, null);
-        }
+        }*/
     }
 }
