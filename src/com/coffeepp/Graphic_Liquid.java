@@ -21,6 +21,12 @@ public class Graphic_Liquid implements Drawable {
     }
     public Graphic_Liquid()
     {}
+    public Liquid getGraphic()
+    {return graphic;}
+    public Image getImg()
+    {return img;}
+    public void setImg(Image image)
+    {img = image;}
     public int getZ()
     {
         return z_index;
