@@ -16,8 +16,8 @@ public class Graphic_Floor extends Graphic_FloorBase {
         int y= getGraphic().GetPosition().GetY();
 
         ImageView imageView = new ImageView(getImg());
-        imageView.setX(x*60);
-        imageView.setY(y*60);
+        imageView.setX(x);
+        imageView.setY(y);
         list.add(imageView);
     }
 }

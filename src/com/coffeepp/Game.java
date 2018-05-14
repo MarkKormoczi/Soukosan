@@ -238,6 +238,7 @@ public class Game {
                         break;
                 }
                 gameView.addLiquid(gl);
+                System.out.println(gameView.drawables.size());
                 mcol++;
             }
             row++;

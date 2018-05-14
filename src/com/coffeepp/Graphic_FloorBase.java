@@ -22,6 +22,7 @@ public class Graphic_FloorBase implements Drawable{
         z_index = 0;
     }
     public Graphic_FloorBase(){
+        img = Resources.getInstance().img_Floor;
     }
 
     public FloorBase getGraphic()

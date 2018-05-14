@@ -27,19 +27,17 @@ public class Menu{
 	public Game newGame(Stage stage){
 		//TODO
 		View view = new View();
-		Game game= new Game();
-		game.NewGame();
+		Game game= Game.getInstance();
 
 
 
-		game.getView().drawAll(stage);
 		return game;
 	}
 
 	public void loadGame(Stage stage, Window window) throws Exception {
 		Group root = new Group();
 		ObservableList list = root.getChildren();
-
+        Game g = Game.getInstance();
 	//Background
 	Image image = new Image(new FileInputStream(new File("img/back.jpg").getAbsolutePath()));
 		ImageView imageView = new ImageView(image);
@@ -68,16 +66,10 @@ public class Menu{
 				mapText.setY(150 + (i * 80));
 				mapText.setText(mapName);
 				list.add(mapText);
-				mapText.addEventHandler(MouseEvent.MOUSE_CLICKED,
-						e -> {
-							try {
-								Game.getInstance().getView().SetStage(stage, window);
-							} catch (FileNotFoundException e1) {
-								e1.printStackTrace();
-							}
-						});
-			}
-		}
+                mapText.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                        e -> g.getView().SetStage(stage, window));
+
+		}}
 
 		//Return text
 		Text returnText = new Text();

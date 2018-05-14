@@ -1,17 +1,22 @@
 package com.coffeepp;
 
+import javafx.scene.image.Image;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import javafx.scene.image.ImageView;
+import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class View {
     private Pane map;
-    private ArrayList<Drawable> drawables= new ArrayList<Drawable>();
+    public  ArrayList<Drawable> drawables= new ArrayList<Drawable>();
     private Stage stage;
     private Scene scene;
     ObservableList list;
@@ -22,11 +27,13 @@ public class View {
         list = root.getChildren();
         scene = new Scene(root, 600,660);
         stage.setScene(drawAll());
+        drawAll();
         stage.show();
     }
     public Scene drawAll(){
         Group root = new Group();
         ObservableList dList = root.getChildren();
+System.out.println(drawables.size());
         for (int i=0; i<drawables.size(); i++){
             Drawable dr= drawables.get(i);
             try {
