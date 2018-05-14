@@ -14,11 +14,8 @@ public class Graphic_FloorBase implements Drawable{
 
     public Graphic_FloorBase(FloorBase gr){
         graphic=gr;
-        try {
-            img = new Image(new FileInputStream(new File("img/floor.png").getAbsolutePath()));
-        }
-        catch (IOException e) {
-        }
+
+        z_index = 0;
     }
     public void SetImage(Image img)
     {
