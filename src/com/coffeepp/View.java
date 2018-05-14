@@ -17,36 +17,28 @@ public class View {
     ObservableList list;
     public void SetStage(Stage stage, Window window)
     {
-
         stage = stage;
         Group root = new Group();
         list = root.getChildren();
         scene = new Scene(root, 600,660);
+        stage.setScene(drawAll());
+        stage.show();
     }
-    public void drawAll(){
+    public Scene drawAll(){
+        Group root = new Group();
+        ObservableList dList = root.getChildren();
         for (int i=0; i<drawables.size(); i++){
             Drawable dr= drawables.get(i);
             try {
-                dr.Draw(list);
+                dr.Draw(dList);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            stage.setTitle("Soukosan");
-            stage.setScene(scene);
-
-            stage.show();
-
         }
-    }
-    public void LoadDrawables()
-    {
-        List<FloorBase> f = (List<FloorBase>) Game.getInstance().getLayout();
-        for (int i = 0; i < f.size(); i++)
-        {
-           // drawables.add();
-        }
+        return new Scene(root, 600,660);
 
     }
+
 
     public void addCrate(Graphic_Crate m){drawables.add(m);}
 
