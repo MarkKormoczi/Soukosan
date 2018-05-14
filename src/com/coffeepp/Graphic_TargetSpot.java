@@ -1,14 +1,22 @@
 package com.coffeepp;
 
 import javafx.collections.ObservableList;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class Graphic_TargetSpot extends Graphic_FloorBase {
     public Graphic_TargetSpot(FloorBase gr) {
         super(gr);
 
-        SetImage(Resources.getInstance().img_TargetSpot);
-    }
+        try {
+            SetImage(new Image(new FileInputStream(new File("img/targetSpot.png").getAbsolutePath())));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }    }
 
     public void Draw(ObservableList list) {
         super.Draw(list);

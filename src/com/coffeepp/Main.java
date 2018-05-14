@@ -23,7 +23,7 @@ public class Main{
     public static void main(String[] args) throws IOException{
         Game g = Game.getInstance();
         try {
-            g.LoadMap("map.txt");
+            g.LoadMap("maps/testlevel1.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }

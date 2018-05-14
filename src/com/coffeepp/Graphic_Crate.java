@@ -17,11 +17,7 @@ public class Graphic_Crate extends Graphic_Movable{
 
     public Graphic_Crate(Crate gr){
         graphic=gr;
-        try {
-            img = new Image(new FileInputStream(new File("img/crate.png").getAbsolutePath()));
-        }
-        catch (IOException e) {
-        }
+            img = Resources.getInstance().img_Crate;
     }
 
     @Override
@@ -30,9 +26,9 @@ public class Graphic_Crate extends Graphic_Movable{
         int x= graphic.getPlace().GetPosition().GetX();
         int y= graphic.getPlace().GetPosition().GetY();
 
-        ImageView imageView = new ImageView(getImg());
-        imageView.setX(x);
-        imageView.setY(y);
+        ImageView imageView = new ImageView(img);
+        imageView.setX(x*80);
+        imageView.setY(y*80);
         list.add(imageView);
     }
 

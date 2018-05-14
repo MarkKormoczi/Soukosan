@@ -14,10 +14,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.Console;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Menu{
@@ -66,10 +63,17 @@ public class Menu{
 				mapText.setY(150 + (i * 80));
 				mapText.setText(mapName);
 				list.add(mapText);
-                mapText.addEventHandler(MouseEvent.MOUSE_CLICKED,
-                        e -> g.getView().SetStage(stage, window));
+				mapText.addEventHandler(MouseEvent.MOUSE_CLICKED,e ->{
+					try {
+						g.LoadMap("maps/"+mapText.getText());
+						g.getView().SetStage(stage, window);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+				});
 
-		}}
+
+			}}
 
 		//Return text
 		Text returnText = new Text();

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Graphic_FloorBase implements Drawable{
@@ -22,16 +23,17 @@ public class Graphic_FloorBase implements Drawable{
         z_index = 0;
     }
     public Graphic_FloorBase(){
-        img = Resources.getInstance().img_Floor;
+
+
     }
 
     public FloorBase getGraphic()
     {return graphic;}
     public Image getImg()
     {return img;}
-    public void SetImage(Image img)
+    public void SetImage(Image image)
     {
-        img = img;
+        img = image;
     }
     public int getZ()
     {
@@ -44,8 +46,8 @@ public class Graphic_FloorBase implements Drawable{
         int y= graphic.GetPosition().GetY();
 
         ImageView imageView = new ImageView(img);
-        imageView.setX(x*60);
-        imageView.setY(y*60);
+        imageView.setX(x*80);
+        imageView.setY(y*80);
         list.add(imageView);
     }
 }

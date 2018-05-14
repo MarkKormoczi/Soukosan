@@ -19,8 +19,6 @@ public class Graphic_Liquid implements Drawable {
         graphic=gr;
             z_index = 1;
     }
-    public Graphic_Liquid()
-    {}
     public Liquid getGraphic()
     {return graphic;}
     public Image getImg()

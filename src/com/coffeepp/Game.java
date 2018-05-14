@@ -1,4 +1,6 @@
 package com.coffeepp;
+import javafx.scene.control.TableView;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,9 +15,9 @@ public class Game {
     private int maxcol = 0;
     private int maxrow = 0;
     private View gameView;
+    public Resources resources;
 
     private int FPS = 60;
-    private View view= new View();
 
     public static Game instance = null;
 
@@ -25,7 +27,7 @@ public class Game {
     public Game() { }
 
     public View getView(){
-        return view;
+        return gameView;
     }
 
     public void setFPS(int i){
@@ -100,7 +102,7 @@ public class Game {
     public void LoadMap(String level) throws IOException {
         layout = new WareHouse();
         gameView = new View();
-
+        resources = Resources.getInstance();
         // Commented out since file loading is not implemented into skeleton
         FileReader fr = new FileReader(level);
         BufferedReader br = new BufferedReader(fr);
@@ -160,7 +162,7 @@ public class Game {
 
                 Worker w;
                 Crate c;
-                Graphic_Movable m = new Graphic_Worker();
+                Graphic_Movable m;
                 switch (charfb) {
                     case 'K':
                         w = new Worker(61);
@@ -168,6 +170,7 @@ public class Game {
                         w.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(w);
                         m = new Graphic_Worker(w);
+                        gameView.addMovable(m);
 
                         break;
                     case 'T':
@@ -176,6 +179,7 @@ public class Game {
                         w.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(w);
                         m = new Graphic_Worker(w);
+                        gameView.addMovable(m);
                         break;
                     case 'A':
                         w = new Worker(161);
@@ -183,6 +187,7 @@ public class Game {
                         w.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(w);
                         m = new Graphic_Worker(w);
+                        gameView.addMovable(m);
                         break;
                     case 'S':
                         c = new Crate(30);
@@ -190,6 +195,7 @@ public class Game {
                         c.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(c);
                         m = new Graphic_Crate(c);
+                        gameView.addMovable(m);
                         break;
                     case 'M':
                         c = new Crate(60);
@@ -197,6 +203,7 @@ public class Game {
                         c.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(c);
                         m = new Graphic_Crate(c);
+                        gameView.addMovable(m);
                         break;
                     case 'L':
                         c = new Crate(80);
@@ -204,12 +211,12 @@ public class Game {
                         c.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(c);
                         m = new Graphic_Crate(c);
+                        gameView.addMovable(m);
                         break;
                 }
-                gameView.addMovable(m);
 
                 charfb = line.charAt(col + 2);
-                Graphic_Liquid gl = new Graphic_Liquid();
+                Graphic_Liquid gl;
                 Liquid l;
                 switch (charfb) {
                     case 'H':
@@ -217,27 +224,30 @@ public class Game {
                         FloorMatrix[row][mcol].setLiquid(l);
                         l.SetPlace(FloorMatrix[row][mcol]);
                         gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        gameView.addLiquid(gl);
                         break;
                     case 'O':
                         l = new Liquid('O');
                         FloorMatrix[row][mcol].setLiquid(l);
                         l.SetPlace(FloorMatrix[row][mcol]);
                         gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        gameView.addLiquid(gl);
                         break;
                     case 'N':
                         l = new Liquid('N');
                         FloorMatrix[row][mcol].setLiquid(l);
                         l.SetPlace(FloorMatrix[row][mcol]);
                         gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        gameView.addLiquid(gl);
                         break;
                     default:
                         l = new Liquid('N');
                         FloorMatrix[row][mcol].setLiquid(l);
                         l.SetPlace(FloorMatrix[row][mcol]);
                         gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        gameView.addLiquid(gl);
                         break;
                 }
-                gameView.addLiquid(gl);
                 System.out.println(gameView.drawables.size());
                 mcol++;
             }
@@ -278,7 +288,7 @@ public class Game {
                     } else {
                         FloorMatrix[rowNum][colNum].setNeighbor(FloorMatrix[rowNum][colNum + 1], Direction.right);
                     }
-                    FloorMatrix[rowNum][colNum].SetPosition(new Position(rowNum, colNum));
+                    FloorMatrix[rowNum][colNum].SetPosition(new Position(colNum, rowNum));
                     layout.AddFloorbase(FloorMatrix[rowNum][colNum]);
                 }
             }

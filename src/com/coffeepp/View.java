@@ -18,6 +18,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class View {
     private Pane map;
@@ -31,16 +33,26 @@ public class View {
         scene = new Scene(drawAll(), 600,660);
         stage.setScene(scene);
         stage.show();
+        StartGame();
+    }
+    public void StartGame()
+    {
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+            }
+        };
     }
     public Group drawAll(){
         Group root = new Group();
         ObservableList dList = root.getChildren();
-System.out.println(drawables.size());
 
         for (int i=0; i<drawables.size(); i++){
             Drawable dr= drawables.get(i);
             try {
                 dr.Draw(dList);
+                System.out.println(drawables.get(i).toString());
             } catch (Exception e) {
                 e.printStackTrace();
             }
