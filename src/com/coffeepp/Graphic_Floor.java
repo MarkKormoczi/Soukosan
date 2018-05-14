@@ -1,6 +1,7 @@
 package com.coffeepp;
 
 import javafx.collections.ObservableList;
+import javafx.scene.image.ImageView;
 
 public class Graphic_Floor extends Graphic_FloorBase {
     public Graphic_Floor(FloorBase gr) {
@@ -11,6 +12,12 @@ public class Graphic_Floor extends Graphic_FloorBase {
 
     public void Draw(ObservableList list)
     {
-        super.Draw(list);
+        int x= getGraphic().GetPosition().GetX();
+        int y= getGraphic().GetPosition().GetY();
+
+        ImageView imageView = new ImageView(getImg());
+        imageView.setX(x*60);
+        imageView.setY(y*60);
+        list.add(imageView);
     }
 }

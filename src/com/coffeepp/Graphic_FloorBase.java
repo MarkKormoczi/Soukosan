@@ -23,6 +23,11 @@ public class Graphic_FloorBase implements Drawable{
     }
     public Graphic_FloorBase(){
     }
+
+    public FloorBase getGraphic()
+    {return graphic;}
+    public Image getImg()
+    {return img;}
     public void SetImage(Image img)
     {
         img = img;
