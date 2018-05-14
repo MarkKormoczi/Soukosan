@@ -25,19 +25,15 @@ public class Graphic_Crate extends Graphic_Movable{
     }
 
     @Override
-    public void Draw(Stage stage) {
-        Group root = new Group();
-        ObservableList list = root.getChildren();
-
+    public void Draw(ObservableList list)
+    {
         int x= graphic.getPlace().GetPosition().GetX();
         int y= graphic.getPlace().GetPosition().GetY();
 
-        ImageView imageView = new ImageView(img);
+        ImageView imageView = new ImageView(getImg());
         imageView.setX(x);
         imageView.setY(y);
         list.add(imageView);
-        stage.show();
-
     }
 
     public void Destroy(){

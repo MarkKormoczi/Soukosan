@@ -1,8 +1,9 @@
 package com.coffeepp;
 
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 
 public interface Drawable {
 
-    public void Draw(Stage stage) throws Exception;
+    public void Draw(ObservableList list) throws Exception;
 }

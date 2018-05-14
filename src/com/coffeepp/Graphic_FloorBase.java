@@ -2,6 +2,7 @@ package com.coffeepp;
 
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -31,9 +32,7 @@ public class Graphic_FloorBase implements Drawable{
         return z_index;
     }
     @Override
-    public void Draw(Stage stage) {
-        Group root = new Group();
-        ObservableList list = root.getChildren();
+    public void Draw(ObservableList list) {
 
         int x= graphic.GetPosition().GetX();
         int y= graphic.GetPosition().GetY();
@@ -42,6 +41,5 @@ public class Graphic_FloorBase implements Drawable{
         imageView.setX(x*60);
         imageView.setY(y*60);
         list.add(imageView);
-        stage.show();
     }
 }

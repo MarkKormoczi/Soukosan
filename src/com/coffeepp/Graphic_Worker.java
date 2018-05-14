@@ -18,9 +18,7 @@ public class Graphic_Worker extends Graphic_Movable{
          graphic = w;
     }
     @Override
-    public void Draw(Stage stage) {
-        Group root = new Group();
-        ObservableList list = root.getChildren();
+    public void Draw(ObservableList list) {
 
         int x= graphic.getPlace().GetPosition().GetX();
         int y= graphic.getPlace().GetPosition().GetY();
@@ -29,7 +27,6 @@ public class Graphic_Worker extends Graphic_Movable{
         imageView.setX(x);
         imageView.setY(y);
         list.add(imageView);
-        stage.show();
 
     }
 }

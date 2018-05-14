@@ -1,5 +1,6 @@
 package com.coffeepp;
 
+import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -12,7 +13,7 @@ public abstract class Graphic_Movable implements Drawable{
     }
 
     @Override
-    public void Draw(Stage stage) {
+    public void Draw(ObservableList list) {
 
     }
     public int getZ()

@@ -26,10 +26,8 @@ public class Graphic_Liquid implements Drawable {
         return z_index;
     }
     @Override
-    public void Draw(Stage stage)
+    public void Draw(ObservableList list)
     {
-        Group root = new Group();
-        ObservableList list = root.getChildren();
 
         int x= graphic.GetPlace().GetPosition().GetX();
         int y= graphic.GetPlace().GetPosition().GetY();
@@ -38,6 +36,5 @@ public class Graphic_Liquid implements Drawable {
         imageView.setX(x*60);
         imageView.setY(y*60);
         list.add(imageView);
-        stage.show();
     }
 }

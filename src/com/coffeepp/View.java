@@ -2,6 +2,7 @@ package com.coffeepp;
 
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -12,21 +13,29 @@ public class View {
     private Pane map;
     private ArrayList<Drawable> drawables= new ArrayList<Drawable>();
     private Stage stage;
+    private Scene scene;
     ObservableList list;
     public void SetStage(Stage stage, Window window)
     {
+
         stage = stage;
         Group root = new Group();
         list = root.getChildren();
+        scene = new Scene(root, 600,660);
     }
     public void drawAll(){
         for (int i=0; i<drawables.size(); i++){
             Drawable dr= drawables.get(i);
             try {
-                dr.Draw(stage);
+                dr.Draw(list);
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            stage.setTitle("Soukosan");
+            stage.setScene(scene);
+
+            stage.show();
+
         }
     }
     public void LoadDrawables()
