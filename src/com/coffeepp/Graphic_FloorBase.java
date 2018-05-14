@@ -39,10 +39,9 @@ public class Graphic_FloorBase implements Drawable{
         int y= graphic.GetPosition().GetY();
 
         ImageView imageView = new ImageView(img);
-        imageView.setX(x);
-        imageView.setY(y);
+        imageView.setX(x*60);
+        imageView.setY(y*60);
         list.add(imageView);
         stage.show();
-
     }
 }

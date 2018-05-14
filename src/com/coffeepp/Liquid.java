@@ -3,7 +3,16 @@ package com.coffeepp;
 public class Liquid {
     private String name;
     private double modifier;
+    private FloorBase place;
 
+    public FloorBase GetPlace()
+    {
+        return place;
+    }
+    public void SetPlace(FloorBase f)
+    {
+        place = f;
+    }
     public Liquid(char c)
     {
         switch(c)

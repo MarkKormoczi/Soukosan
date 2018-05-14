@@ -209,26 +209,35 @@ public class Game {
                 gameView.addMovable(m);
 
                 charfb = line.charAt(col + 2);
-                Graphic_Liquid l = new Graphic_Liquid();
+                Graphic_Liquid gl = new Graphic_Liquid();
+                Liquid l;
                 switch (charfb) {
                     case 'H':
-                        FloorMatrix[row][mcol].setLiquid(new Liquid('H'));
-                        l = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        l = new Liquid('H');
+                        FloorMatrix[row][mcol].setLiquid(l);
+                        l.SetPlace(FloorMatrix[row][mcol]);
+                        gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
                         break;
                     case 'O':
-                        FloorMatrix[row][mcol].setLiquid(new Liquid('O'));
-                        l = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        l = new Liquid('O');
+                        FloorMatrix[row][mcol].setLiquid(l);
+                        l.SetPlace(FloorMatrix[row][mcol]);
+                        gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
                         break;
                     case 'N':
-                        FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
-                        l = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        l = new Liquid('N');
+                        FloorMatrix[row][mcol].setLiquid(l);
+                        l.SetPlace(FloorMatrix[row][mcol]);
+                        gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
                         break;
                     default:
-                        FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
-                        l = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
+                        l = new Liquid('N');
+                        FloorMatrix[row][mcol].setLiquid(l);
+                        l.SetPlace(FloorMatrix[row][mcol]);
+                        gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
                         break;
                 }
-                gameView.addLiquid(l);
+                gameView.addLiquid(gl);
                 mcol++;
             }
             row++;
