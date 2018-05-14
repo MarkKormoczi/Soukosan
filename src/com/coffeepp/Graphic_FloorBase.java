@@ -20,11 +20,16 @@ public class Graphic_FloorBase implements Drawable{
 
         z_index = 0;
     }
+    public Graphic_FloorBase(){
+    }
     public void SetImage(Image img)
     {
         img = img;
     }
-
+    public int getZ()
+    {
+        return z_index;
+    }
     @Override
     public void Draw(Stage stage) {
         Group root = new Group();

@@ -17,11 +17,16 @@ public class Graphic_Liquid implements Drawable {
         graphic=gr;
 
             //img = new Image(new FileInputStream(new File("img/crate.png").getAbsolutePath())); //ez nem oké
-            Honey = Resources.getInstance().img_Honey;
-            Oil = Resources.getInstance().img_Oil;
+            //Honey = Resources.getInstance().img_Honey;
+            //Oil = Resources.getInstance().img_Oil;
             z_index = 1;
     }
-
+    public Graphic_Liquid()
+    {}
+    public int getZ()
+    {
+        return z_index;
+    }
     @Override
     public void Draw(Stage stage) {
 

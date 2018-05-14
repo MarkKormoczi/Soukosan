@@ -12,6 +12,7 @@ public class Game {
     public FloorBase[][] FloorMatrix;
     private int maxcol = 0;
     private int maxrow = 0;
+    private View gameView;
 
     private int FPS = 60;
     private View view= new View();
@@ -98,6 +99,7 @@ public class Game {
     }
     public void LoadMap(String level) throws IOException {
         layout = new WareHouse();
+        gameView = new View();
 
         // Commented out since file loading is not implemented into skeleton
         FileReader fr = new FileReader(level);
@@ -126,83 +128,107 @@ public class Game {
             //A palya tarolasa vegett 3-t kell leptetni és ezért kell az mcol valtozo is
             for (int col = 0; col < line.length(); col += 3) {
                 char charfb = line.charAt(col);
+                Graphic_FloorBase f = new Graphic_FloorBase();
                 switch (charfb) {
                     case '0':
                         FloorMatrix[row][mcol] = new Obstruction();
+                         f = new Graphic_Obstruction(FloorMatrix[row][mcol]);
                         break;
                     case '1':
                         FloorMatrix[row][mcol] = new Floor();
+                         f = new Graphic_Floor(FloorMatrix[row][mcol]);
                         break;
                     case '2':
                         FloorMatrix[row][mcol] = new TargetSpot();
+                         f = new Graphic_TargetSpot(FloorMatrix[row][mcol]);
                         break;
                     case '3':
                         FloorMatrix[row][mcol] = new Switch();
+                         f = new Graphic_Switch(FloorMatrix[row][mcol]);
                         break;
                     case '4':
                         FloorMatrix[row][mcol] = new Trap();
+                         f = new Graphic_Trap(FloorMatrix[row][mcol]);
                         break;
                     case '5':
                         FloorMatrix[row][mcol] = new Hole();
+                         f = new Graphic_Hole(FloorMatrix[row][mcol]);
                         break;
                 }
+                gameView.addFloorBase(f);
                 charfb = line.charAt(col + 1);
 
                 Worker w;
                 Crate c;
+                Graphic_Movable m = new Graphic_Worker();
                 switch (charfb) {
                     case 'K':
                         w = new Worker(61);
                         layout.AddWorker(w);
                         w.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(w);
+                        m = new Graphic_Worker(w);
+
                         break;
                     case 'T':
                         w = new Worker(121);
                         layout.AddWorker(w);
                         w.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(w);
+                        m = new Graphic_Worker(w);
                         break;
                     case 'A':
                         w = new Worker(161);
                         layout.AddWorker(w);
                         w.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(w);
+                        m = new Graphic_Worker(w);
                         break;
                     case 'S':
                         c = new Crate(30);
                         layout.AddCrate(c);
                         c.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(c);
+                        m = new Graphic_Crate(c);
                         break;
                     case 'M':
                         c = new Crate(60);
                         layout.AddCrate(c);
                         c.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(c);
+                        m = new Graphic_Crate(c);
                         break;
                     case 'L':
                         c = new Crate(80);
                         layout.AddCrate(c);
                         c.setPlace(FloorMatrix[row][mcol]);
                         FloorMatrix[row][mcol].setEntity(c);
+                        m = new Graphic_Crate(c);
                         break;
                 }
+                gameView.addMovable(m);
+
                 charfb = line.charAt(col + 2);
+                Graphic_Liquid l = new Graphic_Liquid();
                 switch (charfb) {
                     case 'H':
                         FloorMatrix[row][mcol].setLiquid(new Liquid('H'));
+                        l = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
                         break;
                     case 'O':
                         FloorMatrix[row][mcol].setLiquid(new Liquid('O'));
+                        l = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
                         break;
                     case 'N':
                         FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
+                        l = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
                         break;
                     default:
                         FloorMatrix[row][mcol].setLiquid(new Liquid('N'));
+                        l = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
                         break;
                 }
+                gameView.addLiquid(l);
                 mcol++;
             }
             row++;

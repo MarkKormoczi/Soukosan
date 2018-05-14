@@ -10,8 +10,17 @@ public abstract class Graphic_Movable implements Drawable{
     {
         z_index = 2;
     }
+
     @Override
     public void Draw(Stage stage) {
 
+    }
+    public int getZ()
+    {
+        return z_index;
+    }
+    public Image getImg()
+    {
+        return img;
     }
 }

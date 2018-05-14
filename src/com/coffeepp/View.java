@@ -6,6 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class View {
     private Pane map;
@@ -30,10 +31,19 @@ public class View {
     }
     public void LoadDrawables()
     {
+        List<FloorBase> f = (List<FloorBase>) Game.getInstance().getLayout();
+        for (int i = 0; i < f.size(); i++)
+        {
+           // drawables.add();
+        }
 
     }
 
-     public void addCrate(Graphic_Crate m){drawables.add(m);}
+    public void addCrate(Graphic_Crate m){drawables.add(m);}
+
+    public void addMovable(Graphic_Movable m) {
+        drawables.add(m);
+    }
 
     public void addWorker(Graphic_Worker w){
         drawables.add(w);

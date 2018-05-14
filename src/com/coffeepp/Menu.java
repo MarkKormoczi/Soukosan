@@ -26,6 +26,8 @@ public class Menu{
 
 	public Game newGame(Stage stage){
 		//TODO
+		View view = new View();
+		view.LoadDrawables();
 		Game game= new Game();
 		game.NewGame();
 
