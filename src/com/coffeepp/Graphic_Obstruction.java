@@ -8,8 +8,9 @@ public class Graphic_Obstruction extends Graphic_FloorBase {
         SetImage(Resources.getInstance().img_Obstruction);
 
     }
-      public void Draw(ObservableList list)
+      public boolean Draw(ObservableList list)
     {
         super.Draw(list);
+        return true;
     }
 }

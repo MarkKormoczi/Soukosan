@@ -12,8 +12,9 @@ public class Graphic_Hole extends Graphic_FloorBase {
         super(gr);
         SetImage(Resources.getInstance().img_Hole);
     }
-    public void Draw(ObservableList list)
+    public boolean Draw(ObservableList list)
     {
         super.Draw(list);
+        return true;
     }
 }

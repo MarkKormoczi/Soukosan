@@ -25,7 +25,7 @@ public class Graphic_FloorBase implements Drawable{
         return z_index;
     }
     @Override
-    public void Draw(ObservableList list) {
+    public boolean Draw(ObservableList list) {
 
         int x= graphic.GetPosition().GetX();
         int y= graphic.GetPosition().GetY();
@@ -34,5 +34,6 @@ public class Graphic_FloorBase implements Drawable{
         imageView.setX(x*80);
         imageView.setY(50+y*80);
         list.add(imageView);
+        return true;
     }
 }

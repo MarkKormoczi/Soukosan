@@ -12,8 +12,8 @@ public abstract class Graphic_Movable implements Drawable{
     }
 
     @Override
-    public void Draw(ObservableList list) {
-
+    public boolean Draw(ObservableList list) {
+        return true;
     }
     public int getZ()
     {

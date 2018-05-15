@@ -8,8 +8,9 @@ public class Graphic_Oil extends Graphic_Liquid {
         super(gr);
         SetImage(Resources.getInstance().img_Oil);
     }
-    public void Draw(ObservableList list)
+    public boolean Draw(ObservableList list)
     {
         super.Draw(list);
+        return true;
     }
 }

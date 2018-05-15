@@ -23,7 +23,7 @@ public class Graphic_Liquid implements Drawable {
         return z_index;
     }
     @Override
-    public void Draw(ObservableList list)
+    public boolean Draw(ObservableList list)
     {
         System.out.println(graphic.GetPlace());
         int x= graphic.GetPlace().GetPosition().GetX();
@@ -33,5 +33,6 @@ public class Graphic_Liquid implements Drawable {
         imageView.setX(x*80);
         imageView.setY(50+y*80);
         list.add(imageView);
+        return true;
     }
 }

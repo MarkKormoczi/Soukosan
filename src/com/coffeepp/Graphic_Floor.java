@@ -9,8 +9,9 @@ public class Graphic_Floor extends Graphic_FloorBase {
             SetImage(Resources.getInstance().img_Floor);
     }
 
-    public void Draw(ObservableList list)
+    public boolean Draw(ObservableList list)
     {
         super.Draw(list);
+        return true;
     }
 }

@@ -77,7 +77,8 @@ public class View {
             if(drawables.get(i).getZ()==0)
             {
                 try {
-                    drawables.get(i).Draw(dList);
+                    if(!drawables.get(i).Draw(dList))
+                        drawables.remove(i);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -87,7 +88,8 @@ public class View {
             if(drawables.get(i).getZ()==1)
             {
                 try {
-                    drawables.get(i).Draw(dList);
+                    if(!drawables.get(i).Draw(dList))
+                        drawables.remove(i);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -97,7 +99,8 @@ public class View {
             if(drawables.get(i).getZ()==2)
             {
                 try {
-                    drawables.get(i).Draw(dList);
+                    if(!drawables.get(i).Draw(dList))
+                        drawables.remove(i);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

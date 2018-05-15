@@ -20,7 +20,7 @@ public class Graphic_Worker extends Graphic_Movable{
         img[3] = Resources.getInstance().worker1[3];
     }
     @Override
-    public void Draw(ObservableList list) {
+    public boolean Draw(ObservableList list) {
         if(graphic.getPlace() != null) {
             int x = graphic.getPlace().GetPosition().GetX();
             int y = graphic.getPlace().GetPosition().GetY();
@@ -29,6 +29,9 @@ public class Graphic_Worker extends Graphic_Movable{
             imageView.setX(x*80+10);
             imageView.setY(50+y*80+10);
             list.add(imageView);
+            return true;
         }
+        else
+            return false;
     }
 }

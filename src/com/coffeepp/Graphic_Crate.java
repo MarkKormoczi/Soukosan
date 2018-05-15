@@ -16,15 +16,20 @@ public class Graphic_Crate extends Graphic_Movable{
     }
 
     @Override
-    public void Draw(ObservableList list)
+    public boolean Draw(ObservableList list)
     {
-        int x= graphic.getPlace().GetPosition().GetX();
-        int y= graphic.getPlace().GetPosition().GetY();
+        if(graphic.getPlace() != null) {
+            int x = graphic.getPlace().GetPosition().GetX();
+            int y = graphic.getPlace().GetPosition().GetY();
 
-        ImageView imageView = new ImageView(img);
-        imageView.setX(x*80);
-        imageView.setY(50+y*80);
-        list.add(imageView);
+            ImageView imageView = new ImageView(img);
+            imageView.setX(x * 80);
+            imageView.setY(50 + y * 80);
+            list.add(imageView);
+            return true;
+        }
+        else
+            return false;
     }
 
     public void Destroy(){

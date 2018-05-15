@@ -17,8 +17,9 @@ public class Graphic_Switch extends Graphic_FloorBase {
         }        img2 = Resources.getInstance().img_SwitchOff;
 
     }
-    public void Draw(ObservableList list)
+    public boolean Draw(ObservableList list)
     {
         super.Draw(list);
+        return  true;
     }
 }
