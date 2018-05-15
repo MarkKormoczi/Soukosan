@@ -64,7 +64,7 @@ public abstract class FloorBase implements Updatable {
         Logger l = new Logger();
         l.enter(this, "setLiquid");
         liquid = _liquid;
-
+        liquid.SetPlace(this);
         l.exit(this, "setLiquid", "void");
     }
     /**

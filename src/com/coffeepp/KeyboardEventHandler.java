@@ -48,7 +48,7 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>{
             Controller.LiquidControl(workerIndex, null);
         }
         if(event.getCode().equals(KeyCode.CONTROL)) {
-            Controller.LiquidControl(workerIndex, new Liquid('O'));
+            Controller.LiquidControl(workerIndex, new Liquid('H'));
         }
         if(event.getCode().equals(KeyCode.SHIFT)) {
             Controller.LiquidControl(workerIndex, new Liquid('O'));

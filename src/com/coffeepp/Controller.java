@@ -139,13 +139,15 @@ public class Controller {
         currentWorker = Game.getInstance().getLayout().GetWorkers().get(workerIndex);
         if (currentWorker != null) {
             if (l != null) {
-                currentWorker.LaysLiquid(l);
-                game.getView().addLiquid(new Graphic_Liquid(l));
+                if(l.getName().equals("Oil"))
+                    Game.getInstance().getView().addLiquid(new Graphic_Oil( currentWorker.LaysLiquid(l)));
+                else
+                    Game.getInstance().getView().addLiquid(new Graphic_Honey(currentWorker.LaysLiquid(l)));
             }
             else {
                 Liquid liq= currentWorker.getPlace().getLiquid();
                 currentWorker.RemoveLiquid();
-                game.getView().removeLiquid(new Graphic_Liquid(liq));
+                Game.getInstance().getView().removeLiquid(new Graphic_Liquid(liq));
             }
 
         }

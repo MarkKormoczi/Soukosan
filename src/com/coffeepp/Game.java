@@ -242,11 +242,6 @@ public class Game {
                         gameView.addLiquid(gl);
                         break;
                     default:
-                        l = new Liquid('N');
-                        FloorMatrix[row][mcol].setLiquid(l);
-                        l.SetPlace(FloorMatrix[row][mcol]);
-                        gl = new Graphic_Liquid(FloorMatrix[row][mcol].getLiquid());
-                        gameView.addLiquid(gl);
                         break;
                 }
                 System.out.println(gameView.drawables.size());

@@ -76,17 +76,20 @@ public class Worker extends Movable {
     /**
      * Removes the liquid from the floor where the worker stands
      */
-    public void RemoveLiquid()
+    public Liquid RemoveLiquid()
     {
         this.getPlace().setLiquid(new Liquid('N'));
+        //dont you get fooled by the method name....
+        return this.getPlace().getLiquid();
     }
     /**
      * Lays the given liquid to the floor where the worker stands
-     * @param c
+     * @param
      */
-    public void LaysLiquid(Liquid _liquid)
+    public Liquid LaysLiquid(Liquid _liquid)
     {
         this.getPlace().setLiquid(_liquid);
+        return  this.getPlace().getLiquid();
     }
 
     /**
