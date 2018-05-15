@@ -1,5 +1,4 @@
 package com.coffeepp;
-import javafx.scene.control.TableView;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,7 +8,7 @@ import java.io.IOException;
  * Responsible for starting the game, level loading, and general game control.
  */
 public class Game {
-    private int currentLevel;
+    private String currentLevel;
     private WareHouse layout;
     public FloorBase[][] FloorMatrix;
     private int maxcol = 0;
@@ -81,10 +80,6 @@ public class Game {
      * Returns the current level
      * @return
      */
-    public int GetCurrentLevel()
-    {
-        return currentLevel;
-    }
 
     /**
      * Loads and starts a new game.
@@ -99,8 +94,10 @@ public class Game {
         }
     }
     public void LoadMap(String level) throws IOException {
+        currentLevel = level;
         gameover = false;
         layout = new WareHouse();
+        if(gameView == null)
         gameView = new View();
         resources = Resources.getInstance();
         // Commented out since file loading is not implemented into skeleton
@@ -303,19 +300,14 @@ public class Game {
         gameView.ToMenu();
     }
 
-    /**
-     * Sets the current level to be played.
-     * @param level The desired level.
-     */
-    public void SetLevel(int level)
-    {
-        currentLevel=level;
-    }
     @Override
     public String toString() {
     	return "Game";
     }
-
+    public void Restart() throws IOException {
+        layout.Clear();
+        LoadMap(currentLevel);
+    }
     public boolean isGameOver() {
     return gameover;
     }

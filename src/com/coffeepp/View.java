@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
@@ -17,6 +18,7 @@ import javafx.scene.image.ImageView;
 import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -36,6 +38,8 @@ public class View {
         window = _window;
         menu = _stage;
         stage = _stage;
+        stage.addEventHandler(KeyEvent.KEY_PRESSED, new KeyboardEventHandler());
+
         scene = new Scene(drawAll());
         stage.setScene(scene);
 
@@ -118,19 +122,40 @@ public class View {
             }
         }
         Text back = new Text();
-        back.setFont(new Font(40));
-        back.setX(stage.getX()-100);
-        back.setY(40);
-        back.setText("Back");
+        back.setFont(new Font(20));
+        back.setX(stage.getX()-137);
+        back.setY(17);
+        back.setText("Back to menu");
         list.add(back);
         EventHandler<MouseEvent> exitEventHandler = e -> {
             try {
+
+                drawables.clear();
                 window.start(menu);
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
         };
         back.addEventFilter(MouseEvent.MOUSE_CLICKED, exitEventHandler);
+
+        Text restart = new Text();
+        restart.setFont(new Font(20));
+        restart.setX(stage.getX()-125);
+        restart.setY(45);
+        restart.setText("Restart level");
+        list.add(restart);
+        EventHandler<MouseEvent> restartEventHandler = e -> {
+            try {
+                drawables.clear();
+                list.clear();
+                gameover = false;
+                Game.getInstance().Restart();
+                Update();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        };
+        restart.addEventFilter(MouseEvent.MOUSE_CLICKED, restartEventHandler);
         if(gameover)
         {
             Text exitText = new Text();

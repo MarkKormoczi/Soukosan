@@ -104,7 +104,6 @@ public class Window extends Application{
         primaryStage.setTitle("倉庫さん");
         primaryStage.setScene(scene);
 
-        primaryStage.addEventHandler(KeyEvent.KEY_PRESSED, new KeyboardEventHandler());
 
         primaryStage.show();
     }
