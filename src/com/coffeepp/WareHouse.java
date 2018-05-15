@@ -8,8 +8,7 @@ import java.util.stream.Collectors;
 /**
  * Represents the Game location with floors crates and worksers.
  */
-public class WareHouse
-{
+public class WareHouse {
     private List<Worker> workers = new ArrayList<Worker>();
     private List<Crate> crates = new ArrayList<Crate>();
     private List<FloorBase> floorbases = new ArrayList<FloorBase>(); //mindenki updateable
@@ -17,6 +16,12 @@ public class WareHouse
     /**
      * Updates all updatable items
      */
+    public void Clear()
+    {
+        workers.clear();
+        crates.clear();
+        floorbases.clear();
+    }
     public void UpdateAll()
     {
 

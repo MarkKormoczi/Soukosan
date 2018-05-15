@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -23,11 +24,17 @@ public class View {
     private Pane map;
     public  ArrayList<Drawable> drawables= new ArrayList<Drawable>();
     private Stage stage;
+    private Stage menu;
     private Scene scene;
+    private boolean gameover = false;
+
     ObservableList list;
+    Window window;
     private int cnt = 0;
-    public void SetStage(Stage _stage, Window window)
+    public void SetStage(Stage _stage, Window _window)
     {
+        window = _window;
+        menu = _stage;
         stage = _stage;
         scene = new Scene(drawAll());
         stage.setScene(scene);
@@ -56,6 +63,10 @@ public class View {
 
 
     }
+    public void ToMenu( )
+    {
+        gameover = true;
+    }
     public int compareTo(int o1, int o2) {
         int v1 = (o1);
         int v2 = (o2);
@@ -70,14 +81,14 @@ public class View {
 
     public Group drawAll(){
         Group root = new Group();
-        ObservableList dList = root.getChildren();
+         list = root.getChildren();
        // drawables.sort(e->e.getZ());
         for (int i=0; i<drawables.size(); i++){
 
             if(drawables.get(i).getZ()==0)
             {
                 try {
-                    if(!drawables.get(i).Draw(dList))
+                    if(!drawables.get(i).Draw(list))
                         drawables.remove(i);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -88,7 +99,7 @@ public class View {
             if(drawables.get(i).getZ()==1)
             {
                 try {
-                    if(!drawables.get(i).Draw(dList))
+                    if(!drawables.get(i).Draw(list))
                         drawables.remove(i);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -96,28 +107,44 @@ public class View {
             }
         }
         for (int i=0; i < drawables.size(); i++){
-            if(drawables.get(i).getZ()==2)
+            if(drawables.get(i).getZ() == 2)
             {
                 try {
-                    if(!drawables.get(i).Draw(dList))
+                    if(!drawables.get(i).Draw(list))
                         drawables.remove(i);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
-
-
+        Text back = new Text();
+        back.setFont(new Font(40));
+        back.setX(stage.getX()-100);
+        back.setY(40);
+        back.setText("Back");
+        list.add(back);
+        EventHandler<MouseEvent> exitEventHandler = e -> {
+            try {
+                window.start(menu);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        };
+        back.addEventFilter(MouseEvent.MOUSE_CLICKED, exitEventHandler);
+        if(gameover)
+        {
+            Text exitText = new Text();
+            exitText.setFont(new Font(50));
+            exitText.setX(stage.getX()/2-137);
+            exitText.setY(250);
+            exitText.setText("Game Over\n Click here");
+            list.add(exitText);
+            exitText.addEventFilter(MouseEvent.MOUSE_CLICKED, exitEventHandler);
+        }
         //
         //Exit text
-        Text exitText = new Text();
-        exitText.setFont(new Font(35));
-        exitText.setX(200);
-        exitText.setY(400);
-        exitText.setText("Test Text");
-        dList.add(exitText);
-        EventHandler<MouseEvent> exitEventHandler = e -> Platform.exit();
-        exitText.addEventFilter(MouseEvent.MOUSE_CLICKED, exitEventHandler);
+
+
         //
 
         //Points

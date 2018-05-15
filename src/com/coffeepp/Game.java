@@ -15,6 +15,7 @@ public class Game {
     private int maxcol = 0;
     private int maxrow = 0;
     private View gameView;
+    private boolean gameover = false;
     public Resources resources;
 
     private int FPS = 60;
@@ -98,6 +99,7 @@ public class Game {
         }
     }
     public void LoadMap(String level) throws IOException {
+        gameover = false;
         layout = new WareHouse();
         gameView = new View();
         resources = Resources.getInstance();
@@ -296,7 +298,9 @@ public class Game {
      */
     public void GameOver()
     {
-        //Later
+        layout.Clear();
+        gameover = true;
+        gameView.ToMenu();
     }
 
     /**
@@ -310,5 +314,9 @@ public class Game {
     @Override
     public String toString() {
     	return "Game";
+    }
+
+    public boolean isGameOver() {
+    return gameover;
     }
 }

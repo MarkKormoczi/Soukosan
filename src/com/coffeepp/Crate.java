@@ -73,12 +73,9 @@ public class Crate extends Movable {
     }
     public void Destroy()
     {
-        Logger l = new Logger();
-        l.enter(this, "Destroy");
-
         this.setPlace(null);
-        l.exit(this, "Destroy", "void");
         System.out.println("Destroyed crate. Game Over.");
+
         Game.getInstance().GameOver();
 
     }

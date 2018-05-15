@@ -9,6 +9,7 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>{
 
     @Override
     public void handle(KeyEvent event) {
+        if(!Game.getInstance().isGameOver()){
         int workerIndex= 0;
         if(event.getCode().isArrowKey() || event.getCode().equals(KeyCode.CONTROL) || event.getCode().equals(KeyCode.SHIFT)
                 || event.getCode().equals(KeyCode.ENTER))
@@ -55,6 +56,6 @@ public class KeyboardEventHandler implements EventHandler<KeyEvent>{
         }
         if(event.getCode().equals(KeyCode.ENTER)) {
             Controller.LiquidControl(workerIndex, null);
-        }
+        }}
     }
 }
