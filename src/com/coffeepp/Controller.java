@@ -109,6 +109,7 @@ public class Controller {
 
     public static void WorkerControl(int workerIndex, Direction d){
         Worker currentWorker = null;
+        if(Game.getInstance().getLayout().GetWorkers().size() >= workerIndex+1)
             currentWorker = Game.getInstance().getLayout().GetWorkers().get(workerIndex);
         if(currentWorker != null) {
             switch (d) {

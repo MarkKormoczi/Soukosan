@@ -30,7 +30,7 @@ public class Graphic_Liquid implements Drawable {
 
         ImageView imageView = new ImageView(img);
         imageView.setX(x*80);
-        imageView.setY(y*80);
+        imageView.setY(50+y*80);
         list.add(imageView);
     }
 }

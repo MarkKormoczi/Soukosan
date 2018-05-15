@@ -24,7 +24,8 @@ public class TargetSpot extends FloorBase {
                 getEntity().setWeight(10000.0);
 
                 //System.out.println(getEntity().GetWeight());
-                m.AddPoints();
+                if(!m.getClass().equals(Worker.class))
+                    m.AddPoints();
                 l.exit(this, "Accept", "true");
                 return true;
             } else

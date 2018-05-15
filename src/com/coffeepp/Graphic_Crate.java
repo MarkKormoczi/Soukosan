@@ -23,7 +23,7 @@ public class Graphic_Crate extends Graphic_Movable{
 
         ImageView imageView = new ImageView(img);
         imageView.setX(x*80);
-        imageView.setY(y*80);
+        imageView.setY(50+y*80);
         list.add(imageView);
     }
 

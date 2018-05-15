@@ -67,6 +67,7 @@ public class View {
         }
         return 1;
     }
+
     public Group drawAll(){
         Group root = new Group();
         ObservableList dList = root.getChildren();
@@ -115,6 +116,23 @@ public class View {
         EventHandler<MouseEvent> exitEventHandler = e -> Platform.exit();
         exitText.addEventFilter(MouseEvent.MOUSE_CLICKED, exitEventHandler);
         //
+
+        //Points
+        Text player1Points = new Text();
+        player1Points.setFont(new Font(25));
+        player1Points.setX(10);
+        player1Points.setY(40);
+        player1Points.setText("Player 1: " + Game.getInstance().getLayout().GetWorkers().get(0).GetPoints());
+        dList.add(player1Points);
+
+        if (Game.getInstance().getLayout().GetWorkers().size() > 1) {
+            Text player2Points = new Text();
+            player2Points.setFont(new Font(25));
+            player2Points.setX(140);
+            player2Points.setY(40);
+            player2Points.setText("Player 2: " + Game.getInstance().getLayout().GetWorkers().get(1).GetPoints());
+            dList.add(player2Points);
+        }
 
         return root;
 

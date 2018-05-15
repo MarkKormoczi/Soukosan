@@ -21,13 +21,14 @@ public class Graphic_Worker extends Graphic_Movable{
     }
     @Override
     public void Draw(ObservableList list) {
-        int x= graphic.getPlace().GetPosition().GetX();
-        int y= graphic.getPlace().GetPosition().GetY();
+        if(graphic.getPlace() != null) {
+            int x = graphic.getPlace().GetPosition().GetX();
+            int y = graphic.getPlace().GetPosition().GetY();
 
-        ImageView imageView = new ImageView(img[0]);
-        imageView.setX(x*80+10);
-        imageView.setY(y*80+10);
-        list.add(imageView);
-
+            ImageView imageView = new ImageView(img[0]);
+            imageView.setX(x*80+10);
+            imageView.setY(50+y*80+10);
+            list.add(imageView);
+        }
     }
 }
