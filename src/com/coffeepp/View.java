@@ -38,7 +38,6 @@ public class View {
         window = _window;
         menu = _stage;
         stage = _stage;
-        stage.addEventHandler(KeyEvent.KEY_PRESSED, new KeyboardEventHandler());
 
         scene = new Scene(drawAll());
         stage.setScene(scene);
