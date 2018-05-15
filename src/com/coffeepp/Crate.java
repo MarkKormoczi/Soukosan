@@ -49,7 +49,7 @@ public class Crate extends Movable {
             if(this.getPlace()!=null)
             this.getPlace().Remove(this);
             this.setPlace(pl);
-            pl.setEntity(this);
+            pl.addEntity(this);
         }
         l.exit(this, "Push", "true");
         return true;

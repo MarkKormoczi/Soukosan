@@ -70,10 +70,11 @@ public class Controller {
             case "listfloorbases": //A betöltött pályán kilistázza a FloorBaseket
                 for (FloorBase fb:game.getLayout().GetFloorbases()) {
                     if(fb != null){
-                        if(fb.getEntity() != null)
-                            System.out.println(fb.toString() + " and there is " + fb.getEntity().toString() + " on it.");
-                        else
-                            System.out.println(fb.toString());
+                        // TODO WOREK REW
+                        //if(fb.getEntity() != null)
+                        //    System.out.println(fb.toString() + " and there is " + fb.getEntity().toString() + " on it.");
+                        //else
+                        //    System.out.println(fb.toString());
                     }
                 }
                 break;

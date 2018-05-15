@@ -54,12 +54,18 @@ public class Worker extends Movable {
     	Logger l = new Logger();
     	l.enter(this, "Push", d.toString());
 
-    	if(_strength>=this.GetStrength()) {
+    	if(m.getClass().equals(Worker.class))
+    	    //this.Move(d);
+    	    ;
+    	else
+            this.Destroy();
+
+    	/*if(_strength>=this.GetStrength()) {
     	    if(this.getPlace().GetNeighbor(d).Accept(this, d, this.GetStrength()))
                 this.Move(d);
     	    else
     	        this.Destroy();
-        }
+        }*/
 
 
     	l.exit(this, "Push", "true");

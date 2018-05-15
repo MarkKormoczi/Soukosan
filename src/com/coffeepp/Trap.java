@@ -63,7 +63,8 @@ public class Trap extends FloorBase implements Updatable {
             l.exit(this, "Accept", "true");
             return true;
         }
-        if(this.getEntity()!=null){
+        //if(this.getEntity()!=null){
+        if(!entites.isEmpty()) {
             l.exit(this, "Accept", "false");
             return false;
         }

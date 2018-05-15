@@ -121,7 +121,7 @@ public class View {
         //
 
         //Points
-        Text player1Points = new Text();
+        /*Text player1Points = new Text();
         player1Points.setFont(new Font(25));
         player1Points.setX(10);
         player1Points.setY(40);
@@ -135,7 +135,7 @@ public class View {
             player2Points.setY(40);
             player2Points.setText("Player 2: " + Game.getInstance().getLayout().GetWorkers().get(1).GetPoints());
             dList.add(player2Points);
-        }
+        }*/
 
         return root;
 

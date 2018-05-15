@@ -18,7 +18,7 @@ public class Tester {
     }
 
     //Initialize a tester
-    public void startTester(){
+    /* public void startTester(){
         while(true){
             System.out.print("Choose test case: \n" +
                     "\t1 Initialize a map\n" +
@@ -57,7 +57,7 @@ public class Tester {
                         }
                     }
                     wh3x3.AddWorker(player3x3);
-                    System.out.println("Map created.\n");*/
+                    System.out.println("Map created.\n");
                     break;
                 case "2":
                     System.out.print("\n~Empty fields in every test case\n" +
@@ -442,7 +442,7 @@ public class Tester {
 
         }
 
-    }
+    } */
     @Override
     public String toString() {
     	return "Tester";

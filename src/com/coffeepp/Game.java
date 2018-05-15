@@ -44,11 +44,11 @@ public class Game {
         {
             for ( int j = 0; j<maxcol; j++)
             {
-                if(FloorMatrix[i][j].getEntity() != null){
-                    System.out.print(FloorMatrix[i][j].getEntity()+"\t");
-                }
-                else
-                    System.out.println(FloorMatrix[i][j].toString());
+                //if(FloorMatrix[i][j].getEntity() != null){
+                //    System.out.print(FloorMatrix[i][j].getEntity()+"\t");
+                //}
+                //else
+                //    System.out.println(FloorMatrix[i][j].toString());
             }
             System.out.print("\n");
         }
@@ -169,7 +169,7 @@ public class Game {
                         w = new Worker(61);
                         layout.AddWorker(w);
                         w.setPlace(FloorMatrix[row][mcol]);
-                        FloorMatrix[row][mcol].setEntity(w);
+                        FloorMatrix[row][mcol].addEntity(w);
                         m = new Graphic_Worker(w);
                         gameView.addMovable(m);
 
@@ -178,7 +178,7 @@ public class Game {
                         w = new Worker(121);
                         layout.AddWorker(w);
                         w.setPlace(FloorMatrix[row][mcol]);
-                        FloorMatrix[row][mcol].setEntity(w);
+                        FloorMatrix[row][mcol].addEntity(w);
                         m = new Graphic_Worker(w);
                         gameView.addMovable(m);
                         break;
@@ -186,7 +186,7 @@ public class Game {
                         w = new Worker(161);
                         layout.AddWorker(w);
                         w.setPlace(FloorMatrix[row][mcol]);
-                        FloorMatrix[row][mcol].setEntity(w);
+                        FloorMatrix[row][mcol].addEntity(w);
                         m = new Graphic_Worker(w);
                         gameView.addMovable(m);
                         break;
@@ -194,7 +194,7 @@ public class Game {
                         c = new Crate(30);
                         layout.AddCrate(c);
                         c.setPlace(FloorMatrix[row][mcol]);
-                        FloorMatrix[row][mcol].setEntity(c);
+                        FloorMatrix[row][mcol].addEntity(c);
                         m = new Graphic_Crate(c);
                         gameView.addMovable(m);
                         break;
@@ -202,7 +202,7 @@ public class Game {
                         c = new Crate(60);
                         layout.AddCrate(c);
                         c.setPlace(FloorMatrix[row][mcol]);
-                        FloorMatrix[row][mcol].setEntity(c);
+                        FloorMatrix[row][mcol].addEntity(c);
                         m = new Graphic_Crate(c);
                         gameView.addMovable(m);
                         break;
@@ -210,7 +210,7 @@ public class Game {
                         c = new Crate(80);
                         layout.AddCrate(c);
                         c.setPlace(FloorMatrix[row][mcol]);
-                        FloorMatrix[row][mcol].setEntity(c);
+                        FloorMatrix[row][mcol].addEntity(c);
                         m = new Graphic_Crate(c);
                         gameView.addMovable(m);
                         break;

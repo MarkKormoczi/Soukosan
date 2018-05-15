@@ -3,6 +3,8 @@ package com.coffeepp;
 
 
 import java.io.PipedOutputStream;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * This is the basic floortype whch the more special types inherit form
@@ -14,7 +16,12 @@ public abstract class FloorBase implements Updatable {
     private FloorBase down;
     private FloorBase left;
     private FloorBase right;
-    private Movable entity;
+
+    //ENTITY REFACTOR
+    //private Movable entity;
+
+    protected Set<Movable> entites = new HashSet<Movable>();
+
     private Liquid liquid;
 
     /**
@@ -40,26 +47,32 @@ public abstract class FloorBase implements Updatable {
         nam = m;
     }
 
-    public Movable getEntity() {
+
+    /*public Movable getEntity() {
         if (entity != null) {
             return entity;
         }
         return null;
 
-    }
+    }*/
+
     public Liquid getLiquid() {
         return liquid;
     }
-    /**
-     * Sets the contained entity in this floor.
-     * @param entity the new entity to be set
-     */
-    public void setEntity(Movable entity) {
+
+    //ENTITY REFACTOR
+
+    /*public void setEntity(Movable entity) {
         Logger l = new Logger();
         l.enter(this, "setEntity");
         this.entity = entity;
         l.exit(this, "setEntity", "void");
+    }*/
+
+    public void addEntity(Movable Entity){
+        this.entites.add(Entity);
     }
+
     public void setLiquid(Liquid _liquid) {
         Logger l = new Logger();
         l.enter(this, "setLiquid");
@@ -116,7 +129,8 @@ public abstract class FloorBase implements Updatable {
         Logger l = new Logger();
         l.enter(this, "Accept");
 
-        if(entity == null ) {
+
+        /*if(entity == null ) {
             //System.out.println("\nstrength:"+strength +" Weight: "+m.GetWeight());
             if(0 < strength)
             {
@@ -127,19 +141,40 @@ public abstract class FloorBase implements Updatable {
                 l.exit(this, "Accept", "false");
                 return false;
             }
+        }*/
+
+        // if nothing on this floor
+        if(entites.isEmpty()) {
+            if (strength > 0) {
+                addEntity(m);
+                return true;
+            } else {
+                return false;
+            }
         }
 
+        boolean success = true;
+        for (Movable e : entites){
+            if(e.Push(m,d,strength)){
+                addEntity(m);
+            }
+            else  success = false;
+        }
+        return  success;
         // If something is on this floor. We try to push
-        if (this.entity.Push(m, d, strength)) {
+        /*if (this.entity.Push(m, d, strength)) {
             //on success we move to this
 
             setEntity(m);
 
             l.exit(this, "Accept", "true");
             return true;
-        }
-        l.exit(this, "Accept", "false");
-        return false;
+        }*/
+
+        // If something is on this floor. We try to push
+
+        //l.exit(this, "Accept", "false");
+        //return false;
     }
 
     /**
@@ -150,7 +185,8 @@ public abstract class FloorBase implements Updatable {
     {
         Logger l = new Logger();
         l.enter(this, "Remove");
-        entity = null;
+        //entity = null;
+        entites.remove(m);
         l.exit(this, "Remove", "void");
     }
 
