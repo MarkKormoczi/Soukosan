@@ -1,6 +1,6 @@
 package com.coffeepp;
 
-public class Worker extends Movable {
+public class    Worker extends Movable {
 
     /**
      * Holds the points of this worker.
@@ -12,17 +12,15 @@ public class Worker extends Movable {
      */
 
     public Worker()
-    {   this.setStrength(100); }
+    {
+        this.setStrength(100);
+    }
     public Worker(double _strength)
     {
         this.setStrength(_strength);
     }
     public int GetPoints()
     {
-    	Logger l = new Logger();
-    	l.enter(this, "GetPoints");
-    	
-    	l.exit(this, "GetPoints", Integer.toString(points));
         return points;
     }
 
@@ -30,8 +28,6 @@ public class Worker extends Movable {
      * Moves the worker in the specified direction.
      */
     public void Move(Direction d) {
-        Logger l = new Logger();
-        l.enter(this, "Move", d.toString());
         FloorBase fl = this.getPlace().GetNeighbor(d);
         if (fl.Accept(this, d, this.GetStrength())) {
 
@@ -40,7 +36,6 @@ public class Worker extends Movable {
             this.setPlace(fl);
             //System.out.println("OK");
         }
-    	l.exit(this, "Move", "void");
     }
 
     /**
@@ -51,9 +46,6 @@ public class Worker extends Movable {
     @Override
     public boolean Push(Movable m, Direction d, double _strength)
     {
-    	Logger l = new Logger();
-    	l.enter(this, "Push", d.toString());
-
     	if(m.getClass().equals(Worker.class))
     	    //this.Move(d);
     	    ;
@@ -66,9 +58,6 @@ public class Worker extends Movable {
     	    else
     	        this.Destroy();
         }*/
-
-
-    	l.exit(this, "Push", "true");
         return true;
     }
 
@@ -77,12 +66,7 @@ public class Worker extends Movable {
      */
     public void AddPoints()
     {
-    	Logger l = new Logger();
-    	l.enter(this, "AddPoints");
-    	
     	this.points += 1;
-
-    	l.exit(this, "AddPoints", "void");
     }
 
     /**
@@ -109,10 +93,6 @@ public class Worker extends Movable {
      */
     public boolean SwitchCapable()
     {
-    	Logger l = new Logger();
-    	l.enter(this, "SwitchCapable");
-    	
-    	l.exit(this, "SwitchCapable", "false");
         return false;
     }
     public Movable GetLasPusher()

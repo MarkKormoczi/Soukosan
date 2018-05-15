@@ -128,6 +128,7 @@ public class Controller {
                     break;
 
             }
+            Game.getInstance().getLayout().UpdateAll();
             Game.getInstance().getView().drawAll();
             Game.getInstance().getView().Update();
 

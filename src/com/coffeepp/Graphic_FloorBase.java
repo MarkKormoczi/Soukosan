@@ -19,6 +19,10 @@ public class Graphic_FloorBase implements Drawable{
     {
         img = image;
     }
+    public FloorBase getFloorBase()
+    {
+        return graphic;
+    }
     @Override
     public int getZ()
     {

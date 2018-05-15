@@ -25,9 +25,6 @@ public class Crate extends Movable {
     @Override
     public boolean Push(Movable m, Direction d, double strength)
     {
-        Logger l = new Logger();
-        l.enter(this, "Push");
-
         SetLastPusher(m);
         FloorBase pl= this.getPlace();
         /*if (d == Direction.up)
@@ -43,7 +40,6 @@ public class Crate extends Movable {
 
         if(!pl.Accept(this, d, strength - (this.GetWeight() * this.getPlace().getLiquid().getModifier())))
         {//- (this.GetWeight() )
-            l.exit(this, "Push", "false");
             return false;
         } else {
             if(this.getPlace()!=null)
@@ -51,7 +47,6 @@ public class Crate extends Movable {
             this.setPlace(pl);
             pl.addEntity(this);
         }
-        l.exit(this, "Push", "true");
         return true;
     }
 
@@ -74,9 +69,6 @@ public class Crate extends Movable {
      */
     public boolean SwitchCapable()
     {
-        Logger l = new Logger();
-        l.enter(this, "SwitchCapable");
-        l.exit(this, "SwitchCapable", "true");
         return true;
     }
     public void Destroy()

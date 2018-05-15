@@ -6,7 +6,7 @@ package com.coffeepp;
  */
 public class Switch extends FloorBase implements Updatable {
 
-    private boolean state;
+    private boolean state = false;
     private Trap trapdoor;
 
     /**
@@ -14,9 +14,6 @@ public class Switch extends FloorBase implements Updatable {
      * @return
      */
     public Trap getTrapdoor() {
-        Logger l = new Logger();
-        l.enter(this, "getTrapdoor");
-        l.exit(this, "getTrapdoor", trapdoor.toString());
         return trapdoor;
     }
 
@@ -29,12 +26,15 @@ public class Switch extends FloorBase implements Updatable {
     public boolean Accept(Movable m, Direction d, double s) //mindig mindent megeszik
     {
         super.Accept(m, d, s);
+        System.out.println("truetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetrue");
+
         if(m.SwitchCapable()){
             state = true;
+            System.out.println("truetruetruetrue");
         }
-        Logger l = new Logger();
-        l.enter(this, "Accept");
-        l.exit(this, "Accept", "true");
+        else{
+            state = false;
+        }
         return true;
     }
 
@@ -46,9 +46,6 @@ public class Switch extends FloorBase implements Updatable {
     {
         super.Remove(m);
         this.state = false;
-        Logger l = new Logger();
-        l.enter(this, "Remove");
-        l.exit(this, "Remove", "void");
     }
 
     /**
@@ -56,9 +53,6 @@ public class Switch extends FloorBase implements Updatable {
      * @param trapdoor
      */
     public void setTrapdoor(Trap trapdoor) {
-        Logger l = new Logger();
-        l.enter(this, "setTrapdoor");
-        l.exit(this, "setTrapdoor", "void");
         this.trapdoor = trapdoor;
     }
 
@@ -66,10 +60,8 @@ public class Switch extends FloorBase implements Updatable {
      * Returns this switches state.
      * @return
      */
+    @Override
     public boolean getState() {
-        Logger l = new Logger();
-        l.enter(this, "getState");
-        l.exit(this, "getState", Boolean.toString(state));
         return state;
     }
 
@@ -78,9 +70,6 @@ public class Switch extends FloorBase implements Updatable {
      * @param state the desired state
      */
     public void setState(boolean state) {
-        Logger l = new Logger();
-        l.enter(this, "setState");
-        l.exit(this, "setState", "void");
         this.state = state;
     }
 

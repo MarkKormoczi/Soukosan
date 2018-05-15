@@ -2,7 +2,6 @@ package com.coffeepp;
 
 
 
-import java.io.PipedOutputStream;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -35,6 +34,14 @@ public abstract class FloorBase implements Updatable {
 
     }
 
+    public void SetActive()
+    {
+
+    }
+    public boolean getState()
+    {
+        return false;
+    }
     public Position GetPosition() {
         return p;
     }
@@ -99,6 +106,10 @@ public abstract class FloorBase implements Updatable {
         }
     }
 
+    public boolean isActive()
+    {
+        return false;
+    }
     /**
      * Sets The neighnbour int the desired Direction.
      * @param fb The new neighbor.

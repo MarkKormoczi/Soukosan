@@ -82,9 +82,6 @@ public class Game {
      */
     public int GetCurrentLevel()
     {
-        Logger l = new Logger();
-        l.enter(this, "setLayout");
-        l.exit(this, "setLayout", Integer.toString(currentLevel));
         return currentLevel;
     }
 

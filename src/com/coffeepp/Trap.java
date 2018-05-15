@@ -8,24 +8,23 @@ public class Trap extends FloorBase implements Updatable {
      * Returns this traps state.
      * @return
      */
-    public boolean getState() {
-        Logger l = new Logger();
-        l.enter(this, "getState");
-        l.exit(this, "getState", Boolean.toString(state));
-        return state;
-    }
 
     /**
      * Sets this traps trapdoor.
      * @param state The desired state
      */
     public void setState(boolean state) {
-        Logger l = new Logger();
-        l.enter(this, "setState");
         this.state = state;
-        l.exit(this, "setState", "void");
     }
 
+    public void SetActive()
+    {
+        state = true;
+    }
+    public boolean isActive()
+    {
+        return state;
+    }
 
     /**
      * Kills the movable that tries to step int this.
@@ -33,10 +32,8 @@ public class Trap extends FloorBase implements Updatable {
      */
     public void Kill(Movable m)
     {
-        Logger l = new Logger();
-        l.enter(this, "Kill");
+        if(state)
         m.Destroy();
-        l.exit(this, "Kill", "void");
     }
 
     /**
@@ -45,7 +42,16 @@ public class Trap extends FloorBase implements Updatable {
     @Override
     public void Update()
     {
+        for(int i = 0; i < Game.getInstance().getLayout().GetFloorbases().size(); i++)
+        {            System.out.println(Game.getInstance().getLayout().GetFloorbases().get(i).getState());
 
+            if(Game.getInstance().getLayout().GetFloorbases().get(i).getState())
+            {
+                state = true;
+                return;
+            }
+        }
+        state = false;
     }
 
     /**
@@ -56,19 +62,14 @@ public class Trap extends FloorBase implements Updatable {
      */
     public boolean Accept(Movable m, Direction d, double s)
     {
-        Logger l = new Logger();
-        l.enter(this, "Accept");
         if(state==true){
             Kill(m);
-            l.exit(this, "Accept", "true");
             return true;
         }
         //if(this.getEntity()!=null){
         if(!entites.isEmpty()) {
-            l.exit(this, "Accept", "false");
             return false;
         }
-        l.exit(this, "Accept", "true");
         return true;
     }
 
