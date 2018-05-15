@@ -1,26 +1,17 @@
 package com.coffeepp;
 
-import javafx.application.Platform;
 import javafx.event.EventHandler;
-import javafx.scene.image.Image;
 import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javafx.scene.image.ImageView;
-import java.awt.*;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
-import java.util.List;
 
 public class View {
     private Pane map;
@@ -32,60 +23,37 @@ public class View {
 
     ObservableList list;
     Window window;
-    private int cnt = 0;
-    public void SetStage(Stage _stage, Window _window)
-    {
+    public void SetStage(Stage _stage, Window _window) throws IOException {
+
         window = _window;
         menu = _stage;
         stage = _stage;
 
         scene = new Scene(drawAll());
         stage.setScene(scene);
+        Restart();
 
-
-       // StartTimer(stage);
     }
     public void Update()
     {
         stage.setScene(new Scene(drawAll()));
 
     }
-    public void StartTimer(Stage s)
-    {
-
-        Timer timer = new Timer();
-        TimerTask task = new TimerTask()
-        {
-            public void run()
-            {
-                System.out.println(cnt++);
-                //Update();
-            }
-        };
-        timer.scheduleAtFixedRate(task, 500, 500);
-
-
+    public void Restart() throws IOException {
+        drawables.clear();
+        list.clear();
+        gameover = false;
+        Game.getInstance().Restart();
+        Update();
     }
     public void ToMenu( )
     {
         gameover = true;
     }
-    public int compareTo(int o1, int o2) {
-        int v1 = (o1);
-        int v2 = (o2);
-        if(v1 == v2) {
-            return 0;
-        }
-        if(v1 < v2) {
-            return 2; //return negative integer if first argument is less than second
-        }
-        return 1;
-    }
 
     public Group drawAll(){
         Group root = new Group();
          list = root.getChildren();
-       // drawables.sort(e->e.getZ());
         for (int i=0; i<drawables.size(); i++){
 
             if(drawables.get(i).getZ()==0)
@@ -145,15 +113,12 @@ public class View {
         list.add(restart);
         EventHandler<MouseEvent> restartEventHandler = e -> {
             try {
-                drawables.clear();
-                list.clear();
-                gameover = false;
-                Game.getInstance().Restart();
-                Update();
+                Restart();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         };
+
         restart.addEventFilter(MouseEvent.MOUSE_CLICKED, restartEventHandler);
         if(gameover)
         {

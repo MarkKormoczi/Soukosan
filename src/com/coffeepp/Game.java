@@ -13,7 +13,7 @@ public class Game {
     public FloorBase[][] FloorMatrix;
     private int maxcol = 0;
     private int maxrow = 0;
-    private View gameView;
+    private View gameView = new View();
     private boolean gameover = false;
     public Resources resources;
 
@@ -97,8 +97,6 @@ public class Game {
         currentLevel = level;
         gameover = false;
         layout = new WareHouse();
-        if(gameView == null)
-        gameView = new View();
         resources = Resources.getInstance();
         // Commented out since file loading is not implemented into skeleton
         FileReader fr = new FileReader(level);
@@ -305,6 +303,7 @@ public class Game {
     	return "Game";
     }
     public void Restart() throws IOException {
+
         layout.Clear();
         LoadMap(currentLevel);
     }
