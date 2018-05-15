@@ -21,14 +21,17 @@ public class Menu{
 	private Pane pane;
 	private ArrayList mapList;
 
-	public Game newGame(Stage stage){
+	public void newGame(Stage stage, Window window){
 		//TODO
 		View view = new View();
 		Game game= Game.getInstance();
 
-
-
-		return game;
+		try {
+			game.LoadMap("maps/map.txt");
+			game.getView().SetStage(stage, window);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	public void loadGame(Stage stage, Window window) throws Exception {
