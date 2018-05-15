@@ -293,8 +293,8 @@ public class Game {
      */
     public void GameOver()
     {
-        layout.Clear();
         gameover = true;
+        layout.Clear();
         gameView.ToMenu();
     }
 

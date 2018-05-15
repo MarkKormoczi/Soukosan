@@ -49,6 +49,7 @@ public class View {
     public void ToMenu( )
     {
         gameover = true;
+        Update();
     }
 
     public Group drawAll(){
@@ -137,6 +138,7 @@ public class View {
         //
 
         //Points
+        if(!gameover){
         Text player1Points = new Text();
         player1Points.setFont(new Font(25));
         player1Points.setX(10);
@@ -151,7 +153,7 @@ public class View {
             player2Points.setY(40);
             player2Points.setText("Player 2: " + Game.getInstance().getLayout().GetWorkers().get(1).GetPoints());
             list.add(player2Points);
-        }
+        }}
 
         return root;
 
