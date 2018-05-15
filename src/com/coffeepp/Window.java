@@ -38,6 +38,8 @@ public class Window extends Application{
 
     private Menu menu = new Menu();
 
+    private static boolean started = false;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Group root = new Group();
@@ -104,7 +106,10 @@ public class Window extends Application{
         primaryStage.setTitle("倉庫さん");
         primaryStage.setScene(scene);
 
-
+        if(!Window.started) {
+            primaryStage.addEventHandler(KeyEvent.KEY_PRESSED, new KeyboardEventHandler());
+            Window.started = true;
+        }
         primaryStage.show();
     }
 
