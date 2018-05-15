@@ -131,18 +131,23 @@ public class Controller {
             Game.getInstance().getView().Update();
 
             System.out.println("Worker " + workerIndex + " Direction " + d.toString());
-        //}
+        }
     }
 
-  //  public static void LiquidControl(int workerIndex, Liquid l){
-       /* Worker currentWorker = null;
-        currentWorker = game.getLayout().GetWorkers().get(workerIndex);
-        if (currentWorker != null){
-            if (l !=null)
+    public static void LiquidControl(int workerIndex, Liquid l){
+        Worker currentWorker = null;
+        currentWorker = Game.getInstance().getLayout().GetWorkers().get(workerIndex);
+        if (currentWorker != null) {
+            if (l != null) {
                 currentWorker.LaysLiquid(l);
-            else
+                game.getView().addLiquid(new Graphic_Liquid(l));
+            }
+            else {
+                Liquid liq= currentWorker.getPlace().getLiquid();
                 currentWorker.RemoveLiquid();
+                game.getView().removeLiquid(new Graphic_Liquid(liq));
+            }
 
-        }*/
+        }
     }
 }
