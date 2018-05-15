@@ -11,10 +11,7 @@ public class Hole extends FloorBase {
      */
     public void Kill(Movable m)
     {
-        Logger l = new Logger();
-        l.enter(this, "Kill");
         m.Destroy();
-        l.exit(this, "Kill", "void");
     }
 
     /**
@@ -26,10 +23,7 @@ public class Hole extends FloorBase {
     public boolean Accept(Movable m, Direction d, double s) //mindig mindent megeszik
     {
         super.Accept(m, d, s);
-        Logger l = new Logger();
-        l.enter(this, "Accept");
         Kill(m);
-        l.exit(this, "Accept", "true");
         return true;
     }
 

@@ -2,7 +2,7 @@ package com.coffeepp;
 
 public class Trap extends FloorBase implements Updatable {
 
-    private boolean state;
+    private boolean state = false;
 
     /**
      * Returns this traps state.
@@ -28,13 +28,13 @@ public class Trap extends FloorBase implements Updatable {
 
     /**
      * Kills the movable that tries to step int this.
-     * @param m The movable to be killed.
      */
     public void Kill(Movable m)
     {
-        if(state)
-        m.Destroy();
-    }
+        if(state == true) {
+                m.Destroy();
+            this.entites.clear();
+        }}
 
     /**
      * For updating the Trap
@@ -43,14 +43,14 @@ public class Trap extends FloorBase implements Updatable {
     public void Update()
     {
         for(int i = 0; i < Game.getInstance().getLayout().GetFloorbases().size(); i++)
-        {            System.out.println(Game.getInstance().getLayout().GetFloorbases().get(i).getState());
-
+        {
             if(Game.getInstance().getLayout().GetFloorbases().get(i).getState())
             {
                 state = true;
                 return;
             }
         }
+        ///Kill(this.entites.iterator().next());
         state = false;
     }
 
@@ -62,13 +62,13 @@ public class Trap extends FloorBase implements Updatable {
      */
     public boolean Accept(Movable m, Direction d, double s)
     {
+        //if(this.getEntity()!=null){
+        if(!entites.isEmpty()) {
+            return super.Accept(m,d,s);
+        }
         if(state==true){
             Kill(m);
             return true;
-        }
-        //if(this.getEntity()!=null){
-        if(!entites.isEmpty()) {
-            return false;
         }
         return true;
     }
