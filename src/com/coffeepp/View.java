@@ -10,6 +10,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -20,6 +21,8 @@ public class View {
     private Stage menu;
     private Scene scene;
     private boolean gameover = false;
+    private boolean gamewon = false;
+
 
     ObservableList list;
     Window window;
@@ -49,6 +52,11 @@ public class View {
     public void ToMenu( )
     {
         gameover = true;
+        Update();
+    }
+    public void GameWon( )
+    {
+        gamewon = true;
         Update();
     }
 
@@ -138,6 +146,36 @@ public class View {
             restartText .setText("Restart");
             list.add(restartText );
             restartText .addEventFilter(MouseEvent.MOUSE_CLICKED, restartEventHandler);
+        }
+        if(gamewon)
+        {
+            Text nextlevel = new Text();
+            nextlevel.setFont(new Font(50));
+            nextlevel.setX(stage.getWidth()/2-160);
+            nextlevel.setY(stage.getHeight()/2 -100);
+            nextlevel.setText("  Nice work\nNext Level");
+            list.add(nextlevel);
+            EventHandler<MouseEvent> nextlevelEventHandler = e -> {
+
+                try {
+                    File folder = new File("maps/");
+                    File[] listOfFiles = folder.listFiles();
+                    gamewon=false;
+                    Game.getInstance().LoadMap(listOfFiles[Game.getInstance().getLevelnumber()].getAbsolutePath());
+                    Update();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            };
+            nextlevel.addEventFilter(MouseEvent.MOUSE_CLICKED, nextlevelEventHandler);
+
+            Text exittext = new Text();
+            exittext.setFont(new Font(50));
+            exittext .setX(stage.getWidth()/2-82);
+            exittext .setY(stage.getHeight()/2+50);
+            exittext .setText("Back to menu");
+            list.add(exittext );
+            exittext .addEventFilter(MouseEvent.MOUSE_CLICKED, exitEventHandler);
         }
         //
         //Exit text

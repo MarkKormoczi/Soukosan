@@ -18,11 +18,13 @@ public class TargetSpot extends FloorBase {
             if(strength > 0)
             {
                 addEntity(m);
-                m.setWeight(10000.0);
-
                 //System.out.println(getEntity().GetWeight());
                 if(!m.getClass().equals(Worker.class))
+                {
+                    m.setWeight(10000.0);
+                    Game.getInstance().getLayout().DecreaseBadSpot();
                     m.AddPoints();
+                }
                 return true;
             } else
             {

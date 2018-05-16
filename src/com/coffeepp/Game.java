@@ -8,6 +8,7 @@ import java.io.IOException;
  * Responsible for starting the game, level loading, and general game control.
  */
 public class Game {
+    private int levelnumber=0;
     private String currentLevel;
     private WareHouse layout;
     public FloorBase[][] FloorMatrix;
@@ -93,6 +94,7 @@ public class Game {
         }
     }
     public void LoadMap(String level) throws IOException {
+        levelnumber++;
         currentLevel = level;
         gameover = false;
         layout = new WareHouse();
@@ -285,8 +287,7 @@ public class Game {
                 }
             }
         }
-
-
+        layout.InitBadSpots(layout.GetCrates().size());
     }
 
 
@@ -299,7 +300,19 @@ public class Game {
         layout.Clear();
         gameView.ToMenu();
     }
-
+    public void WinGame() throws IOException {
+        if(layout.isAnyBadSpots())
+        {
+            gameView.list.clear();
+            gameView.drawables.clear();
+            layout.Clear();
+            gameView.GameWon();
+        }
+    }
+    public int getLevelnumber()
+    {
+        return levelnumber;
+    }
     @Override
     public String toString() {
     	return "Game";

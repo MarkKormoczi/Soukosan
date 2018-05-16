@@ -7,10 +7,6 @@ import javafx.scene.image.ImageView;
 public class Graphic_Worker extends Graphic_Movable{
     private Worker graphic;
     private Image img;
-    private int movedx, movedy;
-    public Graphic_Worker()
-    {
-    }
     public Graphic_Worker(Worker w)
     {
         graphic = w;

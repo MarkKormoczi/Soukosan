@@ -12,7 +12,7 @@ public class WareHouse {
     private List<Worker> workers = new ArrayList<Worker>();
     private List<Crate> crates = new ArrayList<Crate>();
     private List<FloorBase> floorbases = new ArrayList<FloorBase>(); //mindenki updateable
-
+    private int badspots;
     /**
      * Updates all updatable items
      */
@@ -116,6 +116,7 @@ public class WareHouse {
      * Returns the FloorBase List
      * @return
      */
+
     public List<FloorBase> GetFloorbases()
     {
         return floorbases;
@@ -123,5 +124,17 @@ public class WareHouse {
     @Override
     public String toString() {
     	return "WareHouse";
+    }
+    public void InitBadSpots(int i)
+    {
+        badspots = i;
+    }
+    public void DecreaseBadSpot()
+    {
+        badspots--;
+    }
+    public boolean isAnyBadSpots()
+    {
+        return 0 == badspots;
     }
 }

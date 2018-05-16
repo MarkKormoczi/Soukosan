@@ -131,6 +131,11 @@ public class Controller {
             Game.getInstance().getLayout().UpdateAll();
             Game.getInstance().getView().drawAll();
             Game.getInstance().getView().Update();
+            try {
+                Game.getInstance().WinGame();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             System.out.println("Worker " + workerIndex + " Direction " + d.toString()+" "+ Game.getInstance().getLayout().GetWorkers().size());
         }
