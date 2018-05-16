@@ -29,6 +29,7 @@ public class Trap extends FloorBase implements Updatable {
     /**
      * Kills the movable that tries to step int this.
      */
+    Movable mm;
     public void Kill(Movable m)
     {
         if(state == true) {
@@ -42,15 +43,23 @@ public class Trap extends FloorBase implements Updatable {
     @Override
     public void Update()
     {
+
         for(int i = 0; i < Game.getInstance().getLayout().GetFloorbases().size(); i++)
         {
             if(Game.getInstance().getLayout().GetFloorbases().get(i).getState())
             {
                 state = true;
+                if(state)
+                {
+                    for (Movable entite : entites) {
+                        entite.Destroy();
+                    }
+                }
                 return;
             }
         }
-        ///Kill(this.entites.iterator().next());
+
+       // Kill(mm);
         state = false;
     }
 
@@ -64,6 +73,7 @@ public class Trap extends FloorBase implements Updatable {
     {
         //if(this.getEntity()!=null){
         if(!entites.isEmpty()) {
+            mm = m;
             return super.Accept(m,d,s);
         }
         if(state==true){

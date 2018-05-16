@@ -81,11 +81,8 @@ public abstract class FloorBase implements Updatable {
     }
 
     public void setLiquid(Liquid _liquid) {
-        Logger l = new Logger();
-        l.enter(this, "setLiquid");
         liquid = _liquid;
         liquid.SetPlace(this);
-        l.exit(this, "setLiquid", "void");
     }
     /**
     * Visszaadja a megadott irányban lévő szomszédos FloorBase-t
@@ -93,9 +90,6 @@ public abstract class FloorBase implements Updatable {
     */
     public FloorBase GetNeighbor(Direction d)
     {
-        Logger l = new Logger();
-        l.enter(this, "GetNeighbor");
-        l.exit(this, "GetNeighbor", d.toString());
         switch(d)
         {
             case up: return up;
@@ -117,9 +111,6 @@ public abstract class FloorBase implements Updatable {
      */
     public void setNeighbor(FloorBase fb, Direction d)
     {
-        Logger l = new Logger();
-        l.enter(this, "setNeighbor");
-        l.exit(this, "setNeighbor", "void");
         switch(d)
         {
             case up: up = fb; break;
@@ -137,8 +128,6 @@ public abstract class FloorBase implements Updatable {
      */
     public boolean Accept(Movable m, Direction d, double strength)
     {
-        Logger l = new Logger();
-        l.enter(this, "Accept");
 
 
         /*if(entity == null ) {
@@ -184,7 +173,6 @@ public abstract class FloorBase implements Updatable {
 
         // If something is on this floor. We try to push
 
-        //l.exit(this, "Accept", "false");
         //return false;
     }
 
@@ -194,20 +182,14 @@ public abstract class FloorBase implements Updatable {
      */
     public void Remove(Movable m)
     {
-        Logger l = new Logger();
-        l.enter(this, "Remove");
         //entity = null;
         entites.remove(m);
-        l.exit(this, "Remove", "void");
     }
 
     /**
      * szándékosan üres, nem mindenki valósítja meg viszont szükséges a tárolás miatt
      */
     public void Update(){
-        Logger l = new Logger();
-        l.enter(this, "Update");
-        l.exit(this, "Update", "void");
     }
 
     @Override
