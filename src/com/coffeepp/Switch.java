@@ -25,15 +25,13 @@ public class Switch extends FloorBase implements Updatable {
      */
     public boolean Accept(Movable m, Direction d, double s) //mindig mindent megeszik
     {
-        super.Accept(m, d, s);
+
+        boolean ret = super.Accept(m, d, s);
 
         if(m.SwitchCapable()){
             state = true;
         }
-        else{
-            state = false;
-        }
-        return true;
+        return ret;
     }
 
     /**
@@ -76,7 +74,10 @@ public class Switch extends FloorBase implements Updatable {
      */
     @Override
     public void Update() {
-
+        for(Movable entity: entites) {
+            state = entity.SwitchCapable();
+            break;
+        }
     }
 
     @Override

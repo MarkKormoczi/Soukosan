@@ -146,28 +146,26 @@ public class View {
         //
 
         //Points
-        if(!gameover){
             if (Game.getInstance().getLayout().GetWorkers().size() > 0)
             {
-                Text player1Points = new Text();
-                player1Points.setFont(new Font(15));
-                player1Points.setX(10);
-                player1Points.setY(15);
-
-                player1Points.setText("Player 1: " + Game.getInstance().getLayout().GetWorkers().get(0).GetPoints());
-                list.add(player1Points);
-
-                Text player2Points = new Text();
-                player2Points.setFont(new Font(15));
-                player2Points.setX(10);
-                player2Points.setY(35);
-                player2Points.setText("Player 2: " + Game.getInstance().getLayout().GetWorkers().get(1).GetPoints());
-                list.add(player2Points);
+                int offset_x=0;
+                int offset_y=1;
+                for(int i = 0; i< Game.getInstance().getLayout().GetWorkers().size(); ++i ) {
+                    if(i%3==0)
+                    {
+                        offset_x++;
+                        offset_y =1;
+                    }
+                    Text playerPoints = new Text();
+                    playerPoints.setFont(new Font(15));
+                    playerPoints.setX((offset_x-1)*80);
+                    playerPoints.setY((offset_y)*15);
+                    offset_y++;
+                    playerPoints.setText("Player "+(i+1)+": "+ Game.getInstance().getLayout().GetWorkers().get(i).GetPoints());
+                    list.add(playerPoints);
+                }
             }
-        }
-
         return root;
-
     }
 
 

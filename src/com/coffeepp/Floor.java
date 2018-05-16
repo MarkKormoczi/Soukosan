@@ -5,7 +5,7 @@ package com.coffeepp;
  */
 public class Floor extends FloorBase {
     public Floor(String m)
-    {nam = m;}
+    {}
     public Floor()
     {}
     @Override

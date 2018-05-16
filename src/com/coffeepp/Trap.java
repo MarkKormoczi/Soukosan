@@ -35,7 +35,8 @@ public class Trap extends FloorBase implements Updatable {
         if(state == true) {
                 m.Destroy();
             this.entites.clear();
-        }}
+        }
+    }
 
     /**
      * For updating the Trap
@@ -43,7 +44,6 @@ public class Trap extends FloorBase implements Updatable {
     @Override
     public void Update()
     {
-
         for(int i = 0; i < Game.getInstance().getLayout().GetFloorbases().size(); i++)
         {
             if(Game.getInstance().getLayout().GetFloorbases().get(i).getState())

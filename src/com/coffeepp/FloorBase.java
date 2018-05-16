@@ -28,7 +28,6 @@ public abstract class FloorBase implements Updatable {
      *
      * @return the entity
      */
-    public String nam;
 
     public FloorBase() {
 
@@ -50,9 +49,6 @@ public abstract class FloorBase implements Updatable {
         p = _p;
     }
 
-    public FloorBase(String m) {
-        nam = m;
-    }
 
 
     /*public Movable getEntity() {
