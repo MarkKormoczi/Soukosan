@@ -55,13 +55,10 @@ public class Crate extends Movable {
      */
     public void AddPoints()
     {
-        Logger l = new Logger();
-        l.enter(this, "AddPoints");
         //if(isGivepoint == true) {
             Movable lp = this.GetLastPusher();
             lp.AddPoints();
         //}
-        l.exit(this, "AddPoints", "void");
     }
 
     /**

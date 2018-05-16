@@ -49,8 +49,36 @@ public class    Worker extends Movable {
     	if(m.getClass().equals(Worker.class))
     	    //this.Move(d);
     	    ;
-    	else
-            this.Destroy();
+    	else {
+            SetLastPusher(m);
+            FloorBase pl= this.getPlace();
+        /*if (d == Direction.up)
+            d = Direction.down;
+        else if (d == Direction.down)
+            d = Direction.up;
+        else if (d == Direction.left)
+            d = Direction.right;
+        else if (d == Direction.right)
+            d = Direction.left;*/
+
+            pl = pl.GetNeighbor(d);
+
+            if(!pl.Accept(this, d, _strength ))
+            {
+                this.Destroy();
+                pl.Accept(this, d, _strength);
+                return true;
+            }
+            else
+                {
+                if(this.getPlace()!=null)
+                    this.getPlace().Remove(this);
+                this.setPlace(pl);
+                pl.addEntity(this);
+            }
+            return true;
+        }
+            //this.Destroy();
 
     	/*if(_strength>=this.GetStrength()) {
     	    if(this.getPlace().GetNeighbor(d).Accept(this, d, this.GetStrength()))
@@ -60,7 +88,12 @@ public class    Worker extends Movable {
         }*/
         return true;
     }
-
+    public void Destroy()
+    {
+        this.getPlace().entites.clear();
+        this.setPlace(null);
+        Game.getInstance().getLayout().GetWorkers().remove(this);
+    }
     /**
      * Incrementing the point counter.
      */
@@ -97,7 +130,6 @@ public class    Worker extends Movable {
     }
     public Movable GetLasPusher()
     {
-        System.out.println(this);
         return this;
     }
     @Override

@@ -91,7 +91,7 @@ public class View {
         }
         Text back = new Text();
         back.setFont(new Font(20));
-        back.setX(stage.getX()-137);
+        back.setX(stage.getWidth()-137);
         back.setY(17);
         back.setText("Back to menu");
         list.add(back);
@@ -108,7 +108,7 @@ public class View {
 
         Text restart = new Text();
         restart.setFont(new Font(20));
-        restart.setX(stage.getX()-125);
+        restart.setX(stage.getWidth()-125);
         restart.setY(45);
         restart.setText("Restart level");
         list.add(restart);
@@ -125,11 +125,19 @@ public class View {
         {
             Text exitText = new Text();
             exitText.setFont(new Font(50));
-            exitText.setX(stage.getX()/2-137);
-            exitText.setY(250);
-            exitText.setText("Game Over\n Click here");
+            exitText.setX(stage.getWidth()/2-160);
+            exitText.setY(stage.getHeight()/2 -100);
+            exitText.setText("  Game Over\nBack to menu");
             list.add(exitText);
             exitText.addEventFilter(MouseEvent.MOUSE_CLICKED, exitEventHandler);
+
+            Text restartText = new Text();
+            restartText .setFont(new Font(50));
+            restartText .setX(stage.getWidth()/2-82);
+            restartText .setY(stage.getHeight()/2+50);
+            restartText .setText("Restart");
+            list.add(restartText );
+            restartText .addEventFilter(MouseEvent.MOUSE_CLICKED, restartEventHandler);
         }
         //
         //Exit text
@@ -140,17 +148,17 @@ public class View {
         //Points
         if(!gameover){
         Text player1Points = new Text();
-        player1Points.setFont(new Font(25));
+        player1Points.setFont(new Font(15));
         player1Points.setX(10);
-        player1Points.setY(40);
+        player1Points.setY(15);
         player1Points.setText("Player 1: " + Game.getInstance().getLayout().GetWorkers().get(0).GetPoints());
         list.add(player1Points);
 
         if (Game.getInstance().getLayout().GetWorkers().size() > 1) {
             Text player2Points = new Text();
-            player2Points.setFont(new Font(25));
-            player2Points.setX(140);
-            player2Points.setY(40);
+            player2Points.setFont(new Font(15));
+            player2Points.setX(10);
+            player2Points.setY(35);
             player2Points.setText("Player 2: " + Game.getInstance().getLayout().GetWorkers().get(1).GetPoints());
             list.add(player2Points);
         }}

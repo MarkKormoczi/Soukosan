@@ -25,7 +25,6 @@ public class Graphic_Liquid implements Drawable {
     @Override
     public boolean Draw(ObservableList list)
     {
-        System.out.println(graphic.GetPlace());
         int x= graphic.GetPlace().GetPosition().GetX();
         int y= graphic.GetPlace().GetPosition().GetY();
 

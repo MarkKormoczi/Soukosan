@@ -132,7 +132,7 @@ public class Controller {
             Game.getInstance().getView().drawAll();
             Game.getInstance().getView().Update();
 
-            System.out.println("Worker " + workerIndex + " Direction " + d.toString());
+            System.out.println("Worker " + workerIndex + " Direction " + d.toString()+" "+ Game.getInstance().getLayout().GetWorkers().size());
         }
     }
 

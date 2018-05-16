@@ -26,11 +26,9 @@ public class Switch extends FloorBase implements Updatable {
     public boolean Accept(Movable m, Direction d, double s) //mindig mindent megeszik
     {
         super.Accept(m, d, s);
-        System.out.println("truetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetruetrue");
 
         if(m.SwitchCapable()){
             state = true;
-            System.out.println("truetruetruetrue");
         }
         else{
             state = false;

@@ -13,8 +13,6 @@ public class TargetSpot extends FloorBase {
      */
     public boolean Accept(Movable m, Direction d, double strength)
     {
-        Logger l = new Logger();
-        l.enter(this, "Accept");
 
         if(entites.isEmpty()){
             if(strength > 0)
@@ -25,11 +23,9 @@ public class TargetSpot extends FloorBase {
                 //System.out.println(getEntity().GetWeight());
                 if(!m.getClass().equals(Worker.class))
                     m.AddPoints();
-                l.exit(this, "Accept", "true");
                 return true;
             } else
             {
-                l.exit(this, "Accept", "false");
                 return false;
             }
         }

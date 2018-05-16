@@ -39,7 +39,6 @@ public class Game {
      * @return the only instance
      */
     public void ShowLevel() {
-        System.out.println("asd");
         for(int i = 0; i < maxrow;i++)
         {
             for ( int j = 0; j<maxcol; j++)
@@ -104,22 +103,27 @@ public class Game {
 
         String line = br.readLine();
         maxcol = Integer.parseInt(line);
-        System.out.println(maxcol);
         line = br.readLine();
         maxrow = Integer.parseInt(line);
-        System.out.println(maxrow);
         line = br.readLine();
 
-        FloorMatrix = new FloorBase[maxrow][maxcol];
+        FloorMatrix = new FloorBase[maxrow+2][maxcol+2];
 
         //FloorMatrix elemeinek NULL értékere állítása
         for (int i = 0; i < FloorMatrix.length; ++i)
             for (int j = 0; j < FloorMatrix[i].length; ++j)
-                FloorMatrix[i][j] = null;
+            {if(j == 0 || i == 0 || j == FloorMatrix[i].length-1 || i == FloorMatrix.length-1){
+                FloorMatrix[i][j] = new Obstruction();
+                Graphic_FloorBase g = new Graphic_Obstruction(FloorMatrix[i][j]);
+                gameView.addFloorBase(g);
+                Liquid l = new Liquid('N');
+                FloorMatrix[i][j].setLiquid(l);
+                l.SetPlace(FloorMatrix[i][j]);}
+            }
 
         //FloorMatrix feltoltese
-        int row = 0;
-        int mcol = 0;
+        int row = 1;
+        int mcol = 1;
 
         while (line != null) {
             //A palya tarolasa vegett 3-t kell leptetni és ezért kell az mcol valtozo is
@@ -238,15 +242,13 @@ public class Game {
                     default:
                         break;
                 }
-                System.out.println(gameView.drawables.size());
                 mcol++;
             }
             row++;
-            mcol = 0;
+            mcol = 1;
             line = br.readLine();
         }
         br.close();
-        System.out.print("\n");
 
 
         int colNum;
