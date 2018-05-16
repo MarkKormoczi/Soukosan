@@ -153,6 +153,7 @@ public class View {
                 player1Points.setFont(new Font(15));
                 player1Points.setX(10);
                 player1Points.setY(15);
+
                 player1Points.setText("Player 1: " + Game.getInstance().getLayout().GetWorkers().get(0).GetPoints());
                 list.add(player1Points);
 
